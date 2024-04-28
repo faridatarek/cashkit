@@ -45,7 +45,7 @@ class _EditQuestionScreenState extends State<EditQuestionScreen> {
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
         ),
         SizedBox(
-          height: 12.h,
+          height: 13.h,
         ),
         InputDecorator(
           decoration: InputDecoration(
