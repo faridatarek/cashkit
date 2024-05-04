@@ -1,19 +1,19 @@
+/*
 import 'package:cashkit/core/desgin/btn.dart';
 import 'package:cashkit/screens/home/view.dart';
+import 'package:cashkit/tesst.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 class test2 extends StatefulWidget {
   const test2({Key? key}) : super(key: key);
 
   @override
   State<test2> createState() => _test2State();
 }
-
+///////////////////////////////////////////////////
 class _test2State extends State<test2> {
-  String selectedCategory = 'Select main category';
-  Image selectedIcon=Image.asset("assets/images/Vector.png",) ;
-// Define subcategories here
+  String selectedCategoryName = 'Select main category';
+  Image selectedImg=Image.asset("assets/images/Vector.png",) ;
 
   Map<String, List<Map<String, dynamic>>> subcategories = {
     'Housing': [
@@ -60,8 +60,6 @@ class _test2State extends State<test2> {
 
 
   };
-
-
   List<Map<String, dynamic>> categories = [
     {'name': 'Housing', 'image':Image.asset("assets/images/noto_house (2).png",width: 35,)},
     {'name': 'Bills & Utilities', 'image':Image.asset("assets/images/Bills.png",width: 35,)},
@@ -104,8 +102,8 @@ class _test2State extends State<test2> {
                   ).then((value) {
                     if (value != null) {
                       setState(() {
-                        selectedCategory = value['name'];
-                        selectedIcon = value['image'];
+                        selectedCategoryName = value['name'];
+                        selectedImg = value['image'];
                       });
                     }
                   });
@@ -118,11 +116,11 @@ class _test2State extends State<test2> {
 
                     Padding(
                       padding:  EdgeInsets.only(left: 10.0.w),
-                      child: CircleAvatar(child: selectedIcon,backgroundColor: Color(0xffEFEFEF),radius: 30),
+                      child: CircleAvatar(child: selectedImg,backgroundColor: Color(0xffEFEFEF),radius: 30),
                     ),
                     SizedBox(width: 15.w,),
                     Text(
-                      selectedCategory,
+                      selectedCategoryName,
                       style: TextStyle(fontSize: 20,color: Color(0xff9B9B9B),fontWeight: FontWeight.w800),
                     ),
                     Spacer(),
@@ -157,8 +155,8 @@ class _test2State extends State<test2> {
     context,
     MaterialPageRoute(
     builder: (context) => SubcategoriesScreen(
-      selectedimgCategory: selectedIcon,
-    selectedCategory: selectedCategory,
+      selectedimgCategory: selectedImg,
+    selectedCategory: selectedCategoryName,
     subcategories: subcategories,
     ),
     ),
@@ -230,7 +228,7 @@ class CategoryListScreen extends StatelessWidget {
     );
   }
 }
-//////////////////////////////////////////////////
+/////////////////////////////////////////////////////
 class SubcategoriesScreen extends StatelessWidget {
   final String selectedCategory;
   final Widget selectedimgCategory;
@@ -309,7 +307,7 @@ class SubcategoriesScreen extends StatelessWidget {
                                  Navigator.push(
                                    context,
                                    MaterialPageRoute(
-                                     builder: (context) =>  SubcategoryDetailsScreen(subcategoryName: filteredSubcategories[index]['name']),
+                                     builder: (context) =>  SubcategoryDetailsScreen(subcategoryName: filteredSubcategories[index]['name'],subcategoryimg: filteredSubcategories[index]['image'],selectedCategory: selectedCategory,selectedimgCategory:  selectedimgCategory),
                                    ),
                                  );
 
@@ -332,14 +330,14 @@ class SubcategoriesScreen extends StatelessWidget {
     );
   }
 }
-///////////////////////////////////////////////////////////
-
-
-
+//////////////////////////////////////////////////////
 class SubcategoryDetailsScreen extends StatelessWidget {
+  final String selectedCategory;
+  final Widget selectedimgCategory;
   final String subcategoryName;
+  final Image subcategoryimg ;
 
-  SubcategoryDetailsScreen({required this.subcategoryName});
+  SubcategoryDetailsScreen({required this.subcategoryName,required this.subcategoryimg,required this.selectedCategory,required this.selectedimgCategory});
 
   @override
   Widget build(BuildContext context) {
@@ -348,29 +346,181 @@ class SubcategoryDetailsScreen extends StatelessWidget {
           backgroundColor: Colors.transparent,
           elevation: 0,
           centerTitle: true,
-          title: Text("Categories",style: TextStyle(fontSize: 20.sp,color: Color(0xff292929),fontWeight: FontWeight.w600))
+          title: Text("Add Budget2",style: TextStyle(fontSize: 20.sp,color: Color(0xff292929),fontWeight: FontWeight.w600))
           ,leading:  Icon(Icons.arrow_back_ios,color: Color(0xff292929),)),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Text(
-            subcategoryName,
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          Container(
+            decoration: BoxDecoration(borderRadius: BorderRadiusDirectional.circular(10),  color: Colors.white,),
+            height: 100,
+            width:1000,
+            child: Row(children: [
+
+              Padding(
+                padding:  EdgeInsets.only(left: 10.0.w),
+                child: CircleAvatar(child: subcategoryimg,backgroundColor: Color(0xffEFEFEF),radius: 30),
+              ),
+              SizedBox(width: 15.w,),
+              Text(
+                subcategoryName,
+                style: TextStyle(fontSize: 20,color: Color(0xff9B9B9B),fontWeight: FontWeight.w800),
+              ),
+              Spacer(),
+              Padding(
+                padding:  EdgeInsets.only(right: 10.0.w),
+                child: Icon(Icons.arrow_forward_ios,size: 25),
+              ),
+
+            ]),
+
           ),
-          SizedBox(height: 20),
-          TextFormField(
-            decoration: InputDecoration(labelText: 'Enter amount'),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Container(
+                decoration: BoxDecoration(borderRadius: BorderRadiusDirectional.circular(10),  color: Colors.white,),
+                height: 100,
+                width:1000,
+
+                child: Padding(
+                  padding:  EdgeInsets.only(left: 10.0.w),
+                  child: Center(child: TextFormField(decoration: InputDecoration(label: Text("Amount",  style: TextStyle(fontSize: 20,color: Color(0xff9B9B9B),fontWeight: FontWeight.w600),),icon:  CircleAvatar(child:Image.asset("assets/images/amount_icon.png",) ,backgroundColor: Color(0xffEFEFEF),radius: 30),),keyboardType: TextInputType.number)),
+                )),
           ),
-          SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              // Implement save functionality
-            },
-            child: Text('Save'),
+          SizedBox(height:25,),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: BTN(text: "Save", onPrees: () {
+              // Inside SubcategoryDetailsScreen build method
+
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => NextScreen(
+                    selectedCategory: selectedCategory,
+                    selectedimgCategory: selectedimgCategory,
+                    selectedSubcategory: subcategoryName,
+                  ),
+                ),
+              );
+
+
+
+            },),
           ),
+
         ],
       ),
     );
   }
 }
+// NextScreen widget
+class NextScreen extends StatefulWidget {
+  final Widget selectedimgCategory;
+  final String selectedCategory;
+  final String selectedSubcategory;
 
+  NextScreen({
+    required this.selectedimgCategory,
+    required this.selectedCategory,
+    required this.selectedSubcategory,
+  });
+
+  @override
+  _NextScreenState createState() => _NextScreenState();
+}
+
+class _NextScreenState extends State<NextScreen> {
+  List<Map<String, dynamic>> selectedSubcategories = [];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Selected Categories'),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              padding: EdgeInsets.all(16.0),
+              color: Colors.grey.shade200,
+              child: Row(
+                children: [
+                  CircleAvatar(
+                    child: widget.selectedimgCategory,
+                    backgroundColor: Color(0xffEFEFEF),
+                    radius: 30,
+                  ),
+                  SizedBox(width: 15.0),
+                  Text(
+                    widget.selectedCategory,
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Color(0xff9B9B9B),
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 10),
+            Container(
+              padding: EdgeInsets.all(16.0),
+              color: Colors.grey.shade200,
+              child: Text(
+                'Selected Subcategories:',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: selectedSubcategories
+                  .map(
+                    (subcategory) => Container(
+                  padding: EdgeInsets.all(16.0),
+                  child: Row(
+                    children: [
+                      CircleAvatar(
+                        child: subcategory['image'],
+                        backgroundColor: Color(0xffEFEFEF),
+                        radius: 30,
+                      ),
+                      SizedBox(width: 15.0),
+                      Text(
+                        subcategory['name'],
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Color(0xff9B9B9B),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              )
+                  .toList(),
+            ),
+            BTN(text: "add more", onPrees:  (){
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) =>test2 ()));
+            })
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    selectedSubcategories.add({
+      'name': widget.selectedSubcategory,
+      'image': widget.selectedimgCategory,
+    });
+  }
+}
+*/
