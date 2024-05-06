@@ -5,6 +5,7 @@ import 'package:cashkit/tesst.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
+/*
 
 class test2 extends StatefulWidget {
   const test2({Key? key}) : super(key: key);
@@ -582,8 +583,7 @@ class _NextScreenState extends State<NextScreen> {
         ) ,
         ),
         SizedBox(width:5,),
-        Container
-        ( height:48,width:279.w,
+        Container( height:48,width:279.w,
         child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -730,6 +730,7 @@ class _NextScreenState extends State<NextScreen> {
   }
 }
 
+*/
 
 
 
@@ -858,4 +859,190 @@ class NextScreen extends StatelessWidget {
 }*/
 
 
+/*
 
+class NextScreen extends StatefulWidget {
+  final List<Budget> budgetList;
+
+  NextScreen({required this.budgetList});
+
+  @override
+  State<NextScreen> createState() => _NextScreenState();
+}
+
+class _NextScreenState extends State<NextScreen> {
+  bool _isChecked = false;
+  double totalAmount = 1000;
+  double spentAmount = 300;
+  List<Map<String, dynamic>> selectedSubcategories = [];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Text(
+          "Your Budgets",
+          style: TextStyle(fontSize: 23, color: Theme.of(context).primaryColor, fontWeight: FontWeight.w500),
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: widget.budgetList.map((budget) {
+            return Padding(
+              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.4),
+                      spreadRadius: 1,
+                      blurRadius: 10,
+                    ),
+                  ],
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Color(0xffEFEFEF),
+                              borderRadius: BorderRadius.all(Radius.circular(4)),
+                            ),
+                            height: 48,
+                            width: 35,
+                            child: CircleAvatar(
+                              child: budget.selectedimgCategory,
+                              backgroundColor: Color(0xffEFEFEF),
+                              radius: 20,
+                            ),
+                          ),
+                          SizedBox(width: 5),
+                          Container(
+                            height: 48,
+                            width: 279,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 5.0),
+                                      child: Text(budget.selectedCategory, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Color(0xff292929))),
+                                    ),
+                                    Text("EGP $spentAmount of EGP ${budget.mainAmount}", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Color(0xff525252))),
+                                  ],
+                                ),
+                                SizedBox(height: 15),
+                                LoadingProg(totalAmount: budget.mainAmount, spentAmount: spentAmount),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: selectedSubcategories
+                                .map(
+                                  (subcategory) => Container(
+                                padding: EdgeInsets.all(16.0),
+                                child: Row(
+                                  children: [
+                                    Checkbox(
+                                      activeColor:  Theme.of(context).primaryColor,
+                                      value: _isChecked,
+                                      onChanged: (bool? value) {
+                                        setState(() {
+                                          _isChecked = value!;
+                                          if (_isChecked) {
+                                            spentAmount = totalAmount;
+                                          } else {
+                                            // Reset spentAmount to its original value
+                                            spentAmount = 300; // Change this to the original spentAmount value
+                                          }
+                                        });
+                                      },
+                                    ),
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        color: Color(0xffEFEFEF),
+                                        borderRadius: BorderRadius.all(Radius.circular(4)),
+                                      ),
+                                      height: 48,
+                                      width: 30.w,
+                                      child:  CircleAvatar(
+                                        child: budget.subCategoryimg,
+                                        backgroundColor: Color(0xffEFEFEF),
+                                        radius: 30,
+                                      ),
+                                    ),
+                                    SizedBox(width: 5),
+                                    Container(
+                                      height: 48,
+                                      width: 210.w,
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Row(
+                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                subcategory['name'],
+                                                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Color(0xff292929)),
+                                              ),
+                                              Text(
+                                                "EGP ${_isChecked ? budget.mainAmount.toString() : spentAmount.toString()} of EGP ${totalAmount.toString()}",
+                                                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Color(0xff525252)),
+                                              ),
+                                            ],
+                                          ),
+                                          SizedBox(height: 15),
+                                          LoadingProg(totalAmount: budget.mainAmount, spentAmount: spentAmount),
+                                        ],
+                                      ),
+                                    ),
+
+
+                                  ],
+                                ),
+                              ),
+                            )
+                                .toList(),
+                          ),
+
+                        ],
+                      ),
+
+                    ],
+                  ),
+                ),
+              ),
+            );
+          }).toList(),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => test2()),
+          );
+        },
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+}*/
