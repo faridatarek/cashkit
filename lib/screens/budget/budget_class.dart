@@ -17,3 +17,6 @@ class Budget {
     required this.subCategoryimg,
   });
 }
+List<Budget> budgetList_needs = [];
+List<Budget> budgetList_wants = [];
+List<Budget> budgetList_emergency = [];

@@ -243,4 +243,3 @@ class SubcategoryDetailsScreen_emergency  extends StatelessWidget {
   }
 }
 
-List<Budget> budgetList_emergency = [];

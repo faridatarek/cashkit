@@ -242,4 +242,3 @@ class SubcategoryDetailsScreen_wants  extends StatelessWidget {
   }
 }
 
-List<Budget> budgetList_wants = [];

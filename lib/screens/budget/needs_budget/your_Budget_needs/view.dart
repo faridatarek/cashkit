@@ -56,17 +56,7 @@ class _YourBudget_needsState extends State<YourBudget_needs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: Text(
-          "Your Budgets",
-          style: TextStyle(
-              fontSize: 23,
-              color: Theme.of(context).primaryColor,
-              fontWeight: FontWeight.w500),
-        ),
-      ),
+
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -235,26 +225,29 @@ class _YourBudget_needsState extends State<YourBudget_needs> {
         padding:  EdgeInsets.only(left:30.0.w),
         child: SizedBox(
           width: double.infinity.w,
-          height: 50.h,
-          child: FloatingActionButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => MainCateg_needs()),
-              );
-            },
-            child: Text(
-              "Add new Expenses",
-              style: TextStyle(
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white),
+          height: 70.h,
+          child: Padding(
+            padding:  EdgeInsets.only(bottom:25.h),
+            child: FloatingActionButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MainCateg_needs()),
+                );
+              },
+              child: Text(
+                "Add new Expenses",
+                style: TextStyle(
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.white),
+              ),
+              backgroundColor: Theme.of(context).primaryColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.r),
+              ),
+              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
             ),
-            backgroundColor: Theme.of(context).primaryColor,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.r),
-            ),
-            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           ),
         ),
       ),
