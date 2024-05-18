@@ -1,23 +1,24 @@
-import 'package:cashkit/budget/needs_budget/subCateg_needs/view.dart';
+
 import 'package:cashkit/core/desgin/btn.dart';
+import 'package:cashkit/screens/budget/Emergency_budget/subCateg_emergency/view.dart';
 import 'package:cashkit/screens/home/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class MainCateg_needs extends StatefulWidget {
-  const MainCateg_needs({Key? key}) : super(key: key);
+class MainCateg_emergency extends StatefulWidget {
+  const MainCateg_emergency({Key? key}) : super(key: key);
 
   @override
-  State<MainCateg_needs> createState() => _MainCateg_needsState();
+  State<MainCateg_emergency> createState() => _MainCateg_emergencyState();
 }
 
-class _MainCateg_needsState extends State<MainCateg_needs> {
-  String selectedCategoryName_needs = 'Select main category';
-  Image selectedImg_needs = Image.asset(
+class _MainCateg_emergencyState extends State<MainCateg_emergency> {
+  String selectedCategoryName_emergency = 'Select main category';
+  Image selectedImg_emergency = Image.asset(
     "assets/images/Vector.png",
   );
-  int mainCatAmount_needs = 0;
-  Map<String, List<Map<String, dynamic>>> subcategories_needs = {
+  int mainCatAmount_emergency = 0;
+  Map<String, List<Map<String, dynamic>>> subcategories_emergency = {
     'Housing': [
       {'name': 'Rent', 'category': 'Housing', 'image':Image.asset("assets/images/rent(key).png",width: 35,)},
       {'name': 'Energy', 'category': 'Housing', 'image':Image.asset("assets/images/energy.png",width: 35,)},
@@ -63,7 +64,7 @@ class _MainCateg_needsState extends State<MainCateg_needs> {
 
   };
 
-  List<Map<String, dynamic>> categorie_needs= [
+  List<Map<String, dynamic>> categorie_emergency= [
     {'name': 'Housing', 'image':Image.asset("assets/images/noto_house (2).png",width: 35,)},
     {'name': 'Bills & Utilities', 'image':Image.asset("assets/images/Bills.png",width: 35,)},
     {'name': 'Shopping', 'image':Image.asset("assets/images/shoppingCatg.png",width: 35,)},
@@ -102,13 +103,13 @@ class _MainCateg_needsState extends State<MainCateg_needs> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => CategoryListScreen_needs(categories_needs: categorie_needs),
+                      builder: (context) => CategoryListScreen_emergency(categories_emergency: categorie_emergency),
                     ),
                   ).then((value) {
                     if (value != null) {
                       setState(() {
-                        selectedCategoryName_needs = value['name'];
-                        selectedImg_needs = value['image'];
+                        selectedCategoryName_emergency = value['name'];
+                        selectedImg_emergency = value['image'];
                       });
                     }
                   });
@@ -124,11 +125,11 @@ class _MainCateg_needsState extends State<MainCateg_needs> {
                     children: [
                       Padding(
                         padding: EdgeInsets.only(left: 10.0.w),
-                        child: CircleAvatar(child: selectedImg_needs, backgroundColor: Color(0xffEFEFEF), radius: 30),
+                        child: CircleAvatar(child: selectedImg_emergency, backgroundColor: Color(0xffEFEFEF), radius: 30),
                       ),
                       SizedBox(width: 15.w),
                       Text(
-                        selectedCategoryName_needs,
+                        selectedCategoryName_emergency,
                         style: TextStyle(fontSize: 20, color: Color(0xff9B9B9B), fontWeight: FontWeight.w800),
                       ),
                       Spacer(),
@@ -171,7 +172,7 @@ class _MainCateg_needsState extends State<MainCateg_needs> {
                       onChanged: (value) {
                         setState(() {
                           // Update mainCatAmount when the text field value changes
-                          mainCatAmount_needs = int.tryParse(value) ?? 0;
+                          mainCatAmount_emergency = int.tryParse(value) ?? 0;
                         });
                       },
                     ),
@@ -188,11 +189,11 @@ class _MainCateg_needsState extends State<MainCateg_needs> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SubcategoriesScreen_needs(
-                        selectedimgCategory_needs: selectedImg_needs,
-                        selectedCategory_needs: selectedCategoryName_needs,
-                        subcategories_needs: subcategories_needs,
-                        mainCatAmount_needs: mainCatAmount_needs.toDouble(), // Convert mainCatAmount to double
+                      builder: (context) => SubcategoriesScreen_emergency(
+                        selectedimgCategory_emergency: selectedImg_emergency,
+                        selectedCategory_emergency: selectedCategoryName_emergency,
+                        subcategories_emergency: subcategories_emergency,
+                        mainCatAmount_emergency: mainCatAmount_emergency.toDouble(), // Convert mainCatAmount to double
                       ),
                     ),
                   );
@@ -209,26 +210,26 @@ class _MainCateg_needsState extends State<MainCateg_needs> {
 }
 
 //  Category List Screen for needs  //
-class CategoryListScreen_needs extends StatelessWidget {
-  final List<Map<String, dynamic>> categories_needs;
-  const CategoryListScreen_needs({Key? key, required this.categories_needs}) : super(key: key);
+class CategoryListScreen_emergency extends StatelessWidget {
+  final List<Map<String, dynamic>> categories_emergency;
+  const CategoryListScreen_emergency({Key? key, required this.categories_emergency}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          centerTitle: true,
-          title: Text("Main Categories",style: TextStyle(fontSize: 20.sp,color: Color(0xff292929),fontWeight: FontWeight.w600))
-          ,leading: InkWell(
-          onTap:  (){
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) =>HomeScreen ()));
-          },
-          child: Icon(Icons.arrow_back_ios,color: Color(0xff292929),))),
+        appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            centerTitle: true,
+            title: Text("Main Categories",style: TextStyle(fontSize: 20.sp,color: Color(0xff292929),fontWeight: FontWeight.w600))
+            ,leading: InkWell(
+            onTap:  (){
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) =>HomeScreen ()));
+            },
+            child: Icon(Icons.arrow_back_ios,color: Color(0xff292929),))),
         body:ListView.builder(
-          itemCount: categories_needs.length,
+          itemCount: categories_emergency.length,
           itemBuilder: (context, index) {
             return Column(
               children: [
@@ -241,14 +242,14 @@ class CategoryListScreen_needs extends StatelessWidget {
 
                     child: Center(
                       child: ListTile(
-                        leading:CircleAvatar(child:   categories_needs[index]['image'],backgroundColor: Color(0xffEFEFEF),radius: 30),
+                        leading:CircleAvatar(child:   categories_emergency[index]['image'],backgroundColor: Color(0xffEFEFEF),radius: 30),
 
                         title: Text(
-                          categories_needs[index]['name'],
+                          categories_emergency[index]['name'],
                           style: TextStyle(color: Color(0xff292929),fontWeight: FontWeight.w600,fontSize: 18),
                         ),
                         onTap: () {
-                          Navigator.pop(context, categories_needs[index]);
+                          Navigator.pop(context, categories_emergency[index]);
                         },
                       ),
                     ),

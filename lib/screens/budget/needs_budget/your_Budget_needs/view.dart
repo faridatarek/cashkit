@@ -1,52 +1,53 @@
-import 'package:cashkit/budget/budget_class.dart';
-import 'package:cashkit/budget/wants_budget/mainCateg_wants/view.dart';
+
 import 'package:cashkit/core/desgin/loading.dart';
+import 'package:cashkit/screens/budget/budget_class.dart';
+import 'package:cashkit/screens/budget/needs_budget/mainCateg_needs/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class YourBudget_wants extends StatefulWidget {
-  final List<Budget> budgetList_wants;
-  const YourBudget_wants({Key? key, required this.budgetList_wants}) : super(key: key);
+class YourBudget_needs extends StatefulWidget {
+  final List<Budget> budgetList_needs;
+  const YourBudget_needs({Key? key, required this.budgetList_needs}) : super(key: key);
 
   @override
-  State<YourBudget_wants> createState() => _YourBudget_wantsState();
+  State<YourBudget_needs> createState() => _YourBudget_needsState();
 }
 
-class _YourBudget_wantsState extends State<YourBudget_wants> {
-  double totalAmount_wants= 1000;
-  double spentAmount_wants = 300;
-  List<bool> _isCheckedList_wants = [];
-  List<Map<String, dynamic>> selectedSubcategories_wants = [];
+class _YourBudget_needsState extends State<YourBudget_needs> {
+  double totalAmount_needs = 1000;
+  double spentAmount_needs = 300;
+  List<bool> _isCheckedList_needs = [];
+  List<Map<String, dynamic>> selectedSubcategories_needs = [];
   void initState() {
     super.initState();
     // Initialize _isCheckedList with false values for each item in the selectedSubcategories list
-    _isCheckedList_wants = List.generate(widget.budgetList_wants.length, (index) => false);
+    _isCheckedList_needs = List.generate(widget.budgetList_needs.length, (index) => false);
 
     super.initState();
 
     // Check if the new choice already exists in selectedSubcategories
-    bool mainCategoryExists = selectedSubcategories_wants.any((element) =>
-    element['mainCategory'] == widget.budgetList_wants.last.selectedCategory);
+    bool mainCategoryExists = selectedSubcategories_needs.any((element) =>
+    element['mainCategory'] == widget.budgetList_needs.last.selectedCategory);
 
     if (mainCategoryExists) {
       // If the main category already exists, find its index in the list
-      int index = selectedSubcategories_wants.indexWhere((element) =>
-      element['mainCategory'] == widget.budgetList_wants.last.selectedCategory);
+      int index = selectedSubcategories_needs.indexWhere((element) =>
+      element['mainCategory'] == widget.budgetList_needs.last.selectedCategory);
       // Add the new subcategory to the existing main category's list of subcategories
-      selectedSubcategories_wants[index]['subcategories'].add({
-        'name': widget.budgetList_wants.last.selectedSubcategory,
-        'image': widget.budgetList_wants.last.subCategoryimg,
-        'amount': widget.budgetList_wants.last.subAmount,
+      selectedSubcategories_needs[index]['subcategories'].add({
+        'name': widget.budgetList_needs.last.selectedSubcategory,
+        'image': widget.budgetList_needs.last.subCategoryimg,
+        'amount': widget.budgetList_needs.last.subAmount,
       });
     } else {
       // If the main category doesn't exist, add a new entry for it
-      selectedSubcategories_wants.add({
-        'mainCategory': widget.budgetList_wants.last.selectedCategory,
+      selectedSubcategories_needs.add({
+        'mainCategory': widget.budgetList_needs.last.selectedCategory,
         'subcategories': [
           {
-            'name': widget.budgetList_wants.last.selectedSubcategory,
-            'image': widget.budgetList_wants.last.subCategoryimg,
-            'amount': widget.budgetList_wants.last.subAmount,
+            'name': widget.budgetList_needs.last.selectedSubcategory,
+            'image': widget.budgetList_needs.last.subCategoryimg,
+            'amount': widget.budgetList_needs.last.subAmount,
           }
         ],
       });
@@ -69,8 +70,8 @@ class _YourBudget_wantsState extends State<YourBudget_wants> {
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: widget.budgetList_wants.map((budget) {
-            int index = widget.budgetList_wants.indexOf(budget); // Get the index of the current budget item
+          children: widget.budgetList_needs.map((budget) {
+            int index = widget.budgetList_needs.indexOf(budget); // Get the index of the current budget item
             return Padding(
               padding: EdgeInsets.only(
                   top: 15.h, left: 8.w, right: 6.w, bottom: 10.h),
@@ -117,7 +118,7 @@ class _YourBudget_wantsState extends State<YourBudget_wants> {
                                               color: Color(0xff292929))),
                                     ),
                                     Text(
-                                        "EGP ${spentAmount_wants} of EGP ${budget.mainAmount.toStringAsFixed(2)}",
+                                        "EGP ${spentAmount_needs} of EGP ${budget.mainAmount.toStringAsFixed(2)}",
                                         style: TextStyle(
                                             fontSize: 12,
                                             fontWeight: FontWeight.w400,
@@ -127,7 +128,7 @@ class _YourBudget_wantsState extends State<YourBudget_wants> {
                                 SizedBox(height: 15),
                                 LoadingProg(
                                     totalAmount: budget.mainAmount,
-                                    spentAmount: spentAmount_wants),
+                                    spentAmount: spentAmount_needs),
                               ],
                             ),
                           ),
@@ -136,21 +137,21 @@ class _YourBudget_wantsState extends State<YourBudget_wants> {
                       SizedBox(height: 10),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: selectedSubcategories_wants.map((subcategory) {
+                        children: selectedSubcategories_needs.map((subcategory) {
                           return Container(
                             padding: EdgeInsets.all(16.0),
                             child: Row(
                               children: [
                                 Checkbox(
                                   activeColor: Theme.of(context).primaryColor,
-                                  value: _isCheckedList_wants[index],
+                                  value: _isCheckedList_needs[index],
                                   onChanged: (bool? value) {
                                     setState(() {
-                                      _isCheckedList_wants[index] = value ?? false;
-                                      if (_isCheckedList_wants[index]) {
-                                        spentAmount_wants = budget.mainAmount;
+                                      _isCheckedList_needs[index] = value ?? false;
+                                      if (_isCheckedList_needs[index]) {
+                                        spentAmount_needs = budget.mainAmount;
                                       } else {
-                                        spentAmount_wants = 300; // Reset spentAmount to its original value
+                                        spentAmount_needs = 300; // Reset spentAmount to its original value
                                       }
                                     });
                                   },
@@ -188,7 +189,7 @@ class _YourBudget_wantsState extends State<YourBudget_wants> {
                                                   fontWeight: FontWeight.w600,
                                                   color: Color(0xff292929))),
                                           Text(
-                                              "EGP ${_isCheckedList_wants[index] ? budget.mainAmount.toString() : spentAmount_wants.toString()} of EGP ${budget.mainAmount}",
+                                              "EGP ${_isCheckedList_needs[index] ? budget.mainAmount.toString() : spentAmount_needs.toString()} of EGP ${budget.mainAmount}",
                                               style: TextStyle(
                                                   fontSize: 12,
                                                   fontWeight: FontWeight.w400,
@@ -198,7 +199,7 @@ class _YourBudget_wantsState extends State<YourBudget_wants> {
                                       SizedBox(height: 15),
                                       LoadingProg(
                                           totalAmount: budget.mainAmount,
-                                          spentAmount: spentAmount_wants),
+                                          spentAmount: spentAmount_needs),
                                     ],
                                   ),
                                 ),
@@ -239,7 +240,7 @@ class _YourBudget_wantsState extends State<YourBudget_wants> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MainCateg_wants()),
+                MaterialPageRoute(builder: (context) => MainCateg_needs()),
               );
             },
             child: Text(

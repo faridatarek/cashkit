@@ -1,24 +1,26 @@
-import 'package:cashkit/budget/budget_class.dart';
-import 'package:cashkit/budget/needs_budget/your_Budget_needs/view.dart';
+
+
 import 'package:cashkit/core/desgin/btn.dart';
+import 'package:cashkit/screens/budget/Emergency_budget/your_Budget_emergency/view.dart';
+import 'package:cashkit/screens/budget/budget_class.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SubcategoriesScreen_needs extends StatelessWidget {
-  const SubcategoriesScreen_needs({Key? key
-    , required this.selectedCategory_needs, required this.selectedimgCategory_needs,
-    required this.subcategories_needs, required this.mainCatAmount_needs}) : super(key: key);
-  final String selectedCategory_needs;
-  final Widget selectedimgCategory_needs;
-  final Map<String, List<Map<String, dynamic>>> subcategories_needs;
-  final double mainCatAmount_needs; // Accept mainCatAmount as double
+class SubcategoriesScreen_emergency extends StatelessWidget {
+  const SubcategoriesScreen_emergency({Key? key
+    , required this.selectedCategory_emergency, required this.selectedimgCategory_emergency,
+    required this.subcategories_emergency, required this.mainCatAmount_emergency}) : super(key: key);
+  final String selectedCategory_emergency;
+  final Widget selectedimgCategory_emergency;
+  final Map<String, List<Map<String, dynamic>>> subcategories_emergency;
+  final double mainCatAmount_emergency; // Accept mainCatAmount as double
 
 
 
   @override
   Widget build(BuildContext context) {
     //list to filter subcategories based on selected category
-    List<Map<String, dynamic>> filteredSubcategories_needs = subcategories_needs[selectedCategory_needs] ?? [];
+    List<Map<String, dynamic>> filteredSubcategories_emergency = subcategories_emergency[selectedCategory_emergency] ?? [];
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.transparent,
@@ -41,11 +43,11 @@ class SubcategoriesScreen_needs extends StatelessWidget {
 
                   Padding(
                     padding:  EdgeInsets.only(left: 10.0.w),
-                    child: CircleAvatar(child: selectedimgCategory_needs,backgroundColor: Color(0xffEFEFEF),radius: 30),
+                    child: CircleAvatar(child: selectedimgCategory_emergency,backgroundColor: Color(0xffEFEFEF),radius: 30),
                   ),
                   SizedBox(width: 15.w,),
                   Text(
-                    selectedCategory_needs,
+                    selectedCategory_emergency,
                     style: TextStyle(fontSize: 20,color: Color(0xff9B9B9B),fontWeight: FontWeight.w800),
                   ),
                   Spacer(),
@@ -63,7 +65,7 @@ class SubcategoriesScreen_needs extends StatelessWidget {
               Container(
                 height: 900,
                 child: ListView.builder(
-                  itemCount: filteredSubcategories_needs.length,
+                  itemCount: filteredSubcategories_emergency.length,
                   itemBuilder: (context, index) {
                     return Column(
                       children: [
@@ -74,13 +76,13 @@ class SubcategoriesScreen_needs extends StatelessWidget {
 
                           child:  Center(
                             child: ListTile(
-                              leading:CircleAvatar(child:filteredSubcategories_needs[index]['image'],backgroundColor: Color(0xffEFEFEF),radius: 30),
-                              title: Text(filteredSubcategories_needs[index]['name'], style: TextStyle(color: Color(0xff292929),fontWeight: FontWeight.w500,fontSize: 18), ),
+                              leading:CircleAvatar(child:filteredSubcategories_emergency[index]['image'],backgroundColor: Color(0xffEFEFEF),radius: 30),
+                              title: Text(filteredSubcategories_emergency[index]['name'], style: TextStyle(color: Color(0xff292929),fontWeight: FontWeight.w500,fontSize: 18), ),
                               onTap: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) =>  SubcategoryDetailsScreen_needs(subcategoryName_needs: filteredSubcategories_needs[index]['name'],subcategoryimg_needs: filteredSubcategories_needs[index]['image'],selectedCategory_needs: selectedCategory_needs,selectedimgCategory_needs:  selectedimgCategory_needs, mainCatAmount_needs: mainCatAmount_needs.toDouble()), // Convert mainCatAmount to double
+                                    builder: (context) =>  SubcategoryDetailsScreen_emergency(subcategoryName_emergency: filteredSubcategories_emergency[index]['name'],subcategoryimg_emergency: filteredSubcategories_emergency[index]['image'],selectedCategory_emergency: selectedCategory_emergency,selectedimgCategory_emergency:  selectedimgCategory_emergency, mainCatAmount_emergency: mainCatAmount_emergency.toDouble()), // Convert mainCatAmount to double
                                   ),
                                 );
 
@@ -106,17 +108,17 @@ class SubcategoriesScreen_needs extends StatelessWidget {
 }
 
 // Subcategory Details Screen for needs //
-class SubcategoryDetailsScreen_needs  extends StatelessWidget {
-  final String selectedCategory_needs;
-  final Widget selectedimgCategory_needs;
-  final String subcategoryName_needs;
-  final Image subcategoryimg_needs;
-  final double mainCatAmount_needs;
-  const SubcategoryDetailsScreen_needs ({Key? key, required this.selectedCategory_needs, required this.selectedimgCategory_needs, required this.subcategoryName_needs, required this.subcategoryimg_needs, required this.mainCatAmount_needs}) : super(key: key);
+class SubcategoryDetailsScreen_emergency  extends StatelessWidget {
+  final String selectedCategory_emergency;
+  final Widget selectedimgCategory_emergency;
+  final String subcategoryName_emergency;
+  final Image subcategoryimg_emergency;
+  final double mainCatAmount_emergency;
+  const SubcategoryDetailsScreen_emergency ({Key? key, required this.selectedCategory_emergency, required this.selectedimgCategory_emergency, required this.subcategoryName_emergency, required this.subcategoryimg_emergency, required this.mainCatAmount_emergency}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    double subAmount_needs = 0;
+    double subAmount_emergency = 0;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -142,7 +144,7 @@ class SubcategoryDetailsScreen_needs  extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(10.r),
               color: Colors.white,
             ),
             height: 100,
@@ -152,14 +154,14 @@ class SubcategoryDetailsScreen_needs  extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(left: 10.0),
                   child: CircleAvatar(
-                    child: subcategoryimg_needs,
+                    child: subcategoryimg_emergency,
                     backgroundColor: Color(0xffEFEFEF),
                     radius: 30,
                   ),
                 ),
-                SizedBox(width: 15),
+                SizedBox(width: 15.w),
                 Text(
-                  subcategoryName_needs,
+                  subcategoryName_emergency,
                   style: TextStyle(
                     fontSize: 20,
                     color: Color(0xff9B9B9B),
@@ -204,7 +206,7 @@ class SubcategoryDetailsScreen_needs  extends StatelessWidget {
                     ),
                     keyboardType: TextInputType.number,
                     onChanged: (value) {
-                      subAmount_needs = double.tryParse(value) ?? 0;
+                      subAmount_emergency = double.tryParse(value) ?? 0;
                     },
                   ),
                 ),
@@ -217,19 +219,19 @@ class SubcategoryDetailsScreen_needs  extends StatelessWidget {
             child: BTN(
               text: "Save",
               onPrees: () {
-                Budget newBudget_needs = Budget(
-                  selectedCategory: selectedCategory_needs,
-                  selectedimgCategory: selectedimgCategory_needs,
-                  selectedSubcategory: subcategoryName_needs,
-                  mainAmount: mainCatAmount_needs,
-                  subAmount: subAmount_needs,
-                  subCategoryimg: subcategoryimg_needs,
+                Budget newBudget_emergency = Budget(
+                  selectedCategory: selectedCategory_emergency,
+                  selectedimgCategory: selectedimgCategory_emergency,
+                  selectedSubcategory: subcategoryName_emergency,
+                  mainAmount: mainCatAmount_emergency,
+                  subAmount: subAmount_emergency,
+                  subCategoryimg: subcategoryimg_emergency,
                 );
-                budgetList_needs.add(newBudget_needs);
+                budgetList_emergency.add(newBudget_emergency);
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>  YourBudget_needs(budgetList_needs: budgetList_needs),
+                    builder: (context) => YourBudget_emergency(budgetList_emergency: budgetList_emergency),
                   ),
                 );
               },
@@ -241,4 +243,4 @@ class SubcategoryDetailsScreen_needs  extends StatelessWidget {
   }
 }
 
-List<Budget> budgetList_needs = [];
+List<Budget> budgetList_emergency = [];
