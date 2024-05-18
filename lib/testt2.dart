@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 
+/*
 class test2 extends StatefulWidget {
   const test2({Key? key}) : super(key: key);
 
@@ -807,5 +808,6 @@ class _NextScreenState extends State<NextScreen> {
 
 
 List<Budget> budgetList = [];
+*/
 
 

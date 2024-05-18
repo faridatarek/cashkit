@@ -1,14 +1,6 @@
 
-import 'package:cashkit/screens/Goals/all_goals/view.dart';
-import 'package:cashkit/screens/charts/view.dart';
-import 'package:cashkit/screens/home/view.dart';
-import 'package:cashkit/screens/premium_view.dart';
-import 'package:cashkit/screens/nav_bar/view.dart';
-import 'package:cashkit/screens/rating/view.dart';
-import 'package:cashkit/screens/splash/logo.dart';
-import 'package:cashkit/screens/splash/toggle_splash.dart';
-import 'package:cashkit/tesst.dart';
-import 'package:cashkit/testt2.dart';
+import 'package:cashkit/budget/Emergency_budget/mainCateg_emergency/view.dart';
+import 'package:cashkit/budget/wants_budget/mainCateg_wants/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -40,7 +32,7 @@ class MyApp extends StatelessWidget {
           ),
 
 
-          home:test2(),
+          home:MainCateg_emergency (),
 
         );
       },
