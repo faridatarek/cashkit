@@ -1,4 +1,3 @@
-
 import 'package:cashkit/core/desgin/btn.dart';
 import 'package:cashkit/screens/budget/wants_budget/subCateg_wants/view.dart';
 import 'package:cashkit/screens/home/view.dart';
@@ -264,4 +263,3 @@ class CategoryListScreen_wants extends StatelessWidget {
     );
   }
 }
-

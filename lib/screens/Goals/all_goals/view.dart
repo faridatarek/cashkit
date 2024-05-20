@@ -3,6 +3,7 @@ import 'package:cashkit/core/desgin/loading.dart';
 import 'package:cashkit/screens/Goals/Your_goal/view.dart';
 import 'package:cashkit/screens/Goals/create_goals/view.dart';
 import 'package:cashkit/screens/home/view.dart';
+import 'package:cashkit/screens/nav_bar/view.dart';
 import 'package:circle_nav_bar/circle_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -45,7 +46,7 @@ class _All_GoalsState extends State<All_Goals> {
           ,leading: InkWell(
           onTap:  (){
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) =>HomeScreen ()));
+                MaterialPageRoute(builder: (context) =>NavScreen ()));
           },
           child: Icon(Icons.arrow_back_ios,color: Color(0xff292929),))),
       body:  Padding(

@@ -1,8 +1,11 @@
 
 
+import 'package:cashkit/screens/Goals/create_goals/view.dart';
 import 'package:cashkit/screens/auth/sign_up/view.dart';
 import 'package:cashkit/screens/budget/Emergency_budget/mainCateg_emergency/view.dart';
 import 'package:cashkit/screens/nav_bar/view.dart';
+import 'package:cashkit/screens/splash/logo.dart';
+import 'package:cashkit/screens/splash/toggle_splash.dart';
 import 'package:cashkit/screens/tab_bar/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,7 +38,7 @@ class MyApp extends StatelessWidget {
           ),
 
 
-          home:signUp (),
+          home:TabBarScreen(),
 
         );
       },

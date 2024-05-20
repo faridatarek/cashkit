@@ -1,4 +1,3 @@
-
 import 'package:cashkit/core/desgin/btn.dart';
 import 'package:cashkit/screens/budget/needs_budget/subCateg_needs/view.dart';
 import 'package:cashkit/screens/home/view.dart';
@@ -217,17 +216,17 @@ class CategoryListScreen_needs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          centerTitle: true,
-          title: Text("Main Categories",style: TextStyle(fontSize: 20.sp,color: Color(0xff292929),fontWeight: FontWeight.w600))
-          ,leading: InkWell(
-          onTap:  (){
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) =>HomeScreen ()));
-          },
-          child: Icon(Icons.arrow_back_ios,color: Color(0xff292929),))),
+        appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            centerTitle: true,
+            title: Text("Main Categories",style: TextStyle(fontSize: 20.sp,color: Color(0xff292929),fontWeight: FontWeight.w600))
+            ,leading: InkWell(
+            onTap:  (){
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) =>HomeScreen ()));
+            },
+            child: Icon(Icons.arrow_back_ios,color: Color(0xff292929),))),
         body:ListView.builder(
           itemCount: categories_needs.length,
           itemBuilder: (context, index) {
@@ -264,4 +263,3 @@ class CategoryListScreen_needs extends StatelessWidget {
     );
   }
 }
-

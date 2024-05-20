@@ -1,5 +1,6 @@
 
 import 'package:cashkit/screens/Goals/create_goals/view.dart';
+import 'package:cashkit/screens/charts/view.dart';
 import 'package:cashkit/screens/home/view.dart';
 import 'package:cashkit/screens/tab_bar/view.dart';
 import 'package:circle_nav_bar/circle_nav_bar.dart';
@@ -15,7 +16,7 @@ class NavScreen extends StatefulWidget {
 
 class _NavScreenState extends State<NavScreen> {
   List<Widget> PagesName = [
-    HomeScreen(), TabBarScreen(), Creat_goals(), HomeScreen(),
+    HomeScreen(), TabBarScreen(), Creat_goals(), Charts_screen(),Charts_screen()
   ];
   int currentIndex = 0;
 

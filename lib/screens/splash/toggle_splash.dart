@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:cashkit/screens/auth/login/view.dart';
+import 'package:cashkit/screens/auth/sign_up/view.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -87,8 +89,13 @@ class _Toggle_spashState extends State<Toggle_spash> {
               padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16),
               child: ElevatedButton(
                 onPressed: () {
-
-                },
+              Navigator.push(
+              context,
+              MaterialPageRoute(
+              builder: (context) => signUp(),
+              ),
+              );
+              },
                 style: ElevatedButton.styleFrom(
                     minimumSize: Size(double.infinity.w, 50.h),
                     backgroundColor: Theme.of(context).primaryColor,
@@ -107,7 +114,14 @@ class _Toggle_spashState extends State<Toggle_spash> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>login(),
+                    ),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                     minimumSize: Size(double.infinity.w, 50.h),
                     side: BorderSide(color: Theme.of(context).primaryColor,width: 1.6),

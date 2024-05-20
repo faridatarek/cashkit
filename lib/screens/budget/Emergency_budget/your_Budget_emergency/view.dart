@@ -1,4 +1,3 @@
-
 import 'package:cashkit/core/desgin/loading.dart';
 import 'package:cashkit/screens/budget/Emergency_budget/mainCateg_emergency/view.dart';
 import 'package:cashkit/screens/budget/budget_class.dart';
@@ -261,4 +260,3 @@ class _YourBudget_emergencyState extends State<YourBudget_emergency> {
     );
   }
 }
-

@@ -1,5 +1,3 @@
-
-
 import 'package:cashkit/core/desgin/btn.dart';
 import 'package:cashkit/screens/budget/Emergency_budget/your_Budget_emergency/view.dart';
 import 'package:cashkit/screens/budget/budget_class.dart';
@@ -242,4 +240,3 @@ class SubcategoryDetailsScreen_emergency  extends StatelessWidget {
     );
   }
 }
-

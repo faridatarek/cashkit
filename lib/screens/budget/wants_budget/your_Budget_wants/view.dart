@@ -1,4 +1,3 @@
-
 import 'package:cashkit/core/desgin/loading.dart';
 import 'package:cashkit/screens/budget/budget_class.dart';
 import 'package:cashkit/screens/budget/wants_budget/mainCateg_wants/view.dart';
@@ -261,4 +260,3 @@ class _YourBudget_wantsState extends State<YourBudget_wants> {
     );
   }
 }
-

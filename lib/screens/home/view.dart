@@ -380,13 +380,13 @@ class HomeScreen extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Top expenses",style: TextStyle(fontSize:16,fontWeight: FontWeight.w600,color: Color(0xff292929))),
+                            Text("Top expenses",style: TextStyle(fontSize:18.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
                             InkWell(
                                 onTap: (){
                                   Navigator.push(context,
                                       MaterialPageRoute(builder: (context) =>Expenses ()));
                                 },
-                                child: Text("View all",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w400,color: Color(0xff525252)))),
+                                child: Text("View all",style: TextStyle(fontSize: 13.sp,fontWeight: FontWeight.w400,color: Color(0xff525252)))),
                           ],),
                         SizedBox(height: 5,),
                         Container(
@@ -460,7 +460,7 @@ class HomeScreen extends StatelessWidget {
                                     borderRadius: BorderRadius.all(Radius.circular(4)), //border corner radius
 
                                   ),
-                                  height:48,width:35,
+                                  height:48.w,width:35.h,
                                   child:Image.asset("assets/images/emojione-v1_shopping-bags.png",) ,
                                 ),
                                 SizedBox(width:5,),
@@ -511,7 +511,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 margin: EdgeInsets.symmetric(vertical: 5,horizontal: 8),
                 width:MediaQuery.of(context).size.width.w,
-                height:220.h,
+                height:225.h,
                 decoration: BoxDecoration(
 
                   color: Colors.white,
@@ -536,7 +536,7 @@ class HomeScreen extends StatelessWidget {
                   InkWell(
                       onTap: (){
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (context) =>Expenses ()));
+                            MaterialPageRoute(builder: (context) =>All_Goals ()));
                       },
                       child: Text("View all",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: Color(0xff525252)))),
                 ],),
