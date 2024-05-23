@@ -79,70 +79,36 @@ class _MainCateg_needsState extends State<MainCateg_needs> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: Text(
-          "Add Budget",
-          style: TextStyle(fontSize: 20.sp, color: Color(0xff292929), fontWeight: FontWeight.w600),
-        ),
-        leading: InkWell(
-          onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
-          },
-          child: Icon(Icons.arrow_back_ios, color: Color(0xff292929)),
+      leadingWidth:200.w,
+        leading: Padding(
+          padding:  EdgeInsets.only(left: 10.w,top: 15.h),
+          child: Text(
+            "Add Budget",
+            style: TextStyle(fontSize: 20.sp, color: Color(0xff292929), fontWeight: FontWeight.w600),
+          ),
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.only(top: 15.h),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: InkWell(
-                onTap: () {
-                  // Navigate to category selection screen
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => CategoryListScreen_needs(categories_needs: categorie_needs),
-                    ),
-                  ).then((value) {
-                    if (value != null) {
-                      setState(() {
-                        selectedCategoryName_needs = value['name'];
-                        selectedImg_needs = value['image'];
-                      });
-                    }
-                  });
-                },
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadiusDirectional.circular(10),
-                    color: Colors.white,
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: InkWell(
+              onTap: () {
+                // Navigate to category selection screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CategoryListScreen_needs(categories_needs: categorie_needs),
                   ),
-                  height: 100,
-                  width: 1000,
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(left: 10.0.w),
-                        child: CircleAvatar(child: selectedImg_needs, backgroundColor: Color(0xffEFEFEF), radius: 30),
-                      ),
-                      SizedBox(width: 15.w),
-                      Text(
-                        selectedCategoryName_needs,
-                        style: TextStyle(fontSize: 20, color: Color(0xff9B9B9B), fontWeight: FontWeight.w800),
-                      ),
-                      Spacer(),
-                      Padding(
-                        padding: EdgeInsets.only(right: 10.0.w),
-                        child: Icon(Icons.arrow_forward_ios, size: 25),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
+                ).then((value) {
+                  if (value != null) {
+                    setState(() {
+                      selectedCategoryName_needs = value['name'];
+                      selectedImg_needs = value['image'];
+                    });
+                  }
+                });
+              },
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadiusDirectional.circular(10),
@@ -150,58 +116,87 @@ class _MainCateg_needsState extends State<MainCateg_needs> {
                 ),
                 height: 100,
                 width: 1000,
-                child: Padding(
-                  padding: EdgeInsets.only(left: 10.0.w),
-                  child: Center(
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        label: Text(
-                          "Amount",
-                          style: TextStyle(fontSize: 20, color: Color(0xff9B9B9B), fontWeight: FontWeight.w600),
-                        ),
-                        icon: CircleAvatar(
-                          child: Image.asset(
-                            "assets/images/amount_icon.png",
-                          ),
-                          backgroundColor: Color(0xffEFEFEF),
-                          radius: 30,
-                        ),
-                      ),
-                      keyboardType: TextInputType.number,
-                      onChanged: (value) {
-                        setState(() {
-                          // Update mainCatAmount when the text field value changes
-                          mainCatAmount_needs = int.tryParse(value) ?? 0;
-                        });
-                      },
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 10.0.w),
+                      child: CircleAvatar(child: selectedImg_needs, backgroundColor: Color(0xffEFEFEF), radius: 30),
                     ),
+                    SizedBox(width: 15.w),
+                    Text(
+                      selectedCategoryName_needs,
+                      style: TextStyle(fontSize: 20, color: Color(0xff9B9B9B), fontWeight: FontWeight.w800),
+                    ),
+                    Spacer(),
+                    Padding(
+                      padding: EdgeInsets.only(right: 10.0.w),
+                      child: Icon(Icons.arrow_forward_ios, size: 25),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadiusDirectional.circular(10),
+                color: Colors.white,
+              ),
+              height: 100,
+              width: 1000,
+              child: Padding(
+                padding: EdgeInsets.only(left: 10.0.w),
+                child: Center(
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      label: Text(
+                        "Amount",
+                        style: TextStyle(fontSize: 20, color: Color(0xff9B9B9B), fontWeight: FontWeight.w600),
+                      ),
+                      icon: CircleAvatar(
+                        child: Image.asset(
+                          "assets/images/amount_icon.png",
+                        ),
+                        backgroundColor: Color(0xffEFEFEF),
+                        radius: 30,
+                      ),
+                    ),
+                    keyboardType: TextInputType.number,
+                    onChanged: (value) {
+                      setState(() {
+                        // Update mainCatAmount when the text field value changes
+                        mainCatAmount_needs = int.tryParse(value) ?? 0;
+                      });
+                    },
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 25),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: BTN(
-                text: "Save",
-                onPrees: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SubcategoriesScreen_needs(
-                        selectedimgCategory_needs: selectedImg_needs,
-                        selectedCategory_needs: selectedCategoryName_needs,
-                        subcategories_needs: subcategories_needs,
-                        mainCatAmount_needs: mainCatAmount_needs.toDouble(), // Convert mainCatAmount to double
-                      ),
+          ),
+          SizedBox(height: 25),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: BTN(
+              text: "Next",
+              onPrees: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SubcategoriesScreen_needs(
+                      selectedimgCategory_needs: selectedImg_needs,
+                      selectedCategory_needs: selectedCategoryName_needs,
+                      subcategories_needs: subcategories_needs,
+                      mainCatAmount_needs: mainCatAmount_needs.toDouble(), // Convert mainCatAmount to double
                     ),
-                  );
+                  ),
+                );
 
-                },
-              ),
+              },
             ),
-          ],
-        ),
+          ),
+        ],
       ),
 
     );
@@ -220,13 +215,15 @@ class CategoryListScreen_needs extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 0,
             centerTitle: true,
-            title: Text("Main Categories",style: TextStyle(fontSize: 20.sp,color: Color(0xff292929),fontWeight: FontWeight.w600))
-            ,leading: InkWell(
-            onTap:  (){
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) =>HomeScreen ()));
-            },
-            child: Icon(Icons.arrow_back_ios,color: Color(0xff292929),))),
+          leadingWidth:200.w,
+          leading: Padding(
+            padding:  EdgeInsets.only(left: 10.w,top: 15.h),
+            child: Text(
+              "Main Categories",
+              style: TextStyle(fontSize: 20.sp, color: Color(0xff292929), fontWeight: FontWeight.w600),
+            ),
+          ),
+        ),
         body:ListView.builder(
           itemCount: categories_needs.length,
           itemBuilder: (context, index) {

@@ -40,9 +40,9 @@ class _TabBarScreenState extends State<TabBarScreen> with SingleTickerProviderSt
         title: Text(
           "Your Budgets",
           style: TextStyle(
-              fontSize: 23,
+              fontSize: 24.sp,
               color: Theme.of(context).primaryColor,
-              fontWeight: FontWeight.bold),
+              fontWeight: FontWeight.w600),
         ),
         bottom: ButtonsTabBar(
           height: 60,
@@ -50,13 +50,13 @@ class _TabBarScreenState extends State<TabBarScreen> with SingleTickerProviderSt
           backgroundColor: Theme.of(context).primaryColor,
           unselectedBackgroundColor: Colors.white,
           unselectedLabelStyle: TextStyle(color: Colors.black),
-          labelStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          labelStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.w600,fontSize:14.sp),
           tabs: [
             Tab(text: 'Needs (50%)'),
             Tab(text: 'Wants (30%)'),
             Tab(text: 'Emergency (20%)'),
           ],
-          contentPadding: EdgeInsets.symmetric(horizontal: 18, vertical: 10),
+          contentPadding: EdgeInsets.symmetric(horizontal:10.w, vertical:10),
         ),
       ),
       body: TabBarView(
@@ -144,14 +144,15 @@ class NeedsTab extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Your needs", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Color(0xff292929))),
-                          Text("EGP 0 of EGP 3,000", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Color(0xff525252))),
+                          Text("Your needs", style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600, color: Color(0xff292929))),
+                          Text("EGP 0 of EGP 3,000", style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400, color: Color(0xff525252))),
                         ],
                       ),
-                      SizedBox(height: 15),
+                      SizedBox(height: 18.h),
                       LinearProgressIndicator(
                         value: 0,
-                        minHeight: 7,
+                        minHeight: 6.h,
+                        color: Colors.black,
                         backgroundColor: Color(0xffEFEFEF),
                         valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
                       ),
@@ -162,7 +163,7 @@ class NeedsTab extends StatelessWidget {
             ),
             margin: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
             width: MediaQuery.of(context).size.width,
-            height: 65,
+            height: 65.h,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(Radius.circular(8)), // border corner radius
@@ -219,14 +220,15 @@ class WantsTab extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Your Wants", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Color(0xff292929))),
-                          Text("EGP 0 of EGP 2,000", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Color(0xff525252))),
+                          Text("Your Wants", style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600, color: Color(0xff292929))),
+                          Text("EGP 0 of EGP 2,000", style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400, color: Color(0xff525252))),
                         ],
                       ),
-                      SizedBox(height: 15),
+                      SizedBox(height: 18.h),
                       LinearProgressIndicator(
                         value: 0,
-                        minHeight: 7,
+                        minHeight: 6.h,
+                        color: Colors.black,
                         backgroundColor: Color(0xffEFEFEF),
                         valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
                       ),
@@ -237,7 +239,7 @@ class WantsTab extends StatelessWidget {
             ),
             margin: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
             width: MediaQuery.of(context).size.width,
-            height: 65,
+            height: 65.h,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(Radius.circular(8)), // border corner radius
@@ -294,14 +296,15 @@ class EmergencyTab extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Your Emergency", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Color(0xff292929))),
-                          Text("EGP 0 of EGP 1,000", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Color(0xff525252))),
+                          Text("Your Emergency", style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600, color: Color(0xff292929))),
+                          Text("EGP 0 of EGP 1,000", style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400, color: Color(0xff525252))),
                         ],
                       ),
-                      SizedBox(height: 15),
+                      SizedBox(height: 18.h),
                       LinearProgressIndicator(
                         value: 0,
-                        minHeight: 7,
+                        minHeight: 6.h,
+                        color: Colors.black,
                         backgroundColor: Color(0xffEFEFEF),
                         valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
                       ),
@@ -312,7 +315,7 @@ class EmergencyTab extends StatelessWidget {
             ),
             margin: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
             width: MediaQuery.of(context).size.width,
-            height: 65,
+            height: 65.h,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(Radius.circular(8)), // border corner radius

@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../nav_bar/view.dart';
+
 class signUp extends StatefulWidget {
   const signUp({Key? key}) : super(key: key);
 
@@ -244,7 +246,7 @@ class _signUpState extends State<signUp> {
                     SizedBox(
                       height: 28.h,
                     ),
-                    BTN(text: "Sign Up", onPrees: _allValidationsPassed ),
+                    BTN(text: "Sign Up", onPrees: () => _allValidationsPassed(context),),
                     SizedBox(
                       height: 28.h,
                     ),
@@ -321,8 +323,14 @@ class _signUpState extends State<signUp> {
     );
   }
 
-  bool _allValidationsPassed() {
-    return isLengthValid && hasUpperCase && hasNumber && hasSpecialChar;
+  bool _allValidationsPassed(BuildContext context) {
+    if (isLengthValid && hasUpperCase && hasNumber && hasSpecialChar) {
+
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) =>NavScreen ()));
+      return true;
+    }
+    return false;
   }
 }
 

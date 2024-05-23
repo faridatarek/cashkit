@@ -1,4 +1,5 @@
 import 'package:cashkit/core/desgin/btn.dart';
+import 'package:cashkit/screens/auth/login/view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -191,7 +192,8 @@ class _newPassState extends State<newPass> {
                     SizedBox(
                       height:15.h,
                     ),
-                    BTN(text: "Sign up", onPrees: _allValidationsPassed ),
+                    BTN(text: "Sign up", onPrees: () => _allValidationsPassed(context),
+                    ),
 
 
 
@@ -216,8 +218,15 @@ class _newPassState extends State<newPass> {
     );
   }
 
-  bool _allValidationsPassed() {
-    return isLengthValid && hasUpperCase && hasNumber && hasSpecialChar;
 
+  bool _allValidationsPassed(BuildContext context) {
+    if (isLengthValid && hasUpperCase && hasNumber && hasSpecialChar) {
+
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) =>login ()));
+      return true;
+    }
+    return false;
   }
+
 }

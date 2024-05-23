@@ -18,13 +18,13 @@ class All_Goals extends StatefulWidget {
 class _All_GoalsState extends State<All_Goals> {
   final List<Data> containerData = [
     Data(goalName: "New Car",totalAmount: 150000,firstdate: "12/2/2025",lastdate: "12/9/2026"
-        ,goalImg:Image.asset("assets/images/22989_cabriolet_car_mazda_red_transport_icon 1.png",)
+        ,goalImg:Image.asset("assets/images/goals_img.png",)
         ,spendAmount: 90000,spendTime: "2 years and 1 month left",spendFromTotal: "EGP 90,000 / EGP 150,000"),
     Data(goalName: "Travel To Japan",totalAmount: 30000,firstdate: "12/2/2025",lastdate: "12/9/2026"
-        ,goalImg:Image.asset("assets/images/noto_house (2).png",)
+        ,goalImg:Image.asset("assets/images/goals_img.png",)
         ,spendAmount: 8000,spendTime: "1 year and 3 months left",spendFromTotal: "EGP 8000 / EGP 30,000"),
     Data(goalName: "Buy New House",totalAmount: 850000,firstdate: "12/2/2025",lastdate: "12/9/2026"
-        ,goalImg:Image.asset("assets/images/Money.png",)
+        ,goalImg:Image.asset("assets/images/goals_img.png",)
         ,spendAmount: 18000,spendTime: "5 years and 2 months left",spendFromTotal: "EGP 18,000 / EGP 850,000")
 
   ];

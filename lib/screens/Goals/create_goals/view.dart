@@ -1,4 +1,5 @@
 
+import 'package:animate_do/animate_do.dart';
 import 'package:cashkit/core/desgin/btn.dart';
 import 'package:cashkit/screens/Goals/all_goals/view.dart';
 import 'package:cashkit/screens/home/view.dart';
@@ -7,6 +8,7 @@ import 'package:cashkit/screens/rating/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:intl/intl.dart';
 
 class Creat_goals extends StatefulWidget {
   const Creat_goals({Key? key}) : super(key: key);
@@ -19,23 +21,77 @@ class _Creat_goalsState extends State<Creat_goals> {
   TextEditingController nameController = TextEditingController();
   TextEditingController budgetController = TextEditingController();
   bool allFieldsFilled = false;
-  //______________________________________________//
-  CalendarFormat _calendarFormatStart = CalendarFormat.month;
-  DateTime _focusedDayStart = DateTime.now();
-  DateTime? _selectedDayStart;
-  bool _showCalendarStart = false;
-  TextEditingController _dateControllerStart = TextEditingController();
-  //___________________________________________________________________//
-  CalendarFormat _calendarFormatEnd = CalendarFormat.month;
-  DateTime _focusedDayEnd = DateTime.now();
-  DateTime? _selectedDayEnd;
-  bool _showCalendarEnd = false;
+  DateTime? _selectedDateEnd;
+  DateTime? _selectedDateStart;
   TextEditingController _dateControllerEnd = TextEditingController();
+
+  TextEditingController _dateControllerStart = TextEditingController();
+
+  Future<void> _selectDateStart(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: _selectedDateStart ?? DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2101),
+      helpText: 'Select Start Date',
+      builder: (BuildContext context, Widget? child) {
+        return Theme(
+          data: ThemeData.light().copyWith(
+            brightness: Brightness.light,
+            colorScheme: ColorScheme.light(
+              primary: Theme.of(context).primaryColor, // Header background color
+              onPrimary: Colors.white, // Header text color
+              onSurface: Theme.of(context).primaryColor, // Body text color
+            ),
+            dialogBackgroundColor: Colors.white, // Background color
+          ),
+          child: child ?? SizedBox.shrink(),
+        );
+      },
+    );
+    if (picked != null && picked != _selectedDateStart) {
+      setState(() {
+        _selectedDateStart = picked;
+        _dateControllerStart.text = DateFormat('d MMMM y').format(picked);
+      });
+    }
+  }
+  //______________________________________________//
+  Future<void> _selectDateEnd(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: _selectedDateEnd ?? DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2101),
+      helpText: 'Select Start Date',
+      builder: (BuildContext context, Widget? child) {
+        return Theme(
+          data: ThemeData.light().copyWith(
+            brightness: Brightness.light,
+            colorScheme: ColorScheme.light(
+              primary: Theme.of(context).primaryColor, // Header background color
+              onPrimary: Colors.white, // Header text color
+              onSurface: Theme.of(context).primaryColor, // Body text color
+            ),
+            dialogBackgroundColor: Colors.white, // Background color
+          ),
+          child: child ?? SizedBox.shrink(),
+        );
+      },
+    );
+    if (picked != null && picked != _selectedDateEnd) {
+      setState(() {
+        _selectedDateEnd = picked;
+        _dateControllerEnd.text = DateFormat('d MMMM y').format(picked);
+      });
+    }
+  }
   @override
   void disposeStart() {
     _dateControllerStart.dispose();
     super.dispose();
   }
+  
   void disposeEnd() {
     _dateControllerEnd.dispose();
     super.dispose();
@@ -64,22 +120,7 @@ class _Creat_goalsState extends State<Creat_goals> {
     });
   }
 
-/*  void saveDataAndNavigate(BuildContext context) {
-    // Save data to a list or wherever you want
-    List<String> data = [
-      nameController.text,
-      budgetController.text,
-      _dateControllerStart.text,
-      _dateControllerEnd.text,
-    ];
-    // Navigate to another screen, passing data if needed
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => All_Goals(),
-      ),
-    );
-  }*/
+
 
   void saveDataAndNavigate(BuildContext context) {
     int budget = int.tryParse(budgetController.text) ?? 0;
@@ -222,6 +263,7 @@ class _Creat_goalsState extends State<Creat_goals> {
         },
       );
     } else {
+
       // Save data to a list or wherever you want
       List<String> data = [
         nameController.text,
@@ -230,12 +272,53 @@ class _Creat_goalsState extends State<Creat_goals> {
         _dateControllerEnd.text,
       ];
       // Navigate to another screen, passing data if needed
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => All_Goals(),
-        ),
+      showDialog(
+        context: context,
+        builder: (context) {
+          Future.delayed(Duration(seconds: 3), () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => All_Goals(),)); // Close the dialog
+          });
+          return AlertDialog(
+            title: JelloIn
+              (
+              duration: Duration(seconds:4),
+              child: Image.asset(
+                "assets/images/star-creatGoal.png",
+                width: 118.w,
+                height: 118.h,
+              ),
+            ),
+            titlePadding: EdgeInsets.symmetric(vertical: 32),
+            actions: [
+              Column(
+                children: [
+                  Text(
+                    "Your goal is added successfully",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize:17.sp),
+                  ),
+                  SizedBox(height:10.h,),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 28.0,right: 22,left: 22),
+                      child: Text(
+                        textAlign: TextAlign.center,
+                        "I hope you achieve your goal.",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 16),
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          );
+        },
       );
+
     }
   }
 
@@ -318,13 +401,9 @@ class _Creat_goalsState extends State<Creat_goals> {
             TextFormField(
               controller: _dateControllerStart,
               readOnly: true,
-              onTap: () {
-                setState(() {
-                  _showCalendarStart = !_showCalendarStart;
-                });
-              },
+              onTap: () => _selectDateStart(context),
               decoration: InputDecoration(
-                suffixIcon: Icon(Icons.calendar_today,color: Theme.of(context).primaryColor),
+                suffixIcon: Icon(Icons.calendar_today,color:Theme.of(context).primaryColor),
                 floatingLabelBehavior: FloatingLabelBehavior.never,
                 enabledBorder:  OutlineInputBorder(
 
@@ -339,7 +418,12 @@ class _Creat_goalsState extends State<Creat_goals> {
                   ),
                 ),
 
-                labelText: "Start date",
+                labelText:
+                  _selectedDateStart == null
+                      ? 'Start date'
+                      : DateFormat('d MMMM y').format(_selectedDateStart!),
+                /*  style: TextStyle(fontSize: 15.sp),*/
+
 
                 border: OutlineInputBorder(
 
@@ -348,57 +432,10 @@ class _Creat_goalsState extends State<Creat_goals> {
               ),
             ),
             SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(right: 15.0,left: 15,top: 15),
-              child: Visibility(
-                visible: _showCalendarStart,
-                child: TableCalendar(
-                  calendarFormat: _calendarFormatStart ,
-                  focusedDay: _focusedDayStart,
-                  firstDay: DateTime(2010),
-                  lastDay: DateTime(2040),
-                  selectedDayPredicate: (day) {
-                    return isSameDay(_selectedDayStart, day);
-                  },
-                  onDaySelected: (selectedDay, focusedDay) {
-                    setState(() {
-                      _selectedDayStart = selectedDay;
-                      _focusedDayStart = focusedDay;
-                      _dateControllerStart.text = selectedDay.toString();
-                      _showCalendarStart = false; // to hide the calendar after selecting a day
-                    });
-                  },
-                  headerStyle: HeaderStyle(
-                    formatButtonVisible: false,
-                    titleCentered: true,
-                    titleTextStyle: TextStyle(color: Colors.white),
-                    headerPadding: EdgeInsets.symmetric(vertical: 16),
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  ),
-                  calendarStyle: CalendarStyle(
-                    todayDecoration: BoxDecoration(
-                      color: Colors.green.shade100,
-                      shape: BoxShape.circle,
-                    ),
-                    selectedDecoration: BoxDecoration(
-                      color: Colors.green,
-                      shape: BoxShape.circle,
-                    ),
-                    selectedTextStyle: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ),
-            ),
             TextFormField(
               controller: _dateControllerEnd,
-              readOnly: true,
-              onTap: () {
-                setState(() {
-                  _showCalendarEnd = !_showCalendarEnd;
-                });
-              },
+              readOnly:true,
+              onTap: () => _selectDateEnd(context),
               decoration: InputDecoration(
                 suffixIcon: Icon(Icons.calendar_today,color: Theme.of(context).primaryColor),
                 floatingLabelBehavior: FloatingLabelBehavior.never,
@@ -415,58 +452,19 @@ class _Creat_goalsState extends State<Creat_goals> {
                   ),
                 ),
 
-                labelText: "End date",
+                labelText:_selectedDateEnd == null
+                    ? 'Start date'
+                    : DateFormat('d MMMM y').format(_selectedDateEnd!),
 
                 border: OutlineInputBorder(
-
 
                     borderRadius: BorderRadius.circular(8.r)),
               ),
             ),
-            SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Visibility(
-                visible: _showCalendarEnd,
-                child: TableCalendar(
-                  calendarFormat: _calendarFormatEnd,
-                  focusedDay: _focusedDayEnd,
-                  firstDay: DateTime(2010),
-                  lastDay: DateTime(2040),
-                  selectedDayPredicate: (day) {
-                    return isSameDay(_selectedDayEnd, day);
-                  },
-                  onDaySelected: (selectedDay, focusedDay) {
-                    setState(() {
-                      _selectedDayEnd = selectedDay;
-                      _focusedDayEnd = focusedDay;
-                      _dateControllerEnd.text = selectedDay.toString();
-                      _showCalendarEnd = false; // to hide the calendar after selecting a day
-                    });
-                  },
-                  headerStyle: HeaderStyle(
-                    formatButtonVisible: false,
-                    titleCentered: true,
-                    titleTextStyle: TextStyle(color: Colors.white),
-                    headerPadding: EdgeInsets.symmetric(vertical: 16),
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  ),
-                  calendarStyle: CalendarStyle(
-                    todayDecoration: BoxDecoration(
-                      color: Colors.green.shade100,
-                      shape: BoxShape.circle,
-                    ),
-                    selectedDecoration: BoxDecoration(
-                      color: Colors.green,
-                      shape: BoxShape.circle,
-                    ),
-                    selectedTextStyle: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ),
-            ),
+
+
+            SizedBox(height: 50.h),
+
             Center(
               child: ElevatedButton(
 

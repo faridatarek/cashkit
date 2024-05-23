@@ -55,17 +55,17 @@ class _YourBudget_emergencyState extends State<YourBudget_emergency> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+     /* appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text(
+       *//* title: Text(
           "Your Budgets",
           style: TextStyle(
               fontSize: 23,
               color: Theme.of(context).primaryColor,
               fontWeight: FontWeight.w500),
-        ),
-      ),
+        ),*//*
+      ),*/
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

@@ -79,15 +79,13 @@ class _MainCateg_emergencyState extends State<MainCateg_emergency> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: Text(
-          "Add Budget",
-          style: TextStyle(fontSize: 20.sp, color: Color(0xff292929), fontWeight: FontWeight.w600),
-        ),
-        leading: InkWell(
-          onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
-          },
-          child: Icon(Icons.arrow_back_ios, color: Color(0xff292929)),
+        leadingWidth:200.w,
+        leading: Padding(
+          padding:  EdgeInsets.only(left: 10.w,top: 15.h),
+          child: Text(
+            "Add Budget",
+            style: TextStyle(fontSize: 20.sp, color: Color(0xff292929), fontWeight: FontWeight.w600),
+          ),
         ),
       ),
       body: Padding(
@@ -183,7 +181,7 @@ class _MainCateg_emergencyState extends State<MainCateg_emergency> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: BTN(
-                text: "Save",
+                text: "Next",
                 onPrees: () {
                   Navigator.push(
                     context,
@@ -220,13 +218,15 @@ class CategoryListScreen_emergency extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 0,
             centerTitle: true,
-            title: Text("Main Categories",style: TextStyle(fontSize: 20.sp,color: Color(0xff292929),fontWeight: FontWeight.w600))
-            ,leading: InkWell(
-            onTap:  (){
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) =>HomeScreen ()));
-            },
-            child: Icon(Icons.arrow_back_ios,color: Color(0xff292929),))),
+          leadingWidth:200.w,
+          leading: Padding(
+            padding:  EdgeInsets.only(left: 10.w,top: 15.h),
+            child: Text(
+              "Main Categories",
+              style: TextStyle(fontSize: 20.sp, color: Color(0xff292929), fontWeight: FontWeight.w600),
+            ),
+          ),
+        ),
         body:ListView.builder(
           itemCount: categories_emergency.length,
           itemBuilder: (context, index) {

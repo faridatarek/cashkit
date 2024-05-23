@@ -1,3 +1,4 @@
+import 'package:cashkit/core/desgin/btn.dart';
 import 'package:cashkit/core/desgin/loading.dart';
 import 'package:cashkit/screens/Goals/Your_goal/view.dart';
 import 'package:cashkit/screens/Goals/all_goals/view.dart';
@@ -20,13 +21,13 @@ class HomeScreen extends StatelessWidget {
 
     final List<Data> containerData = [
       Data(goalName: "New Car",totalAmount: 150000,firstdate: "12/2/2025",lastdate: "12/9/2026"
-          ,goalImg:Image.asset("assets/images/22989_cabriolet_car_mazda_red_transport_icon 1.png",)
+          ,goalImg:Image.asset("assets/images/goals_img.png",)
           ,spendAmount: 90000,spendTime: "2 years and 1 month left",spendFromTotal: "EGP 90,000 / EGP 150,000"),
       Data(goalName: "Travel To Japan",totalAmount: 30000,firstdate: "12/2/2025",lastdate: "12/9/2026"
-          ,goalImg:Image.asset("assets/images/noto_house (2).png",)
+          ,goalImg:Image.asset("assets/images/goals_img.png",)
           ,spendAmount: 8000,spendTime: "1 year and 3 months left",spendFromTotal: "EGP 8000 / EGP 30,000"),
       Data(goalName: "Buy New House",totalAmount: 850000,firstdate: "12/2/2025",lastdate: "12/9/2026"
-          ,goalImg:Image.asset("assets/images/Money.png",)
+          ,goalImg:Image.asset("assets/images/goals_img.png",)
           ,spendAmount: 18000,spendTime: "5 years and 2 months left",spendFromTotal: "EGP 18,000 / EGP 850,000")
 
     ];
@@ -164,8 +165,8 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                       margin: EdgeInsets.symmetric(vertical:7,horizontal: 7),
-                      width:130.w,
-                      height:90.h,
+                      width:128.w,
+                      height:92.h,
                       decoration: BoxDecoration(
 
                         color: Colors.white,
@@ -233,8 +234,8 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                       margin: EdgeInsets.symmetric(vertical: 8,horizontal: 8),
-                      width: 140,
-                      height:105,
+                      width: 128.w,
+                      height:92.h,
                       decoration: BoxDecoration(
 
                         color: Colors.white,
@@ -350,7 +351,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     margin: EdgeInsets.symmetric(vertical: 5,horizontal: 8),
                     width:185.w,
-                    height:200.h,
+                    height:195.h,
                     decoration: BoxDecoration(
 
                       color: Colors.white,
@@ -369,6 +370,7 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),)
                 ],),
+
               Container(
 
                 child: Padding(
@@ -529,6 +531,7 @@ class HomeScreen extends StatelessWidget {
                     //you can set more BoxShadow() here
                   ],
                 ),),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -573,7 +576,7 @@ class HomeScreen extends StatelessWidget {
                                   borderRadius: BorderRadius.all(Radius.circular(4)), //border corner radius
 
                                 ),
-                                height:60,width:40,
+                                height:45.h,width:35.w,
                                 child:containerData[index].goalImg,
                               ),
                               SizedBox(width:9,),
@@ -649,6 +652,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     itemCount: containerData.length),
               ),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

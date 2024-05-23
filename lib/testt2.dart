@@ -811,3 +811,118 @@ List<Budget> budgetList = [];
 */
 
 
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
+
+
+class AddSubBudgetScreen extends StatefulWidget {
+  @override
+  _AddSubBudgetScreenState createState() => _AddSubBudgetScreenState();
+}
+
+class _AddSubBudgetScreenState extends State<AddSubBudgetScreen> {
+   DateTime? _selectedDate;
+  bool _isSwitched = false;
+
+   Future<void> _selectDate(BuildContext context) async {
+     final DateTime? picked = await showDatePicker(
+       context: context,
+       initialDate: DateTime.now(),
+       firstDate: DateTime(2000),
+       lastDate: DateTime(2101),
+       helpText: 'Set your deadline',
+
+       builder: (BuildContext context, Widget? child) {
+         return Theme(
+           data: ThemeData.light().copyWith(
+             brightness:Brightness.light ,
+             colorScheme: ColorScheme.light(
+
+               primary:Theme.of(context).primaryColor, // Header background color
+               onPrimary:Colors.white, // Header text color
+               onSurface:Theme.of(context).primaryColor, // Body text color
+             ),
+             dialogBackgroundColor: Colors.white,
+             // Background color
+           ),
+           child: child ?? SizedBox.shrink(),
+         );
+       },
+     );
+     if (picked != null && picked != _selectedDate)
+       setState(() {
+         _selectedDate = picked;
+       });
+   }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Add Sub Budget'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ListTile(
+              leading: Icon(Icons.category),
+              title: Text('Select category'),
+              trailing: Icon(Icons.arrow_forward_ios),
+              onTap: () {
+                // Handle category selection
+              },
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.attach_money),
+              title: Text('Amount'),
+              trailing: Icon(Icons.arrow_forward_ios),
+              onTap: () {
+                // Handle amount input
+              },
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.date_range),
+              title: Text('Date',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600)),
+              subtitle: Text(
+                _selectedDate == null
+                    ? 'DD/MM/YY (Optional)'
+                    : DateFormat('d MMMM y').format(_selectedDate!),
+              style: TextStyle(fontSize: 14)),
+              trailing: Icon(Icons.arrow_forward_ios),
+              onTap: () => _selectDate(context),
+            ),
+            Divider(),
+            SwitchListTile(
+
+              title: Text('Repeat this budget',style: TextStyle(fontWeight: FontWeight.w600,fontSize: 16.sp),),
+              subtitle: Text('Budget will renew automatically.',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14.sp,color: Color(0xff656565)),),
+              value: _isSwitched,
+              activeColor:Theme.of(context).primaryColor,
+              onChanged: (bool value) {
+                setState(() {
+                  _isSwitched = value;
+                });
+              },
+            ),
+            Spacer(),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  // Handle save action
+                },
+                child: Text('Save'),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
