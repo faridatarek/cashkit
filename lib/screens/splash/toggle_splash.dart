@@ -89,12 +89,12 @@ class _Toggle_spashState extends State<Toggle_spash> {
               padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16),
               child: ElevatedButton(
                 onPressed: () {
-              Navigator.push(
+          /*    Navigator.push(
               context,
               MaterialPageRoute(
               builder: (context) => signUp(),
               ),
-              );
+              );*/
               },
                 style: ElevatedButton.styleFrom(
                     minimumSize: Size(double.infinity.w, 50.h),

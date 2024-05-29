@@ -9,6 +9,7 @@ import 'package:cashkit/screens/splash/logo.dart';
 import 'package:cashkit/screens/splash/toggle_splash.dart';
 import 'package:cashkit/screens/tab_bar/view.dart';
 import 'package:cashkit/tesst.dart';
+import 'package:cashkit/testt2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
           ),
 
 
-          home:HomeScreen(),
+          home:SignUp(),
 
         );
       },
