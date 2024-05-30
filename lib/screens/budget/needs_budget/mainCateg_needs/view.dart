@@ -92,6 +92,95 @@ class _MainCateg_needsState extends State<MainCateg_needs> {
         children: [
           Padding(
             padding: const EdgeInsets.all(10.0),
+            child: Container(
+              color: Colors.white,height: 160.h,
+              child: Column(children: [
+                InkWell(
+                  onTap: () {
+                    // Navigate to category selection screen
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CategoryListScreen_needs(categories_needs: categorie_needs),
+                      ),
+                    ).then((value) {
+                      if (value != null) {
+                        setState(() {
+                          selectedCategoryName_needs = value['name'];
+                          selectedImg_needs = value['image'];
+                        });
+                      }
+                    });
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadiusDirectional.circular(10),
+                      color: Colors.white,
+                    ),
+                    height: 80,
+                    width: 1000,
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 10.0.w),
+                          child: CircleAvatar(child: selectedImg_needs, backgroundColor: Color(0xffEFEFEF), radius: 30),
+                        ),
+                        SizedBox(width: 15.w),
+                        Text(
+                          selectedCategoryName_needs,
+                          style: TextStyle(fontSize: 20, color: Color(0xff9B9B9B), fontWeight: FontWeight.w800),
+                        ),
+                        Spacer(),
+                        Padding(
+                          padding: EdgeInsets.only(right: 10.0.w),
+                          child: Icon(Icons.arrow_forward_ios, size: 25),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(height: 4.h,),
+                Container(color: Color(0xffDCDCDC),height:2.h,width: MediaQuery.of(context).size.width*0.95), SizedBox(height: 5.h,),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadiusDirectional.circular(10),
+                    color: Colors.white,
+                  ),
+                  height: 80,
+                  width: 1000,
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 10.0.w),
+                    child: Center(
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          label: Text(
+                            "Amount",
+                            style: TextStyle(fontSize: 20, color: Color(0xff9B9B9B), fontWeight: FontWeight.w600),
+                          ),
+                          icon: CircleAvatar(
+                            child: Image.asset(
+                              "assets/images/amount_icon.png",
+                            ),
+                            backgroundColor: Color(0xffEFEFEF),
+                            radius: 30,
+                          ),
+                        ),
+                        keyboardType: TextInputType.number,
+                        onChanged: (value) {
+                          setState(() {
+                            // Update mainCatAmount when the text field value changes
+                            mainCatAmount_needs = int.tryParse(value) ?? 0;
+                          });
+                        },
+                      ),
+                    ),
+                  ),
+                ),
+              ]),
+            ),
+          ),
+         /* Padding(
+            padding: const EdgeInsets.all(10.0),
             child: InkWell(
               onTap: () {
                 // Navigate to category selection screen
@@ -174,7 +263,7 @@ class _MainCateg_needsState extends State<MainCateg_needs> {
                 ),
               ),
             ),
-          ),
+          ),*/
           SizedBox(height: 25),
           Padding(
             padding: const EdgeInsets.all(8.0),

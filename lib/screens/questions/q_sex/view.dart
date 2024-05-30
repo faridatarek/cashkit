@@ -1,5 +1,6 @@
 import 'package:cashkit/core/desgin/questions/question_btn.dart';
 import 'package:cashkit/core/desgin/questions/questions_prog.dart';
+import 'package:cashkit/screens/nav_bar/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -42,8 +43,9 @@ class _QuestionSexScreenState
           Padding(
             padding: const EdgeInsets.only(bottom: 20),
             child: QuestionBTNScreen(
-              onPrees: () {},
+              onPrees: () { Navigator.push(context, MaterialPageRoute(builder: (context) => NavScreen(),));},
               isSelected: selectIndex != null,
+
             ),
           ),
           SizedBox(

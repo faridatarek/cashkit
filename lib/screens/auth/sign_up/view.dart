@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:cashkit/core/desgin/btn.dart';
 import 'package:cashkit/screens/auth/login/view.dart';
+import 'package:cashkit/screens/questions/q_one/view.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -50,6 +51,7 @@ class _signUpState extends State<signUp> {
       hasUpperCase = RegExp(r'[A-Z]').hasMatch(newPassword);
       hasNumber = RegExp(r'[0-9]').hasMatch(newPassword);
       hasSpecialChar = RegExp(r'[!@#$%^&*(),.?":{}|<>]').hasMatch(newPassword);
+
     });
   }
 
@@ -257,7 +259,18 @@ class _signUpState extends State<signUp> {
                     SizedBox(
                       height: 28.h,
                     ),
-                    BTN(text: "Sign Up", onPrees: () => _allValidationsPassed(context),),
+                    BTN(text: "Sign Up", onPrees: () {
+    if (_allValidationsPassed(context)) {
+    Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(builder: (context) => QuestionOneScreen ()),
+    );
+    } else {
+    // Handle the case where validations did not pass
+    ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text('Your password not good')),
+    );
+                    }}),
                     SizedBox(
                       height: 28.h,
                     ),

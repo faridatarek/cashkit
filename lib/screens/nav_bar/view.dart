@@ -2,6 +2,7 @@
 import 'package:cashkit/screens/Goals/create_goals/view.dart';
 import 'package:cashkit/screens/charts/view.dart';
 import 'package:cashkit/screens/home/view.dart';
+import 'package:cashkit/screens/profile/view.dart';
 import 'package:cashkit/screens/tab_bar/view.dart';
 import 'package:circle_nav_bar/circle_nav_bar.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class NavScreen extends StatefulWidget {
 
 class _NavScreenState extends State<NavScreen> {
   List<Widget> PagesName = [
-    HomeScreen(), TabBarScreen(), Creat_goals(), Charts_screen(),Charts_screen()
+    HomeScreen(), TabBarScreen(), Creat_goals(), Charts_screen(),ProfileScreen ()
   ];
   int currentIndex = 0;
 
@@ -49,7 +50,7 @@ class _NavScreenState extends State<NavScreen> {
             Text("Budget",style: TextStyle(color:Color(0xff047857),fontSize: 15,fontWeight: FontWeight.bold)),
             Text("New",style: TextStyle(color:Color(0xff047857),fontSize: 15,fontWeight: FontWeight.bold)),
             Text("Statistics",style: TextStyle(color:Color(0xff047857),fontSize: 15,fontWeight: FontWeight.bold)),
-            Text("Account",style: TextStyle(color:Color(0xff047857),fontSize: 15,fontWeight: FontWeight.bold)),
+            Text("Profile",style: TextStyle(color:Color(0xff047857),fontSize: 15,fontWeight: FontWeight.bold)),
           ],
           color: Colors.red,
           circleColor: Colors.red,

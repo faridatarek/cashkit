@@ -86,8 +86,9 @@ class SavingScreen extends StatelessWidget {
                   children: [
                     Spacer(),
                     ElevatedButton(
-                        style: ElevatedButton.styleFrom(
+                        style: ElevatedButton.styleFrom(backgroundColor: Theme.of(context).primaryColor,
                           shape: RoundedRectangleBorder(
+
                               borderRadius: BorderRadius.circular(8)),
                           fixedSize: Size(100.w, 48.h),
                         ),
@@ -139,7 +140,7 @@ class SavingScreen extends StatelessWidget {
                             },
                           );
                         },
-                        child: Text("Sure")),
+                        child: Text("Save")),
                     Spacer(),
                     ElevatedButton(
                         style: ElevatedButton.styleFrom(

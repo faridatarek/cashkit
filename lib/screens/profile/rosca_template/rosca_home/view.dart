@@ -1,7 +1,10 @@
+import 'package:cashkit/screens/nav_bar/view.dart';
 import 'package:cashkit/screens/profile/rosca_template/add_member/view.dart';
 import 'package:cashkit/screens/profile/rosca_template/create_rosca/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../view.dart';
 
 class RoscaHomeScreen extends StatefulWidget {
   const RoscaHomeScreen({Key? key}) : super(key: key);
@@ -25,9 +28,9 @@ class _RoscaHomeScreenState extends State<RoscaHomeScreen> {
                   builder: (context) => CreatRosca(),
                 ),
                 (route) => true);
-            // إجراء عند الضغط على الزر
+
           },
-          child: Icon(Icons.add), // أيقونة الزر
+          child: Icon(Icons.add),
           backgroundColor: Theme.of(context).primaryColor, // لون الخلفية
         ),
       ),
@@ -35,7 +38,14 @@ class _RoscaHomeScreenState extends State<RoscaHomeScreen> {
         backgroundColor: const Color(0xffEFEFEF),
         elevation: 0,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ProfileScreen(),
+                ),
+                    );
+          },
           icon: Icon(
             Icons.arrow_back_ios_new,
             color: Colors.black,

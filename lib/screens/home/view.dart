@@ -8,6 +8,8 @@ import 'package:circular_chart_flutter/circular_chart_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../notifications/view.dart';
+
 class HomeScreen extends StatelessWidget {
 
   const HomeScreen({Key? key}) : super(key: key);
@@ -85,7 +87,10 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(width:145.sp,),
-                        const CircleAvatar(backgroundColor: Color(0xffEFEFEF),child:  Icon(Icons.notifications_outlined,size:30,color:Color(0xff05966D) ),radius:25),
+                        InkWell(onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationsScreen()));
+                        },
+                            child: const CircleAvatar(backgroundColor: Color(0xffEFEFEF),child:  Icon(Icons.notifications_outlined,size:30,color:Color(0xff05966D) ),radius:25)),
 
                       ]),
                 ),
@@ -250,7 +255,7 @@ class HomeScreen extends StatelessWidget {
                             //first paramerter of offset is left-right
                             //second parameter is top to down
                           ),
-                          //you can set more BoxShadow() here
+
                         ],
                       ),),
                   ],),
@@ -318,12 +323,12 @@ class HomeScreen extends StatelessWidget {
                                           borderRadius: BorderRadius.circular(40.0),
                                           border: Border.all(
                                             color: Colors.green,
-                                            width: 2.0, // Adjust the border thickness as needed
+                                            width: 2.0,
                                           ),
                                         ),
                                         child: Center(
                                           child: Text(
-                                            'EGP 5000', // Replace with actual total money from user input
+                                            'EGP 5000',
                                             style: TextStyle(
                                               color: Colors.black,
                                               fontSize:12.sp,
@@ -438,13 +443,9 @@ class HomeScreen extends StatelessWidget {
                               BoxShadow(
                                 color: Colors.grey.withOpacity(0.4), //color of shadow
 
-                                spreadRadius:1, //spread radius
-                                blurRadius:10, // blur radius
-                                //changes position of shadow
-                                //first paramerter of offset is left-right
-                                //second parameter is top to down
+                                spreadRadius:1,
                               ),
-                              //you can set more BoxShadow() here
+
                             ],
                           ),),
                         SizedBox(height: 5,),
@@ -495,13 +496,9 @@ class HomeScreen extends StatelessWidget {
                               BoxShadow(
                                 color: Colors.grey.withOpacity(0.4), //color of shadow
 
-                                spreadRadius:1, //spread radius
-                                blurRadius:10, // blur radius
-                                //changes position of shadow
-                                //first paramerter of offset is left-right
-                                //second parameter is top to down
+                                spreadRadius:1,
                               ),
-                              //you can set more BoxShadow() here
+
                             ],
                           ),)
 
@@ -522,13 +519,9 @@ class HomeScreen extends StatelessWidget {
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.2), //color of shadow
 
-                      spreadRadius:1, //spread radius
-                      blurRadius:10, // blur radius
-                      //changes position of shadow
-                      //first paramerter of offset is left-right
-                      //second parameter is top to down
+                      spreadRadius:1,
                     ),
-                    //you can set more BoxShadow() here
+
                   ],
                 ),),
 
@@ -640,13 +633,10 @@ class HomeScreen extends StatelessWidget {
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.4), //color of shadow
 
-                              spreadRadius:1, //spread radius
-                              blurRadius:10, // blur radius
-                              //changes position of shadow
-                              //first paramerter of offset is left-right
-                              //second parameter is top to down
+                              spreadRadius:1,
+                              blurRadius:10,
                             ),
-                            //you can set more BoxShadow() here
+
                           ],
                         ),),
                     ),

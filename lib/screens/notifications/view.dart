@@ -6,10 +6,27 @@ class NotificationsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List images = [
+      "assets/images/n1.png",
+      "assets/images/n2.png",
+      "assets/images/n3.png",
+    ];
+    List title = [
+      "Balance notification",
+      "Upcoming bill",
+      "Budget overspending",
+    ];
+    List subTitle = [
+      "Congratulations! You’re back in positive balance (EGP 3000). You can breathe a bit easier for a while.",
+      "Internet bill will be due in 3 days.",
+      "Your monthly expense almost break the budget.",
+    ];
+    List date = ["5:28 pm", "3:28 pm", "1:30 pm"];
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.red,
         onPressed: () {
-          Navigator.push(
+          Navigator.pushReplacement(
               context,
               MaterialPageRoute(
                 builder: (context) => DeleteScreen(),
@@ -40,25 +57,23 @@ class NotificationsScreen extends StatelessWidget {
         itemBuilder: (context, index) => Padding(
           padding: const EdgeInsets.all(16.0),
           child: ListTile(
-            trailing: Text("5:28 pm"),
+            trailing: Text(date[index]),
             tileColor: Colors.white,
-            contentPadding: EdgeInsets.all(16),
-            leading: Image.network(
-                "https://img.freepik.com/free-vector/notification-bell_78370-542.jpg?t=st=1712071127~exp=1712074727~hmac=9710e3cc5a603a689fba6c9da3f7d2d9c89bf866fa005a372b47dce596fd4f6b&w=740",
-                width: 28,
-                height: 28,
-                fit: BoxFit.fill),
+            contentPadding: EdgeInsets.symmetric(vertical: 30, horizontal: 10),
+            leading: Image.asset(images[index],
+                width: 28, height: 28, fit: BoxFit.fill),
             title: Text(
-              "Balance notification",
+              title[index],
               style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
                   color: Colors.black),
             ),
             subtitle: Text(
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                "Congratulations! You’re back in positive balance (EGP 3000). You can breathe a bit easier for a while."),
+              subTitle[index],
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
           ),
         ),
         itemCount: 3,
@@ -94,27 +109,29 @@ class DeleteScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Image.asset("assets/images/deletenot.png"),
-            SizedBox(
-              height: 24.h,
-            ),
-            Text(
-              "No notifications yet",
-              style: TextStyle(fontSize: 26, fontWeight: FontWeight.w600),
-            ),
-            SizedBox(
-              height: 8.h,
-            ),
-            Text(
-              textAlign: TextAlign.center,
-              "You have no notifications right now. Come \n back later.",
-              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
-            )
-          ],
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset("assets/images/deletenot.png"),
+              SizedBox(
+                height: 24.h,
+              ),
+              Text(
+                "No notifications yet",
+                style: TextStyle(fontSize: 26, fontWeight: FontWeight.w600),
+              ),
+              SizedBox(
+                height: 8.h,
+              ),
+              Text(
+                textAlign: TextAlign.center,
+                "You have no notifications right now. Come \n back later.",
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
+              )
+            ],
+          ),
         ),
       ),
     );

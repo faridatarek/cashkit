@@ -17,10 +17,10 @@ class EmptyRoscaScreen extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => CreatRosca(),
                   ));
-              // إجراء عند الضغط على الزر
+
             },
-            child: Icon(Icons.add), // أيقونة الزر
-            backgroundColor: Theme.of(context).primaryColor, // لون الخلفية
+            child: Icon(Icons.add),
+            backgroundColor: Theme.of(context).primaryColor,
           ),
         ),
         appBar: AppBar(

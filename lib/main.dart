@@ -5,6 +5,7 @@ import 'package:cashkit/screens/auth/sign_up/view.dart';
 import 'package:cashkit/screens/budget/Emergency_budget/mainCateg_emergency/view.dart';
 import 'package:cashkit/screens/home/view.dart';
 import 'package:cashkit/screens/nav_bar/view.dart';
+import 'package:cashkit/screens/profile/view.dart';
 import 'package:cashkit/screens/splash/logo.dart';
 import 'package:cashkit/screens/splash/toggle_splash.dart';
 import 'package:cashkit/screens/tab_bar/view.dart';
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
           ),
 
 
-          home:SignUp(),
+          home:NavScreen(),
 
         );
       },

@@ -9,6 +9,10 @@ import 'package:cashkit/screens/questions/q_one/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../Goals/all_goals/view.dart';
+import '../expenses/view.dart';
+import '../premium/premium_view.dart';
+
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
 
@@ -40,11 +44,11 @@ class ProfileScreen extends StatelessWidget {
       EditAllQuestionScreen(),
       EditIncomeScreen(),
       EditSavingBox(),
-      EditProfileScreen(),
-      EditProfileScreen(),
+      Expenses (),
+      All_Goals(),
       EmptyRoscaScreen(),
       CreditHomeScreen(),
-      EditProfileScreen(),
+      Premium(),
     ];
     return SafeArea(
       child: Scaffold(

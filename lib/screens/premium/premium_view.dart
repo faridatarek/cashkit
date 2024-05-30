@@ -2,6 +2,8 @@ import 'package:cashkit/screens/home/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../profile/view.dart';
+
 class Premium extends StatelessWidget {
   const Premium({Key? key}) : super(key: key);
 
@@ -28,9 +30,9 @@ class Premium extends StatelessWidget {
             InkWell(
                 onTap:  (){
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) =>HomeScreen () )); //to credit page
+                      MaterialPageRoute(builder: (context) =>ProfileScreen () )); //to credit page
                 },
-                child: Image.asset("assets/images/Frame 1000005180.png",))
+                child: Image.asset("assets/images/Frame Premium.png",))
           ],
         ),
       ),

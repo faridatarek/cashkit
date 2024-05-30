@@ -88,118 +88,120 @@ class _MainCateg_emergencyState extends State<MainCateg_emergency> {
           ),
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.only(top: 15.h),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: InkWell(
-                onTap: () {
-                  // Navigate to category selection screen
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => CategoryListScreen_emergency(categories_emergency: categorie_emergency),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Container(
+              color: Colors.white,height: 160.h,
+              child: Column(children: [
+                InkWell(
+                  onTap: () {
+                    // Navigate to category selection screen
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CategoryListScreen_emergency(categories_emergency: categorie_emergency),
+                      ),
+                    ).then((value) {
+                      if (value != null) {
+                        setState(() {
+                          selectedCategoryName_emergency = value['name'];
+                          selectedImg_emergency = value['image'];
+                        });
+                      }
+                    });
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadiusDirectional.circular(10),
+                      color: Colors.white,
                     ),
-                  ).then((value) {
-                    if (value != null) {
-                      setState(() {
-                        selectedCategoryName_emergency = value['name'];
-                        selectedImg_emergency = value['image'];
-                      });
-                    }
-                  });
-                },
-                child: Container(
+                    height: 80,
+                    width: 1000,
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 10.0.w),
+                          child: CircleAvatar(child: selectedImg_emergency, backgroundColor: Color(0xffEFEFEF), radius: 30),
+                        ),
+                        SizedBox(width: 15.w),
+                        Text(
+                          selectedCategoryName_emergency,
+                          style: TextStyle(fontSize: 20, color: Color(0xff9B9B9B), fontWeight: FontWeight.w800),
+                        ),
+                        Spacer(),
+                        Padding(
+                          padding: EdgeInsets.only(right: 10.0.w),
+                          child: Icon(Icons.arrow_forward_ios, size: 25),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(height: 4.h,),
+                Container(color: Color(0xffDCDCDC),height:2.h,width: MediaQuery.of(context).size.width*0.95), SizedBox(height: 5.h,),
+
+                Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadiusDirectional.circular(10),
                     color: Colors.white,
                   ),
-                  height: 100,
+                  height: 80,
                   width: 1000,
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(left: 10.0.w),
-                        child: CircleAvatar(child: selectedImg_emergency, backgroundColor: Color(0xffEFEFEF), radius: 30),
-                      ),
-                      SizedBox(width: 15.w),
-                      Text(
-                        selectedCategoryName_emergency,
-                        style: TextStyle(fontSize: 20, color: Color(0xff9B9B9B), fontWeight: FontWeight.w800),
-                      ),
-                      Spacer(),
-                      Padding(
-                        padding: EdgeInsets.only(right: 10.0.w),
-                        child: Icon(Icons.arrow_forward_ios, size: 25),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadiusDirectional.circular(10),
-                  color: Colors.white,
-                ),
-                height: 100,
-                width: 1000,
-                child: Padding(
-                  padding: EdgeInsets.only(left: 10.0.w),
-                  child: Center(
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        label: Text(
-                          "Amount",
-                          style: TextStyle(fontSize: 20, color: Color(0xff9B9B9B), fontWeight: FontWeight.w600),
-                        ),
-                        icon: CircleAvatar(
-                          child: Image.asset(
-                            "assets/images/amount_icon.png",
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 10.0.w),
+                    child: Center(
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          label: Text(
+                            "Amount",
+                            style: TextStyle(fontSize: 20, color: Color(0xff9B9B9B), fontWeight: FontWeight.w600),
                           ),
-                          backgroundColor: Color(0xffEFEFEF),
-                          radius: 30,
+                          icon: CircleAvatar(
+                            child: Image.asset(
+                              "assets/images/amount_icon.png",
+                            ),
+                            backgroundColor: Color(0xffEFEFEF),
+                            radius: 30,
+                          ),
                         ),
+                        keyboardType: TextInputType.number,
+                        onChanged: (value) {
+                          setState(() {
+                            // Update mainCatAmount when the text field value changes
+                            mainCatAmount_emergency = int.tryParse(value) ?? 0;
+                          });
+                        },
                       ),
-                      keyboardType: TextInputType.number,
-                      onChanged: (value) {
-                        setState(() {
-                          // Update mainCatAmount when the text field value changes
-                          mainCatAmount_emergency = int.tryParse(value) ?? 0;
-                        });
-                      },
                     ),
                   ),
                 ),
-              ),
-            ),
-            SizedBox(height: 25),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: BTN(
-                text: "Next",
-                onPrees: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SubcategoriesScreen_emergency(
-                        selectedimgCategory_emergency: selectedImg_emergency,
-                        selectedCategory_emergency: selectedCategoryName_emergency,
-                        subcategories_emergency: subcategories_emergency,
-                        mainCatAmount_emergency: mainCatAmount_emergency.toDouble(), // Convert mainCatAmount to double
-                      ),
-                    ),
-                  );
+            ]),),
+          ),
 
-                },
-              ),
+          SizedBox(height: 25),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: BTN(
+              text: "Next",
+              onPrees: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SubcategoriesScreen_emergency(
+                      selectedimgCategory_emergency: selectedImg_emergency,
+                      selectedCategory_emergency: selectedCategoryName_emergency,
+                      subcategories_emergency: subcategories_emergency,
+                      mainCatAmount_emergency: mainCatAmount_emergency.toDouble(), // Convert mainCatAmount to double
+                    ),
+                  ),
+                );
+
+              },
             ),
-          ],
-        ),
+          ),
+        ],
       ),
 
     );
