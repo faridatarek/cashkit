@@ -53,6 +53,9 @@ dependencies:
   flutter_bloc: ^8.1.5
   equatable: ^2.0.5
   dropdown_button2: ^2.3.9
+  http: ^1.1.0
+  fluttertoast: ^8.2.5
+  pin_code_fields: ^8.0.1
 
 dev_dependencies:
   flutter_test:

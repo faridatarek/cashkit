@@ -1,6 +1,7 @@
 import 'package:cashkit/core/desgin/btn.dart';
 import 'package:cashkit/core/desgin/loading.dart';
 import 'package:cashkit/screens/auth/login/view.dart';
+import 'package:cashkit/screens/auth/sign_up/signUp_function.dart';
 
 import 'package:cashkit/screens/home/view.dart';
 import 'package:cashkit/screens/questions/q_one/view.dart';
@@ -11,6 +12,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+/*
 class signUp extends StatefulWidget {
   const signUp({Key? key}) : super(key: key);
 
@@ -20,7 +23,7 @@ class signUp extends StatefulWidget {
 
 class _signUpState extends State<signUp> {
   final _formKey = GlobalKey<FormState>();
-  bool _tc = false;
+  bool _tc = true;
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -53,11 +56,29 @@ class _signUpState extends State<signUp> {
       hasUpperCase = RegExp(r'[A-Z]').hasMatch(newPassword);
       hasNumber = RegExp(r'[0-9]').hasMatch(newPassword);
       hasSpecialChar = RegExp(r'[!@#$%^&*(),.?":{}|<>]').hasMatch(newPassword);
-      _tc = _allValidationsPassed(context);
+    */
+/*  _tc = _allValidationsPassed(context);*//*
+
 
 
     });
   }
+  Future<void> _handleReg(BuildContext context) async {
+    String name = _nameController.text;
+    String email = _emailController.text;
+    String password = _passwordController.text;
+    String confirmPassword = _confirmPasswordController.text;
+
+    try {
+      await SignUp_Api ().registerFun(context, name, email, password, confirmPassword, _tc);
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('An error occurred: $e')),
+      );
+    }
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -265,8 +286,7 @@ class _signUpState extends State<signUp> {
                       SizedBox(
                         height: 28.h,
                       ),
-                      BTN(text: "Sign Up", onPrees: () {
-                        }),
+                      BTN(text: "Sign Up", onPrees: () => _handleReg(context),),
                       SizedBox(
                         height: 28.h,
                       ),
@@ -352,4 +372,4 @@ class _signUpState extends State<signUp> {
     return false;
   }
 
-}
+}*/

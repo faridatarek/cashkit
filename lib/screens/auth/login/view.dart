@@ -6,6 +6,8 @@ import 'package:cashkit/screens/nav_bar/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../new_password/forget_view.dart';
+
 class login extends StatefulWidget {
   const login({Key? key}) : super(key: key);
 
@@ -46,12 +48,12 @@ class _loginState extends State<login> {
             height: 80.h,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 16.0, top: 130),
+            padding: const EdgeInsets.only(left: 16.0, top: 110),
             child: Text("Login",
 
                 style: TextStyle(
                     fontWeight: FontWeight.w700,
-                    fontSize: 28.sp,
+                    fontSize: 25.sp,
                     color: Colors.white)),
           ),
 
@@ -109,7 +111,7 @@ class _loginState extends State<login> {
                           ),
                         ),
 
-                        labelText: "Email",
+                 label: Text("Email ",style: TextStyle(fontSize:14,fontWeight: FontWeight.w400)),
 
                         border: OutlineInputBorder(
 
@@ -138,7 +140,7 @@ class _loginState extends State<login> {
                           ),
                         ),
 
-                        labelText: "Confirm Password",
+                        label: Text("Password ",style: TextStyle(fontSize:14,fontWeight: FontWeight.w400)),
                         suffixIcon:  IconButton(onPressed: toggleObscuredConfrm ,
                             icon: Icon(_isObsecuredConfirm?Icons.visibility:Icons.visibility_off
                               ,color: Theme.of(context).primaryColor,)),
@@ -167,7 +169,7 @@ class _loginState extends State<login> {
                         GestureDetector(
                           onTap: () {
                             Navigator.push(context,
-                                MaterialPageRoute(builder: (context) =>newPass ()));
+                                MaterialPageRoute(builder: (context) =>ForgetPasswordScreen ()));
                           },
                           child: Text('Forgot Password?',style: TextStyle(color: Theme.of(context).primaryColor,fontSize:12.sp)),
                         ),
@@ -179,7 +181,7 @@ class _loginState extends State<login> {
                       height: 20.h,
                     ),
                     BTN(text: "Login", onPrees:(){
-                      Navigator.push(context,
+                      Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (context) =>NavScreen ()));
                     } ),
                     SizedBox(
@@ -205,13 +207,13 @@ class _loginState extends State<login> {
                             width:96.w,
                             height: 50.h,
                             child:Image.network("https://th.bing.com/th/id/R.0fa3fe04edf6c0202970f2088edea9e7?rik=joOK76LOMJlBPw&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fgoogle-logo-png-open-2000.png&ehk=0PJJlqaIxYmJ9eOIp9mYVPA4KwkGo5Zob552JPltDMw%3d&risl=&pid=ImgRaw&r=0")),
-                        SizedBox(width: 20.w),
+                        SizedBox(width:15),
                         Container(
                             decoration:BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(12),border: Border.all(width:1,color: Color(0xffBDBDBD),)),
                             width:96.w,
                             height: 50.h,
                             child:Image.network(fit: BoxFit.fill,"https://th.bing.com/th/id/OIP.f1yTTEz6vnVeF9ymigPWNQHaHa?rs=1&pid=ImgDetMain")),
-                        SizedBox(width: 20.w), Container(
+                        SizedBox(width: 15), Container(
                             decoration:BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(12),border: Border.all(width:1,color: Color(0xffBDBDBD),)),
                             width:96.w,
                             height: 50.h,

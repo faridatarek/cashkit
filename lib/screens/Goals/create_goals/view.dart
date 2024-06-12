@@ -139,13 +139,13 @@ class _Creat_goalsState extends State<Creat_goals> {
                 borderRadius: BorderRadius.circular(8.0), // Set border radius
               ),
 
-              content: Text("The amount of money required to achieve your goal exceeds the amount in the saving box ,you can:",style: TextStyle(fontSize:21,fontWeight: FontWeight.w600)),
+              content: Text("The amount of money required to achieve your goal exceeds the amount in the saving box ,you can:",style: TextStyle(fontSize:18.sp,fontWeight: FontWeight.w600)),
 
               actions: <Widget>[
 
                 Center(
                   child: Container(
-                    height: 200,
+                    height: 250.h,
 
                     child: Column(
 
@@ -163,13 +163,18 @@ class _Creat_goalsState extends State<Creat_goals> {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(" Edit Goal",style: TextStyle(fontWeight: FontWeight.w800,fontSize: 16.sp)),
+                                  Text(" Edit Goal",style: TextStyle(fontWeight: FontWeight.w800,fontSize: 14.sp)),
 
                                   TextButton(
                                     onPressed: () {
                                       Navigator.pop(context); // Close the alert dialog
                                     },
-                                    child: Text('Change the amount saved every month.',style: TextStyle(fontWeight: FontWeight.w400,fontSize:12.sp,color: Color(0xff656565))),
+                                    child: Column(
+                                      children: [
+                                        Text('Change the amount',style: TextStyle(fontWeight: FontWeight.w400,fontSize:12.sp,color: Color(0xff656565),)),
+                                        Text('  saved every month.',style: TextStyle(fontWeight: FontWeight.w400,fontSize:12.sp,color: Color(0xff656565),)),
+                                      ],
+                                    ),
                                   ),
                                 ],
                               ),
@@ -178,7 +183,7 @@ class _Creat_goalsState extends State<Creat_goals> {
                         ),
                         margin: EdgeInsets.symmetric(vertical: 5,horizontal:8),
                         width:MediaQuery.of(context).size.width.w,
-                        height:70.h,
+                        height:85.h,
 
                         decoration: BoxDecoration(
 
@@ -190,11 +195,9 @@ class _Creat_goalsState extends State<Creat_goals> {
 
                               spreadRadius:1, //spread radius
                               blurRadius:10, // blur radius
-//changes position of shadow
-//first paramerter of offset is left-right
-//second parameter is top to down
+
                             ),
-//you can set more BoxShadow() here
+
                           ],
                         ),),
 
@@ -211,7 +214,7 @@ class _Creat_goalsState extends State<Creat_goals> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(" Edit saving box",style: TextStyle(fontWeight: FontWeight.w800,fontSize: 16.sp)),
+                                    Text(" Edit saving box",style: TextStyle(fontWeight: FontWeight.w800,fontSize: 14.sp)),
 
 
                                     TextButton(
@@ -223,7 +226,12 @@ class _Creat_goalsState extends State<Creat_goals> {
                                           ),
                                         );
                                       },
-                                      child: Text('Increase End Date or decrease budget.',style: TextStyle(fontWeight: FontWeight.w400,fontSize:12.sp,color: Color(0xff656565))),
+                                      child: Column(
+                                        children: [
+                                          Text('Increase End Date ',style: TextStyle(fontWeight: FontWeight.w400,fontSize:12.sp,color: Color(0xff656565))),
+                                          Text('    or decrease budget.',style: TextStyle(fontWeight: FontWeight.w400,fontSize:12.sp,color: Color(0xff656565))),
+                                        ],
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -231,8 +239,8 @@ class _Creat_goalsState extends State<Creat_goals> {
                             ),
                           ),
                           margin: EdgeInsets.symmetric(vertical: 5,horizontal:8),
-                          width:MediaQuery.of(context).size.width.w,
-                          height:70.h,
+                          width:255.w,
+                          height:85.h,
 
                           decoration: BoxDecoration(
 
@@ -244,11 +252,9 @@ class _Creat_goalsState extends State<Creat_goals> {
 
                                 spreadRadius:1, //spread radius
                                 blurRadius:10, // blur radius
-//changes position of shadow
-//first paramerter of offset is left-right
-//second parameter is top to down
+
                               ),
-//you can set more BoxShadow() here
+
                             ],
                           ),),
 

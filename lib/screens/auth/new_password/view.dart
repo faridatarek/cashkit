@@ -65,11 +65,11 @@ class _newPassState extends State<newPass> {
             height: 80.h,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 16.0, top: 130),
+            padding: const EdgeInsets.only(left: 16.0, top: 110),
             child: Text("Set your password",
                 style: TextStyle(
                     fontWeight: FontWeight.w700,
-                    fontSize: 28.sp,
+                    fontSize: 25.sp,
                     color: Colors.white)),
           ),
 
@@ -96,13 +96,13 @@ class _newPassState extends State<newPass> {
 
                       "In order to keep your account safe you need to create a strong password.",
                       style: TextStyle(
-                        fontSize: 18.sp,
+                        fontSize: 15.sp,
                         fontWeight: FontWeight.w400,
                         color: Color(0xff989898),
 
                       ),),
                     SizedBox(
-                      height:25.h,
+                      height:10.h,
                     ),
 
                     SizedBox(
@@ -128,7 +128,7 @@ class _newPassState extends State<newPass> {
                           ),
                         ),
 
-                        labelText: "Password",
+                        label: Text("Password ",style: TextStyle(fontSize:14,fontWeight: FontWeight.w400)),
                         suffixIcon:  IconButton(onPressed:_toggleObscured,
                             icon: Icon(_isObsecured?Icons.visibility:Icons.visibility_off
                               ,color: Theme.of(context).primaryColor,)),
@@ -159,7 +159,7 @@ class _newPassState extends State<newPass> {
                           ),
                         ),
 
-                        labelText: "Confirm Password",
+                   label: Text("Confirm Password",style: TextStyle(fontSize:14,fontWeight: FontWeight.w400)),
                         suffixIcon:  IconButton(onPressed: toggleObscuredConfrm ,
                             icon: Icon(_isObsecuredConfirm?Icons.visibility:Icons.visibility_off
                               ,color: Theme.of(context).primaryColor,)),
@@ -192,7 +192,7 @@ class _newPassState extends State<newPass> {
                     SizedBox(
                       height:15.h,
                     ),
-                    BTN(text: "Sign up", onPrees: () => _allValidationsPassed(context),
+                    BTN(text: "Change Password", onPrees: () => _allValidationsPassed(context),
                     ),
 
 
@@ -212,8 +212,8 @@ class _newPassState extends State<newPass> {
           isValid ? Icons.check_circle : Icons.check_circle ,
           color: isValid ?Color(0xff047857) : Colors.black12,
         ),
-        SizedBox(width: 8.0),
-        Text(message,style: TextStyle(fontSize: 16)),
+        SizedBox(width: 8.w),
+        Text(message,style: TextStyle(fontSize:13.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
       ],
     );
   }

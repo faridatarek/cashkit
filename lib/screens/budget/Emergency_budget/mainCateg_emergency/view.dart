@@ -88,120 +88,127 @@ class _MainCateg_emergencyState extends State<MainCateg_emergency> {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Container(
-              color: Colors.white,height: 160.h,
-              child: Column(children: [
-                InkWell(
-                  onTap: () {
-                    // Navigate to category selection screen
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => CategoryListScreen_emergency(categories_emergency: categorie_emergency),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                color: Colors.white,height: 180.h,
+                child:
+                Column(
+                    children: [
+                  InkWell(
+                    onTap: () {
+                      // Navigate to category selection screen
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CategoryListScreen_emergency(categories_emergency: categorie_emergency),
+                        ),
+                      ).then((value) {
+                        if (value != null) {
+                          setState(() {
+                            selectedCategoryName_emergency = value['name'];
+                            selectedImg_emergency = value['image'];
+                          });
+                        }
+                      });
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadiusDirectional.circular(10),
+                        color: Colors.white,
                       ),
-                    ).then((value) {
-                      if (value != null) {
-                        setState(() {
-                          selectedCategoryName_emergency = value['name'];
-                          selectedImg_emergency = value['image'];
-                        });
-                      }
-                    });
-                  },
-                  child: Container(
+                      height: 80,
+                      width: 1000,
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(left: 10.0.w),
+                            child: CircleAvatar(child: selectedImg_emergency, backgroundColor: Color(0xffEFEFEF), radius: 30.r),
+                          ),
+                          SizedBox(width: 15.w),
+                          Text(
+                            selectedCategoryName_emergency,
+                            style: TextStyle(fontSize: 16.sp, color: Color(0xff9B9B9B), fontWeight: FontWeight.w800),
+                          ),
+                          Spacer(),
+                          Padding(
+                            padding: EdgeInsets.only(right: 10.0.w),
+                            child: Icon(Icons.arrow_forward_ios, size: 20,color: Color(0xff3B3B3D)),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 4.h,),
+                  Container(color: Color(0xffDCDCDC),height:2.h,width: MediaQuery.of(context).size.width*0.95), SizedBox(height: 5.h,),
+
+                  Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadiusDirectional.circular(10),
                       color: Colors.white,
                     ),
                     height: 80,
                     width: 1000,
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 10.0.w),
-                          child: CircleAvatar(child: selectedImg_emergency, backgroundColor: Color(0xffEFEFEF), radius: 30),
-                        ),
-                        SizedBox(width: 15.w),
-                        Text(
-                          selectedCategoryName_emergency,
-                          style: TextStyle(fontSize: 20, color: Color(0xff9B9B9B), fontWeight: FontWeight.w800),
-                        ),
-                        Spacer(),
-                        Padding(
-                          padding: EdgeInsets.only(right: 10.0.w),
-                          child: Icon(Icons.arrow_forward_ios, size: 25),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                SizedBox(height: 4.h,),
-                Container(color: Color(0xffDCDCDC),height:2.h,width: MediaQuery.of(context).size.width*0.95), SizedBox(height: 5.h,),
-
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadiusDirectional.circular(10),
-                    color: Colors.white,
-                  ),
-                  height: 80,
-                  width: 1000,
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 10.0.w),
-                    child: Center(
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          label: Text(
-                            "Amount",
-                            style: TextStyle(fontSize: 20, color: Color(0xff9B9B9B), fontWeight: FontWeight.w600),
-                          ),
-                          icon: CircleAvatar(
-                            child: Image.asset(
-                              "assets/images/amount_icon.png",
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 10.0.w),
+                      child: Center(
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            label: Text(
+                              "Amount",
+                              style: TextStyle(fontSize: 16.sp, color: Color(0xff9B9B9B), fontWeight: FontWeight.w600),
                             ),
-                            backgroundColor: Color(0xffEFEFEF),
-                            radius: 30,
+                            icon: CircleAvatar(
+                              child: Image.asset(
+                                "assets/images/amount_icon.png",
+                              ),
+                              backgroundColor: Color(0xffEFEFEF),
+                              radius: 30.r,
+                            ),
                           ),
+                          keyboardType: TextInputType.number,
+                          onChanged: (value) {
+                            setState(() {
+                              // Update mainCatAmount when the text field value changes
+                              mainCatAmount_emergency = int.tryParse(value) ?? 0;
+                            });
+                          },
                         ),
-                        keyboardType: TextInputType.number,
-                        onChanged: (value) {
-                          setState(() {
-                            // Update mainCatAmount when the text field value changes
-                            mainCatAmount_emergency = int.tryParse(value) ?? 0;
-                          });
-                        },
                       ),
                     ),
                   ),
+              ]
+
                 ),
-            ]),),
-          ),
-
-          SizedBox(height: 25),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: BTN(
-              text: "Next",
-              onPrees: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => SubcategoriesScreen_emergency(
-                      selectedimgCategory_emergency: selectedImg_emergency,
-                      selectedCategory_emergency: selectedCategoryName_emergency,
-                      subcategories_emergency: subcategories_emergency,
-                      mainCatAmount_emergency: mainCatAmount_emergency.toDouble(), // Convert mainCatAmount to double
-                    ),
-                  ),
-                );
-
-              },
+              ),
             ),
-          ),
-        ],
+
+            SizedBox(height: 25),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: BTN(
+                text: "Next",
+                onPrees: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SubcategoriesScreen_emergency(
+                        selectedimgCategory_emergency: selectedImg_emergency,
+                        selectedCategory_emergency: selectedCategoryName_emergency,
+                        subcategories_emergency: subcategories_emergency,
+                        mainCatAmount_emergency: mainCatAmount_emergency.toDouble(), // Convert mainCatAmount to double
+                      ),
+                    ),
+                  );
+
+                },
+              ),
+            ),
+          ],
+        ),
       ),
 
     );
@@ -225,7 +232,7 @@ class CategoryListScreen_emergency extends StatelessWidget {
             padding:  EdgeInsets.only(left: 10.w,top: 15.h),
             child: Text(
               "Main Categories",
-              style: TextStyle(fontSize: 20.sp, color: Color(0xff292929), fontWeight: FontWeight.w600),
+              style: TextStyle(fontSize: 18.sp, color: Color(0xff292929), fontWeight: FontWeight.w600),
             ),
           ),
         ),
@@ -243,11 +250,11 @@ class CategoryListScreen_emergency extends StatelessWidget {
 
                     child: Center(
                       child: ListTile(
-                        leading:CircleAvatar(child:   categories_emergency[index]['image'],backgroundColor: Color(0xffEFEFEF),radius: 30),
+                        leading:CircleAvatar(child:   categories_emergency[index]['image'],backgroundColor: Color(0xffEFEFEF),radius: 30.r),
 
                         title: Text(
                           categories_emergency[index]['name'],
-                          style: TextStyle(color: Color(0xff292929),fontWeight: FontWeight.w600,fontSize: 18),
+                          style: TextStyle(color: Color(0xff292929),fontWeight: FontWeight.w600,fontSize: 18.sp),
                         ),
                         onTap: () {
                           Navigator.pop(context, categories_emergency[index]);

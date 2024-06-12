@@ -67,9 +67,10 @@ class Charts_screen extends StatelessWidget {
                 padding: const EdgeInsets.all(12.0),
                 child: Row(children: [
                     Icon(Icons.arrow_back_ios,color: Color(0xff292929),),
-                  SizedBox(width:80,),
-                  Text("February 2024",style: TextStyle(fontSize: 20.sp,color: Color(0xff292929),fontWeight: FontWeight.w600))
-                ,SizedBox(width:75,),
+                  Spacer(),
+
+                  Center(child: Text("February 2024",style: TextStyle(fontSize: 16.sp,color: Color(0xff292929),fontWeight: FontWeight.w600)))
+            ,Spacer(),
                   Icon(Icons.arrow_forward_ios,color: Color(0xff292929),),
                 ]),
               ) ,
@@ -81,12 +82,12 @@ class Charts_screen extends StatelessWidget {
               children:[
 
                 Padding(
-                  padding:  EdgeInsets.only(left:70.0.w,top: 18.h),
-                  child: Text("EGP 6,000",style: TextStyle(fontSize: 17.sp,color: Color(0xff243465),fontWeight: FontWeight.w600)),
+                  padding:  EdgeInsets.only(left:90.0.w,top: 18.h),
+                  child: Text("EGP 6,000",style: TextStyle(fontSize: 15.sp,color: Color(0xff243465),fontWeight: FontWeight.w600)),
                 ),
                 Padding(
-                  padding:  EdgeInsets.only(left:65.0.w,bottom: 30.h),
-                  child: Text("Total Expenses",style: TextStyle(fontSize: 14.sp,color: Color(0xff848A9C),fontWeight: FontWeight.w500)),
+                  padding:  EdgeInsets.only(left:80.0.w,bottom: 30.h),
+                  child: Text("Total Expenses",style: TextStyle(fontSize: 12.sp,color: Color(0xff848A9C),fontWeight: FontWeight.w500)),
                 ),
                 Row(children: [
                 AnimatedCircularChart(

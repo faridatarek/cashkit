@@ -37,7 +37,7 @@ class Rating extends StatelessWidget {
             child:SingleChildScrollView(
 
               child:Column(
-crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                 Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -76,7 +76,7 @@ crossAxisAlignment: CrossAxisAlignment.start,
                     )
               ,SizedBox(height: 18.h),
                     Padding(
-                      padding:  EdgeInsets.only(left: 8.0.w),
+                      padding:  EdgeInsets.only(left: 9.0.w),
                       child: Text("Title",style: TextStyle(fontSize: 17.sp,color: Color(0xff989898),fontWeight: FontWeight.w400)),
                     )
                    ,SizedBox(height: 16.h)
@@ -86,7 +86,7 @@ crossAxisAlignment: CrossAxisAlignment.start,
                     ),
               SizedBox(height: 16.h),
                     Padding(
-                      padding:  EdgeInsets.only(left: 8.0.w),
+                      padding:  EdgeInsets.only(left: 9.0.w),
                       child: Text("Review (Optional)",style: TextStyle(fontSize: 17.sp,color: Color(0xff989898),fontWeight: FontWeight.w400)),
                     )
 

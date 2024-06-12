@@ -55,9 +55,9 @@ class _Toggle_spashState extends State<Toggle_spash> {
               child: Image.asset("assets/images/Group 47 (1).png",width: 150.w,height: 100.h,),
             )),*/
             Padding(
-              padding:  EdgeInsets.only(top:40.h),
+              padding:  EdgeInsets.only(top:50.h),
               child: Container(
-                height: 500.h,
+                height: 400.h,
                 width: MediaQuery.of(context).size.width.w,
                 child: PageView.builder(
                   controller: _pageController,
@@ -70,7 +70,8 @@ class _Toggle_spashState extends State<Toggle_spash> {
                   itemBuilder: (context, index) {
                     return Image.asset(
                       _photos[index],
-                      fit: BoxFit.none,
+                      fit: BoxFit.fill,
+                      height: 350.h,width: 365.w,
                     );
                   },
                 ),

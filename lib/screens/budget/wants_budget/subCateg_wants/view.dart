@@ -162,7 +162,7 @@ class _SubcategoryDetailsScreen_wantsState extends State<SubcategoryDetailsScree
           padding:  EdgeInsets.only(left: 10.w,top: 15.h),
           child: Text(
             "Add Sub Budget",
-            style: TextStyle(fontSize: 20.sp, color: Color(0xff292929), fontWeight: FontWeight.w600),
+            style: TextStyle(fontSize: 18.sp, color: Color(0xff292929), fontWeight: FontWeight.w600),
           ),
         ),
       ),
@@ -193,7 +193,7 @@ class _SubcategoryDetailsScreen_wantsState extends State<SubcategoryDetailsScree
                         child: CircleAvatar(
                           child: widget.subcategoryimg_wants,
                           backgroundColor: Color(0xffEFEFEF),
-                          radius: 24.r,
+                          radius: 30.r,
                         ),
                       ),
                     ),
@@ -201,7 +201,7 @@ class _SubcategoryDetailsScreen_wantsState extends State<SubcategoryDetailsScree
                     Text(
                       widget.subcategoryName_wants,
                       style: TextStyle(
-                        fontSize:18.sp,
+                        fontSize:16.sp,
                         color: Color(0xff9B9B9B),
                         fontWeight: FontWeight.w800,
                       ),
@@ -209,7 +209,7 @@ class _SubcategoryDetailsScreen_wantsState extends State<SubcategoryDetailsScree
                     Spacer(),
                     Padding(
                       padding: EdgeInsets.only(right: 10.0.w),
-                      child: Icon(Icons.arrow_forward_ios, size: 25,color:  Color(0xffACACAC)),
+                      child: Icon(Icons.arrow_forward_ios, size: 20,color:  Color(0xffACACAC)),
                     ),
                   ],
                 ),
@@ -231,7 +231,7 @@ class _SubcategoryDetailsScreen_wantsState extends State<SubcategoryDetailsScree
                         decoration: InputDecoration(
                           labelText: "Amount",
                           labelStyle: TextStyle(
-                            fontSize: 18.sp,
+                            fontSize: 16.sp,
                             color: Color(0xff9B9B9B),
                             fontWeight: FontWeight.w600,
                           ),
@@ -242,7 +242,7 @@ class _SubcategoryDetailsScreen_wantsState extends State<SubcategoryDetailsScree
                                 "assets/images/amount_icon.png",
                               ),
                               backgroundColor: Color(0xffEFEFEF),
-                              radius: 24.r,
+                              radius: 30.r,
                             ),
                           ),
                         ),
@@ -265,7 +265,7 @@ class _SubcategoryDetailsScreen_wantsState extends State<SubcategoryDetailsScree
                       leading: CircleAvatar(
                         child:Icon(Icons.date_range,size:40,color: Color(0xffACACAC)),
                         backgroundColor: Color(0xffEFEFEF),
-                        radius:25.r,
+                        radius:30.r,
                       ),
                       title: Text('Date',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600)),
 
@@ -273,8 +273,8 @@ class _SubcategoryDetailsScreen_wantsState extends State<SubcategoryDetailsScree
                           _selectedDate == null
                               ? 'DD/MM/YY (Optional)'
                               : DateFormat('d MMMM y').format(_selectedDate!),
-                          style: TextStyle(fontSize: 14.sp)),
-                      trailing: Icon(Icons.arrow_forward_ios),
+                          style: TextStyle(fontSize: 12.sp)),
+                      trailing: Icon(Icons.arrow_forward_ios,size: 20),
                       onTap: () => _selectDate(context),
                     ),
                   ),
@@ -293,7 +293,7 @@ class _SubcategoryDetailsScreen_wantsState extends State<SubcategoryDetailsScree
                 child:   SwitchListTile(
 
                   title: Text('Repeat this budget',style: TextStyle(fontWeight: FontWeight.w600,fontSize: 16.sp),),
-                  subtitle: Text('Budget will renew automatically.',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14.sp,color: Color(0xff656565)),),
+                  subtitle: Text('Budget will renew automatically.',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 13.sp,color: Color(0xff656565)),),
                   value: _isSwitched,
                   activeColor:Theme.of(context).primaryColor,
                   onChanged: (bool value) {
@@ -305,7 +305,7 @@ class _SubcategoryDetailsScreen_wantsState extends State<SubcategoryDetailsScree
               ),
               margin: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
               width: MediaQuery.of(context).size.width,
-              height: 70.h,
+              height: 80.h,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.all(Radius.circular(8)), // border corner radius

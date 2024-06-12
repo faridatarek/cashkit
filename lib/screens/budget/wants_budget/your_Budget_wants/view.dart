@@ -55,17 +55,7 @@ class _YourBudget_wantsState extends State<YourBudget_wants> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Colors.transparent,
-      //   elevation: 0,
-      //   title: Text(
-      //     "Your Budgets",
-      //     style: TextStyle(
-      //         fontSize: 23,
-      //         color: Theme.of(context).primaryColor,
-      //         fontWeight: FontWeight.w500),
-      //   ),
-      // ),
+
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -88,8 +78,8 @@ class _YourBudget_wantsState extends State<YourBudget_wants> {
                               borderRadius: BorderRadius.all(
                                   Radius.circular(4)), //border corner radius
                             ),
-                            height: 48,
-                            width: 35,
+                            height: 46.h,
+                            width:46.w,
                             child: CircleAvatar(
                               child: budget.selectedimgCategory,
                               backgroundColor: Color(0xffEFEFEF),
@@ -98,8 +88,8 @@ class _YourBudget_wantsState extends State<YourBudget_wants> {
                           ),
                           SizedBox(width: 5),
                           Container(
-                            height: 48,
-                            width: 279.w,
+                            height: 48.h,
+                            width: 261.w,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -112,33 +102,33 @@ class _YourBudget_wantsState extends State<YourBudget_wants> {
                                       child: Text(
                                           budget.selectedCategory,
                                           style: TextStyle(
-                                              fontSize: 16,
+                                              fontSize: 13.sp,
                                               fontWeight: FontWeight.w600,
                                               color: Color(0xff292929))),
                                     ),
                                     Text(
                                         "EGP ${spentAmount_wants} of EGP ${budget.mainAmount.toStringAsFixed(2)}",
                                         style: TextStyle(
-                                            fontSize: 12,
+                                            fontSize: 10.sp,
                                             fontWeight: FontWeight.w400,
                                             color: Color(0xff525252))),
                                   ],
                                 ),
-                                SizedBox(height: 15),
+                                SizedBox(height: 15.h),
                                 LoadingProg(
                                     totalAmount: budget.mainAmount,
-                                    spentAmount: spentAmount_wants),
+                                    spentAmount: spentAmount_wants,width: 320.w),
                               ],
                             ),
                           ),
                         ],
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 15.h),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: selectedSubcategories_wants.map((subcategory) {
                           return Container(
-                            padding: EdgeInsets.all(16.0),
+                            padding: EdgeInsets.all(5.0),
                             child: Row(
                               children: [
                                 Checkbox(
@@ -161,18 +151,18 @@ class _YourBudget_wantsState extends State<YourBudget_wants> {
                                     borderRadius:
                                     BorderRadius.all(Radius.circular(4)),
                                   ),
-                                  height: 48,
-                                  width: 30.w,
+                                  height:40.h,
+                                  width:40.w,
                                   child: CircleAvatar(
                                     child: budget.subCategoryimg,
                                     backgroundColor: Color(0xffEFEFEF),
-                                    radius: 30,
+                                    radius: 30.r,
                                   ),
                                 ),
                                 SizedBox(width: 5),
                                 Container(
-                                  height: 48,
-                                  width: 210.w,
+                                  height: 48.h,
+                                  width: 195.w,
                                   child: Column(
                                     crossAxisAlignment:
                                     CrossAxisAlignment.start,
@@ -184,21 +174,21 @@ class _YourBudget_wantsState extends State<YourBudget_wants> {
                                           Text(
                                               budget.selectedSubcategory,
                                               style: TextStyle(
-                                                  fontSize: 15,
+                                                  fontSize: 12.sp,
                                                   fontWeight: FontWeight.w600,
                                                   color: Color(0xff292929))),
                                           Text(
                                               "EGP ${_isCheckedList_wants[index] ? budget.mainAmount.toString() : spentAmount_wants.toString()} of EGP ${budget.mainAmount}",
                                               style: TextStyle(
-                                                  fontSize: 12,
+                                                  fontSize: 8.sp,
                                                   fontWeight: FontWeight.w400,
                                                   color: Color(0xff525252))),
                                         ],
                                       ),
-                                      SizedBox(height: 15),
+                                      SizedBox(height: 15.h),
                                       LoadingProg(
                                           totalAmount: budget.mainAmount,
-                                          spentAmount: spentAmount_wants),
+                                          spentAmount: spentAmount_wants,width: 328.w),
                                     ],
                                   ),
                                 ),
@@ -210,8 +200,9 @@ class _YourBudget_wantsState extends State<YourBudget_wants> {
                     ],
                   ),
                 ),
-                margin: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
-                width: MediaQuery.of(context).size.width.w,
+                margin: EdgeInsets.symmetric(vertical: 5, horizontal: 3.w),
+
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius:

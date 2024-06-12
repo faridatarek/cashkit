@@ -134,8 +134,8 @@ class NeedsTab extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(5.0),
               child: Container(
-                height: 50,
-                width: 280,
+                height: 50.h,
+                width: 280.w,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -148,7 +148,7 @@ class NeedsTab extends StatelessWidget {
                           Text("EGP 0 of EGP 3,000", style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400, color: Color(0xff525252))),
                         ],
                       ),
-                      SizedBox(height: 18.h),
+                      SizedBox(height: 15.h),
                       LinearProgressIndicator(
                         value: 0,
                         minHeight: 6.h,
@@ -163,7 +163,7 @@ class NeedsTab extends StatelessWidget {
             ),
             margin: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
             width: MediaQuery.of(context).size.width,
-            height: 65.h,
+            height: 70.h,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(Radius.circular(8)), // border corner radius
@@ -210,8 +210,8 @@ class WantsTab extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(5.0),
               child: Container(
-                height: 50,
-                width: 280,
+                height: 50.h,
+                width: 280.w,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -224,7 +224,7 @@ class WantsTab extends StatelessWidget {
                           Text("EGP 0 of EGP 2,000", style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400, color: Color(0xff525252))),
                         ],
                       ),
-                      SizedBox(height: 18.h),
+                      SizedBox(height: 15.h),
                       LinearProgressIndicator(
                         value: 0,
                         minHeight: 6.h,
@@ -239,7 +239,7 @@ class WantsTab extends StatelessWidget {
             ),
             margin: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
             width: MediaQuery.of(context).size.width,
-            height: 65.h,
+            height: 70.h,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(Radius.circular(8)), // border corner radius
@@ -286,8 +286,8 @@ class EmergencyTab extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(5.0),
               child: Container(
-                height: 50,
-                width: 280,
+                height: 50.h,
+                width: 280.w,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -296,11 +296,11 @@ class EmergencyTab extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Your Emergency", style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600, color: Color(0xff292929))),
-                          Text("EGP 0 of EGP 1,000", style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400, color: Color(0xff525252))),
+                          Text("Your Emergency", style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w600, color: Color(0xff292929))),
+                          Text("EGP 0 of EGP 1,000", style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w400, color: Color(0xff525252))),
                         ],
                       ),
-                      SizedBox(height: 18.h),
+                      SizedBox(height: 15.h),
                       LinearProgressIndicator(
                         value: 0,
                         minHeight: 6.h,
@@ -315,7 +315,7 @@ class EmergencyTab extends StatelessWidget {
             ),
             margin: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
             width: MediaQuery.of(context).size.width,
-            height: 65.h,
+            height: 70.h,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(Radius.circular(8)), // border corner radius

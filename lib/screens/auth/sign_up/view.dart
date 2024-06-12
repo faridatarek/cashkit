@@ -81,11 +81,11 @@ class _signUpState extends State<signUp> {
             height: 80.h,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 16.0, top: 130),
+            padding: const EdgeInsets.only(left: 16.0, top: 110),
             child: Text("Sign up",
                 style: TextStyle(
                     fontWeight: FontWeight.w700,
-                    fontSize: 28.sp,
+                    fontSize: 25.sp,
                     color: Colors.white)),
           ),
 
@@ -110,10 +110,10 @@ class _signUpState extends State<signUp> {
                   children: [
                     Text(
 
-                      "Creat Your account",
+                      "Create your account",
                       style: TextStyle(
                           fontSize: 20.sp,
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w700,
                           color: Colors.black),
                     ),
                     SizedBox(
@@ -136,7 +136,7 @@ class _signUpState extends State<signUp> {
                           ),
                         ),
 
-                        labelText: "Full Name",
+                       label: Text( "Full Name ",style: TextStyle(fontSize:14,fontWeight: FontWeight.w400)),
 
                         border: OutlineInputBorder(
 
@@ -164,7 +164,8 @@ class _signUpState extends State<signUp> {
                           ),
                         ),
 
-                        labelText: "Email",
+
+                        label: Text( "Email ",style: TextStyle(fontSize:14,fontWeight: FontWeight.w400)),
 
                         border: OutlineInputBorder(
 
@@ -195,7 +196,7 @@ class _signUpState extends State<signUp> {
                           ),
                         ),
 
-                        labelText: "Password",
+                label: Text("Password ",style: TextStyle(fontSize:14,fontWeight: FontWeight.w400)),
                         suffixIcon:  IconButton(onPressed:_toggleObscured,
                             icon: Icon(_isObsecured?Icons.visibility:Icons.visibility_off
                               ,color: Theme.of(context).primaryColor,)),
@@ -226,7 +227,7 @@ class _signUpState extends State<signUp> {
                           ),
                         ),
 
-                        labelText: "Confirm Password",
+                       label: Text( "Confirm Password ",style: TextStyle(fontSize:14,fontWeight: FontWeight.w400)),
                         suffixIcon:  IconButton(onPressed: toggleObscuredConfrm ,
                             icon: Icon(_isObsecuredConfirm?Icons.visibility:Icons.visibility_off
                               ,color: Theme.of(context).primaryColor,)),
@@ -294,13 +295,13 @@ class _signUpState extends State<signUp> {
                             width:96.w,
                             height: 50.h,
                             child:Image.network("https://th.bing.com/th/id/R.0fa3fe04edf6c0202970f2088edea9e7?rik=joOK76LOMJlBPw&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fgoogle-logo-png-open-2000.png&ehk=0PJJlqaIxYmJ9eOIp9mYVPA4KwkGo5Zob552JPltDMw%3d&risl=&pid=ImgRaw&r=0")),
-                        SizedBox(width: 20.w),
+                        SizedBox(width: 15.w),
                         Container(
                             decoration:BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(12),border: Border.all(width:1,color: Color(0xffBDBDBD),)),
                             width:96.w,
                             height: 50.h,
                             child:Image.network(fit: BoxFit.fill,"https://th.bing.com/th/id/OIP.f1yTTEz6vnVeF9ymigPWNQHaHa?rs=1&pid=ImgDetMain")),
-                        SizedBox(width: 20.w), Container(
+                        SizedBox(width: 15.w), Container(
                             decoration:BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(12),border: Border.all(width:1,color: Color(0xffBDBDBD),)),
                             width:96.w,
                             height: 50.h,
@@ -341,8 +342,8 @@ class _signUpState extends State<signUp> {
           isValid ? Icons.check_circle : Icons.check_circle ,
           color: isValid ?Color(0xff047857) : Colors.black12,
         ),
-        SizedBox(width: 8.0),
-        Text(message,style: TextStyle(fontSize: 16)),
+        SizedBox(width: 8.w),
+        Text(message,style: TextStyle(fontSize:13.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
       ],
     );
   }

@@ -6,6 +6,7 @@ import 'package:cashkit/screens/profile/view.dart';
 import 'package:cashkit/screens/tab_bar/view.dart';
 import 'package:circle_nav_bar/circle_nav_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NavScreen extends StatefulWidget {
   const NavScreen({Key? key}) : super(key: key);
@@ -45,12 +46,12 @@ class _NavScreenState extends State<NavScreen> {
             Icon(Icons.stacked_bar_chart_outlined,color: Colors.white,size: 30),
             Icon(Icons.person_outline,color: Colors.white,size: 30 ),
           ],
-          inactiveIcons: const [
-            Text("Home",style: TextStyle(color:Color(0xff047857),fontSize: 15,fontWeight: FontWeight.bold)),
-            Text("Budget",style: TextStyle(color:Color(0xff047857),fontSize: 15,fontWeight: FontWeight.bold)),
-            Text("New",style: TextStyle(color:Color(0xff047857),fontSize: 15,fontWeight: FontWeight.bold)),
-            Text("Statistics",style: TextStyle(color:Color(0xff047857),fontSize: 15,fontWeight: FontWeight.bold)),
-            Text("Profile",style: TextStyle(color:Color(0xff047857),fontSize: 15,fontWeight: FontWeight.bold)),
+          inactiveIcons:  [
+            Text("Home",style: TextStyle(color:Color(0xff047857),fontSize: 12.sp,fontWeight: FontWeight.bold)),
+            Text("Budget",style: TextStyle(color:Color(0xff047857),fontSize: 12.sp,fontWeight: FontWeight.bold)),
+            Text("New",style: TextStyle(color:Color(0xff047857),fontSize: 12.sp,fontWeight: FontWeight.bold)),
+            Text("Statistics",style: TextStyle(color:Color(0xff047857),fontSize: 11.sp,fontWeight: FontWeight.bold)),
+            Text("Profile",style: TextStyle(color:Color(0xff047857),fontSize: 12.sp,fontWeight: FontWeight.bold)),
           ],
           color: Colors.red,
           circleColor: Colors.red,

@@ -4,12 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class LoadingProg extends StatelessWidget {
   final double spentAmount;
   final double totalAmount;
-
+final double width;
 
   LoadingProg({
     Key? key,
     required this.spentAmount,
     required this.totalAmount,
+    required this.width,
   }) : super(key: key);
 
   @override
@@ -17,7 +18,7 @@ class LoadingProg extends StatelessWidget {
     double progress = (spentAmount/totalAmount );
     return Container(
 
-      width: MediaQuery.of(context).size.width.w,
+      width:width,
       //275.w
       height: 6.h,
       decoration: BoxDecoration(

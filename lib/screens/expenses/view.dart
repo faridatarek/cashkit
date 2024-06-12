@@ -141,7 +141,7 @@ class _ExpensesState extends State<Expenses> {
                                   Text("EGP 300 of EGP 800",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w400,color: Color(0xff525252))),
                                 ],),
                               SizedBox(height:15,),
-                              LoadingProg(totalAmount:800,spentAmount: 300),
+                              LoadingProg(totalAmount:800,spentAmount: 300,width: 312.w),
                             ],),
                         )
                       ],),
@@ -198,7 +198,7 @@ class _ExpensesState extends State<Expenses> {
                                   Text("EGP 800 of EGP 1,000",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w400,color: Color(0xff525252))),
                                 ],),
                               SizedBox(height:15,),
-                              LoadingProg(totalAmount: 1000,spentAmount: 800),
+                              LoadingProg(totalAmount: 1000,spentAmount: 800,width: 312.w),
                             ],),
                         )
                       ],),
@@ -260,7 +260,7 @@ class _ExpensesState extends State<Expenses> {
                                   Text("EGP 500 of EGP 800",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w400,color: Color(0xff525252))),
                                 ],),
                               SizedBox(height:15,),
-                              LoadingProg(totalAmount:800,spentAmount: 500),
+                              LoadingProg(totalAmount:800,spentAmount: 500,width: 312.w),
                             ],),
                         )
                       ],),
@@ -316,7 +316,7 @@ class _ExpensesState extends State<Expenses> {
                                   Text("EGP 200 of EGP 400",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w400,color: Color(0xff525252))),
                                 ],),
                               SizedBox(height:15,),
-                              LoadingProg(totalAmount:400,spentAmount: 200),
+                              LoadingProg(totalAmount:400,spentAmount: 200,width: 312.w),
                             ],),
                         )
                       ],),
@@ -372,7 +372,7 @@ class _ExpensesState extends State<Expenses> {
                                   Text("EGP 150 of EGP 300",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w400,color: Color(0xff525252))),
                                 ],),
                               SizedBox(height:15,),
-                              LoadingProg(totalAmount:300,spentAmount: 150),
+                              LoadingProg(totalAmount:300,spentAmount: 150,width: 312.w),
                             ],),
                         )
                       ],),
@@ -434,7 +434,7 @@ class _ExpensesState extends State<Expenses> {
                                   Text("EGP 200 of EGP 300",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w400,color: Color(0xff525252))),
                                 ],),
                               SizedBox(height:15,),
-                              LoadingProg(totalAmount:300,spentAmount: 200),
+                              LoadingProg(totalAmount:300,spentAmount: 200,width: 312.w),
                             ],),
                         )
                       ],),
@@ -491,7 +491,7 @@ class _ExpensesState extends State<Expenses> {
                                   Text("EGP 150 of EGP 300",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w400,color: Color(0xff525252))),
                                 ],),
                               SizedBox(height:15,),
-                              LoadingProg(totalAmount:300,spentAmount: 150),
+                              LoadingProg(totalAmount:300,spentAmount: 150,width: 312.w),
                             ],),
                         )
                       ],),

@@ -2,9 +2,7 @@
 import 'package:cashkit/core/desgin/loading.dart';
 import 'package:cashkit/screens/Goals/Your_goal/view.dart';
 import 'package:cashkit/screens/Goals/create_goals/view.dart';
-import 'package:cashkit/screens/home/view.dart';
 import 'package:cashkit/screens/nav_bar/view.dart';
-import 'package:circle_nav_bar/circle_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -50,26 +48,26 @@ class _All_GoalsState extends State<All_Goals> {
           },
           child: Icon(Icons.arrow_back_ios,color: Color(0xff292929),))),
       body:  Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(2.0),
         child: SingleChildScrollView(
           child: Column(
                  crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 5,right: 8,top:22),
+                  padding: const EdgeInsets.only(left: 5,right: 6,top:22),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                      Padding(
-                       padding: const EdgeInsets.all(8.0),
+                       padding: const EdgeInsets.all(5.0),
                        child: Column(
                          crossAxisAlignment: CrossAxisAlignment.start,
                            children: [
-                         Text("  You have 3 ongoing saving goals",style: TextStyle(fontSize: 17,color: Color(0xff292929),fontWeight: FontWeight.w600)),
+                         Text("You have 3 ongoing saving goals",style: TextStyle(fontSize: 13.sp,color: Color(0xff292929),fontWeight: FontWeight.w600)),
                          SizedBox(height: 5.h,),
-                         Text("  Time to start a new one",style: TextStyle(fontSize: 16,color: Color(0xff7C7C7C),fontWeight: FontWeight.w400)),
+                         Text("Time to start a new one",style: TextStyle(fontSize: 13.sp,color: Color(0xff7C7C7C),fontWeight: FontWeight.w400)),
 
                        ]),
 
@@ -82,8 +80,8 @@ class _All_GoalsState extends State<All_Goals> {
                         child: Padding(
                           padding: const EdgeInsets.only(top: 8,right: 4),
                           child: Container(
-                            height: 56,
-                            width:56,
+                            height: 48.h,
+                            width:45.w,
                             decoration: BoxDecoration(shape: BoxShape.circle,
                                 gradient: LinearGradient(
                                   begin: Alignment.topRight,
@@ -127,7 +125,7 @@ class _All_GoalsState extends State<All_Goals> {
                 ),),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("Saving Goals",style: TextStyle(fontSize: 17,color: Color(0xff292929),fontWeight: FontWeight.w600),),
+                child: Text("Saving Goals",style: TextStyle(fontSize: 18.sp,color: Color(0xff292929),fontWeight: FontWeight.w600),),
               )
               ,Container(
                 height: MediaQuery.of(context).size.height,
@@ -139,7 +137,9 @@ class _All_GoalsState extends State<All_Goals> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Your_goal (data: containerData[index]
+                            builder: (context) =>
+
+                                Your_goal (data: containerData[index]
                               ,onDelete:  () {
                               deleteData(index);
                             },),
@@ -160,35 +160,35 @@ class _All_GoalsState extends State<All_Goals> {
                                   borderRadius: BorderRadius.all(Radius.circular(4)), //border corner radius
 
                                 ),
-                                height:60,width:40,
+                                height:56.h,width:56.h,
                                 child:containerData[index].goalImg,
                               ),
                               SizedBox(width:9,),
                               Container
                                 (
 
-                                height:70,width:MediaQuery.of(context).size.width.w*0.65,
+                                height:70.h,width:240.w,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(" ${containerData[index].goalName}",style: TextStyle(fontSize:15,fontWeight: FontWeight.w500,color: Color(0xff292929))),
-                                    SizedBox(height:13,),
+                                    Text(" ${containerData[index].goalName}",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w500,color: Color(0xff292929))),
+                                    SizedBox(height:12.h),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(" ${containerData[index].spendTime}",style: TextStyle(fontSize:12,fontWeight: FontWeight.w400,color: Color(0xff7C7C7C))),
 
-                                        Text(" ${containerData[index].spendFromTotal}",style: TextStyle(fontSize: 11,fontWeight: FontWeight.w400,color: Color(0xff292929))),
+                                      children: [
+                                        Text(" ${containerData[index].spendTime}",style: TextStyle(fontSize:7.sp,fontWeight: FontWeight.w400,color: Color(0xff7C7C7C))),
+                                        SizedBox(width:9.w,),
+                                        Text(" ${containerData[index].spendFromTotal}",style: TextStyle(fontSize: 7.sp,fontWeight: FontWeight.w400,color: Color(0xff292929))),
                                       ],),
-                                    SizedBox(height:7,),
-                                    LoadingProg(totalAmount: containerData[index].totalAmount,spentAmount: containerData[index].spendAmount),
+                                    SizedBox(height:7.h,),
+                                    LoadingProg(totalAmount: containerData[index].totalAmount,spentAmount: containerData[index].spendAmount,width: 350.w),
                                   ],),
                               )
                             ],),
                         ),
                         margin: EdgeInsets.symmetric(vertical: 5,horizontal: 8),
-                        width:MediaQuery.of(context).size.width.w,
-                        height:90.h,
+                        width:MediaQuery.of(context).size.width,
+                        height:97.h,
                         decoration: BoxDecoration(
 
                           color: Colors.white,

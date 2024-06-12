@@ -78,8 +78,8 @@ class _YourBudget_needsState extends State<YourBudget_needs> {
                               borderRadius: BorderRadius.all(
                                   Radius.circular(4)), //border corner radius
                             ),
-                            height: 48,
-                            width: 35,
+                            height: 46.w,
+                            width: 46.w,
                             child: CircleAvatar(
                               child: budget.selectedimgCategory,
                               backgroundColor: Color(0xffEFEFEF),
@@ -88,8 +88,8 @@ class _YourBudget_needsState extends State<YourBudget_needs> {
                           ),
                           SizedBox(width: 5),
                           Container(
-                            height: 48,
-                            width: 279.w,
+                            height: 48.h,
+                            width: 261.w,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -102,22 +102,22 @@ class _YourBudget_needsState extends State<YourBudget_needs> {
                                       child: Text(
                                           budget.selectedCategory,
                                           style: TextStyle(
-                                              fontSize: 16,
+                                              fontSize: 13.sp,
                                               fontWeight: FontWeight.w600,
                                               color: Color(0xff292929))),
                                     ),
                                     Text(
                                         "EGP ${spentAmount_needs} of EGP ${budget.mainAmount.toStringAsFixed(2)}",
                                         style: TextStyle(
-                                            fontSize: 12,
+                                            fontSize: 9.sp,
                                             fontWeight: FontWeight.w400,
                                             color: Color(0xff525252))),
                                   ],
                                 ),
-                                SizedBox(height: 15),
+                                SizedBox(height: 15.h),
                                 LoadingProg(
                                     totalAmount: budget.mainAmount,
-                                    spentAmount: spentAmount_needs),
+                                    spentAmount: spentAmount_needs,width: 320.w),
                               ],
                             ),
                           ),
@@ -128,7 +128,7 @@ class _YourBudget_needsState extends State<YourBudget_needs> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: selectedSubcategories_needs.map((subcategory) {
                           return Container(
-                            padding: EdgeInsets.all(16.0),
+                            padding: EdgeInsets.all(5.0),
                             child: Row(
                               children: [
                                 Checkbox(
@@ -151,18 +151,18 @@ class _YourBudget_needsState extends State<YourBudget_needs> {
                                     borderRadius:
                                     BorderRadius.all(Radius.circular(4)),
                                   ),
-                                  height: 48,
-                                  width: 30.w,
+                                  height: 40,
+                                  width: 40.w,
                                   child: CircleAvatar(
                                     child: budget.subCategoryimg,
                                     backgroundColor: Color(0xffEFEFEF),
-                                    radius: 30,
+                                    radius: 30.r,
                                   ),
                                 ),
                                 SizedBox(width: 5),
                                 Container(
                                   height: 48,
-                                  width: 210.w,
+                                  width: 195.w,
                                   child: Column(
                                     crossAxisAlignment:
                                     CrossAxisAlignment.start,
@@ -174,13 +174,14 @@ class _YourBudget_needsState extends State<YourBudget_needs> {
                                           Text(
                                               budget.selectedSubcategory,
                                               style: TextStyle(
-                                                  fontSize: 15,
+                                                  fontSize: 12.sp,
                                                   fontWeight: FontWeight.w600,
                                                   color: Color(0xff292929))),
                                           Text(
                                               "EGP ${_isCheckedList_needs[index] ? budget.mainAmount.toString() : spentAmount_needs.toString()} of EGP ${budget.mainAmount}",
                                               style: TextStyle(
-                                                  fontSize: 12,
+
+                                                  fontSize: 8.r,
                                                   fontWeight: FontWeight.w400,
                                                   color: Color(0xff525252))),
                                         ],
@@ -188,7 +189,7 @@ class _YourBudget_needsState extends State<YourBudget_needs> {
                                       SizedBox(height: 15),
                                       LoadingProg(
                                           totalAmount: budget.mainAmount,
-                                          spentAmount: spentAmount_needs),
+                                          spentAmount: spentAmount_needs,width: 328.w),
                                     ],
                                   ),
                                 ),
@@ -200,8 +201,8 @@ class _YourBudget_needsState extends State<YourBudget_needs> {
                     ],
                   ),
                 ),
-                margin: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
-                width: MediaQuery.of(context).size.width.w,
+                margin: EdgeInsets.symmetric(vertical: 5, horizontal:3.w),
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius:
