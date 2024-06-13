@@ -24,14 +24,17 @@ class SavingScreen extends StatelessWidget {
               children: [
                 Text(
                   "Saving Fund !",
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24.sp),
                 ),
                 SizedBox(
                   height: 24.h,
                 ),
-                Text(
-                  "Now you can save from your total budget",
-                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Text(
+                    "Now you can save from your total budget",
+                    style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17.sp),
+                  ),
                 ),
                 SizedBox(
                   height: 24.h,
@@ -74,7 +77,7 @@ class SavingScreen extends StatelessWidget {
                       "Do you want to carry on and make a saving box of your own?",
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
-                        fontSize: 18,
+                        fontSize: 18.sp,
                       ),
                     ),
                   ),
@@ -117,7 +120,7 @@ class SavingScreen extends StatelessWidget {
                                         "Great choice!",
                                         style: TextStyle(
                                             fontWeight: FontWeight.w600,
-                                            fontSize: 23),
+                                            fontSize: 23.sp),
                                       ),
                                       SizedBox(height: 8.h,),
                                       Align(
@@ -129,7 +132,7 @@ class SavingScreen extends StatelessWidget {
                                             "Now you will save EGP 1000 this month in your saving box.",
                                             style: TextStyle(
                                                 fontWeight: FontWeight.w400,
-                                                fontSize: 16),
+                                                fontSize: 16.sp),
                                           ),
                                         ),
                                       ),

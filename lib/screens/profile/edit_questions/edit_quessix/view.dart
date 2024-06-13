@@ -1,5 +1,6 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EditQuestionSix extends StatefulWidget {
   @override
@@ -28,7 +29,7 @@ class _EditQuestionSixState extends State<EditQuestionSix> {
           children: [
             Text(
               "Which of these do you spend money on ?",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+              style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600),
             ),
             SizedBox(
               height: 16,
@@ -36,7 +37,7 @@ class _EditQuestionSixState extends State<EditQuestionSix> {
             DropdownButtonHideUnderline(
               child: DropdownButton2<String>(
                 isExpanded: true,
-                hint: const Row(
+                hint:  Row(
                   children: [
                     SizedBox(
                       width: 4,
@@ -45,7 +46,7 @@ class _EditQuestionSixState extends State<EditQuestionSix> {
                       child: Text(
                         'Select Item',
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -59,8 +60,8 @@ class _EditQuestionSixState extends State<EditQuestionSix> {
                           value: item,
                           child: Text(
                             item,
-                            style: const TextStyle(
-                              fontSize: 16,
+                            style:  TextStyle(
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w500,
                               color: Colors.black,
                             ),

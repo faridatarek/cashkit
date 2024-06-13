@@ -180,54 +180,56 @@ class Charts_screen extends StatelessWidget {
             SizedBox(height: 40.h,),
             Text("Top categories of expenses,February",style: TextStyle(fontSize: 16.sp,color: Color(0xff292929),fontWeight: FontWeight.w600)),
              SizedBox(height: 10.h,),
-                Padding(
+                SingleChildScrollView(
+                  child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
 
-                    height:800.h,
-                    width: 400.w,
-                    child: ListView.separated(
-                      separatorBuilder: (context, index) {
-                        return SizedBox(height: 15.h);
-                      },
-                      itemCount: allCateg_data_list.length,
-                      itemBuilder: (context, index) {
-                        return Container(
-                          width: 396.w,
-                          height: 66.h,
-                          decoration: BoxDecoration(
+                      height:800.h,
+                      width: 400.w,
+                      child: ListView.separated(
+                        separatorBuilder: (context, index) {
+                          return SizedBox(height: 15.h);
+                        },
+                        itemCount: allCateg_data_list.length,
+                        itemBuilder: (context, index) {
+                          return Container(
+                            width: 396.w,
+                            height: 66.h,
+                            decoration: BoxDecoration(
 
-                            color: Colors.white,
-                            borderRadius: BorderRadius.all(Radius.circular(8)), //border corner radius
-                            boxShadow:[
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.2), //color of shadow
+                              color: Colors.white,
+                              borderRadius: BorderRadius.all(Radius.circular(8)), //border corner radius
+                              boxShadow:[
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.2), //color of shadow
 
-                                spreadRadius:1, //spread radius
-                                blurRadius:10, // blur radius
-                                //changes position of shadow
-                                //first paramerter of offset is left-right
-                                //second parameter is top to down
-                              ),
-                              //you can set more BoxShadow() here
-                            ],
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Row(children: [
-                              CircleAvatar(backgroundColor:  Color(0xffF6F6F6),child: allCateg_data_list[index].categImg,radius: 18.r,),
-                              SizedBox(width: 6.w,),
-                              Text("${allCateg_data_list[index].categName}",style: TextStyle(fontSize: 14.sp,color: Color(0xff292929),fontWeight: FontWeight.w500)),
-                             Spacer(),
-                              Text(" -EGP ${allCateg_data_list[index].categSpend}",style: TextStyle(fontSize: 14.sp,color: Color(0xffF14242),fontWeight: FontWeight.w500)),
-                            ],),
+                                  spreadRadius:1, //spread radius
+                                  blurRadius:10, // blur radius
+                                  //changes position of shadow
+                                  //first paramerter of offset is left-right
+                                  //second parameter is top to down
+                                ),
+                                //you can set more BoxShadow() here
+                              ],
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(children: [
+                                CircleAvatar(backgroundColor:  Color(0xffF6F6F6),child: allCateg_data_list[index].categImg,radius: 18.r,),
+                                SizedBox(width: 6.w,),
+                                Text("${allCateg_data_list[index].categName}",style: TextStyle(fontSize: 14.sp,color: Color(0xff292929),fontWeight: FontWeight.w500)),
+                               Spacer(),
+                                Text(" -EGP ${allCateg_data_list[index].categSpend}",style: TextStyle(fontSize: 14.sp,color: Color(0xffF14242),fontWeight: FontWeight.w500)),
+                              ],),
 
-                          ),
-                        ) ;
-                      },
+                            ),
+                          ) ;
+                        },
+                      ),
                     ),
-                  ),
             ),
+                ),
           ]),
         ),
       ),

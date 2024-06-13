@@ -4,6 +4,7 @@ import 'package:cashkit/screens/Goals/Your_goal/view.dart';
 import 'package:cashkit/screens/Goals/all_goals/view.dart';
 import 'package:cashkit/screens/articles/view.dart';
 import 'package:cashkit/screens/expenses/view.dart';
+import 'package:cashkit/screens/profile/view.dart';
 import 'package:circular_chart_flutter/circular_chart_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -55,7 +56,7 @@ class HomeScreen extends StatelessWidget {
       "in 2023",
     ];
 
-    double completedPercentage =70;
+    double completedPercentage =72;
 
     return Scaffold(
       body: Padding(
@@ -73,7 +74,12 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(left:5.0),
-                          child: CircleAvatar(backgroundImage: AssetImage("assets/images/avtar1.png"),radius:27.r),
+                          child: InkWell(
+                            onTap: ()
+                            {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileScreen()));
+                            },
+                              child: CircleAvatar(backgroundImage: AssetImage("assets/images/avtar1.png"),radius:27.r)),
                         ),
                         SizedBox(width: 10.w,),
                         Padding(
@@ -237,7 +243,7 @@ class HomeScreen extends StatelessWidget {
                               ]),
                           Text("  Saving",style: TextStyle(fontSize: 16.sp,color: Color(0xff989898),fontWeight: FontWeight.bold)),
                           SizedBox(height: 5.h,),
-                          Text("  EGP 800",style: TextStyle(fontSize: 16.sp,color: Color(0xff292929),fontWeight: FontWeight.bold)),
+                          Text("  EGP 1000",style: TextStyle(fontSize: 16.sp,color: Color(0xff292929),fontWeight: FontWeight.bold)),
 
                         ],
                       ),
@@ -545,112 +551,112 @@ class HomeScreen extends StatelessWidget {
                       },
                       child: Text("View all",style: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.w400,color: Color(0xff525252)))),
                 ],),
-              Container(
-                height: 100.w,
-                width: MediaQuery.of(context).size.width ,
-                child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    // physics: NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemBuilder: (context, index) =>GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Your_goal (data: containerData[index]
-                              ,onDelete:  () {
+               Container(
+            height: 100.w,
+            width: MediaQuery.of(context).size.width ,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                // physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemBuilder: (context, index) =>GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Your_goal (data: containerData[index]
+                          ,onDelete:  () {
 
-                              },),
+                          },),
+                      ),
+                    );
+                  },
+                  child:Container(
+
+                    child: Padding(
+                      padding: const EdgeInsets.all(7.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+
+                              color:Color(0xffEFEFEF),
+                              borderRadius: BorderRadius.all(Radius.circular(4)), //border corner radius
+
+                            ),
+                            height:45.h,width:35.w,
+                            child:containerData[index].goalImg,
                           ),
-                        );
-                      },
-                      child:Container(
+                          SizedBox(width:9,),
+                          Container
+                            (
 
-                        child: Padding(
-                          padding: const EdgeInsets.all(7.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-
-                                  color:Color(0xffEFEFEF),
-                                  borderRadius: BorderRadius.all(Radius.circular(4)), //border corner radius
-
-                                ),
-                                height:45.h,width:35.w,
-                                child:containerData[index].goalImg,
-                              ),
-                              SizedBox(width:9,),
-                              Container
-                                (
-
-                                height:70,width:MediaQuery.of(context).size.width.w*0.45,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                            height:70,width:MediaQuery.of(context).size.width.w*0.45,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
                                   children: [
-                                    Row(
-                                      children: [
-                                        Text(" ${containerData[index].goalName}",style: TextStyle(fontSize:12.sp,fontWeight: FontWeight.w500,color: Color(0xff292929))),
-                                     Spacer(),
-                                        Icon(Icons.arrow_forward_ios,color: Color(0xff989898),size: 17,)
-                                      ],
-                                    ),
-                                    SizedBox(height:7,),
+                                    Text(" ${containerData[index].goalName}",style: TextStyle(fontSize:12.sp,fontWeight: FontWeight.w500,color: Color(0xff292929))),
+                                    Spacer(),
+                                    Icon(Icons.arrow_forward_ios,color: Color(0xff989898),size: 17,)
+                                  ],
+                                ),
+                                SizedBox(height:7,),
                                 Text(" ${containerData[index].spendFromTotal}",style: TextStyle(fontSize: 8.sp,fontWeight: FontWeight.w800,color: Color(0xff989899))),
-                                    SizedBox(height:7,),
+                                SizedBox(height:7,),
 
-                                    Container(
+                                Container(
 
-                                      width: 140.w,
-                                      //275.w
+                                  width: 140.w,
+                                  //275.w
+                                  height: 6.h,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(24.sp),
+                                    color: Color(0xffEFEFEF),
+                                  ),
+                                  child: Align(
+                                    alignment: AlignmentDirectional.centerStart,
+                                    child: Container(
+                                      width:150* (containerData[index].spendAmount/containerData[index].totalAmount).w,
                                       height: 6.h,
                                       decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(24.sp),
-                                        color: Color(0xffEFEFEF),
-                                      ),
-                                      child: Align(
-                                        alignment: AlignmentDirectional.centerStart,
-                                        child: Container(
-                                          width:150* (containerData[index].spendAmount/containerData[index].totalAmount).w,
-                                          height: 6.h,
-                                          decoration: BoxDecoration(
-                                              gradient: LinearGradient(colors: [
-                                                Color(0xffAFFE9C),
-                                                Color(0xff047857).withOpacity(.6),
-                                                Color(0xff005B3B).withOpacity(.8),
+                                          gradient: LinearGradient(colors: [
+                                            Color(0xffAFFE9C),
+                                            Color(0xff047857).withOpacity(.6),
+                                            Color(0xff005B3B).withOpacity(.8),
 
-                                              ]),
-                                              borderRadius: BorderRadius.circular(24.sp),
-                                              color: Theme.of(context).primaryColor),
-                                        ),
-                                      ),
-                                    )
-                                  ],),
+                                          ]),
+                                          borderRadius: BorderRadius.circular(24.sp),
+                                          color: Theme.of(context).primaryColor),
+                                    ),
+                                  ),
+                                )
+                              ],),
 
-                              )
-                            ],),
-                        ),
-                        margin: EdgeInsets.symmetric(vertical: 5,horizontal: 8),
-                        width:206.w,
-                        height:90.h,
-                        decoration: BoxDecoration(
-
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(8)), //border corner radius
-                          boxShadow:[
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.4), //color of shadow
-
-                              spreadRadius:1,
-                              blurRadius:10,
-                            ),
-
-                          ],
-                        ),),
+                          )
+                        ],),
                     ),
-                    itemCount: containerData.length),
-              ),
+                    margin: EdgeInsets.symmetric(vertical: 5,horizontal: 8),
+                    width:206.w,
+                    height:90.h,
+                    decoration: BoxDecoration(
+
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(8)), //border corner radius
+                      boxShadow:[
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.4), //color of shadow
+
+                          spreadRadius:1,
+                          blurRadius:10,
+                        ),
+
+                      ],
+                    ),),
+                ),
+                itemCount: containerData.length),
+          ),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

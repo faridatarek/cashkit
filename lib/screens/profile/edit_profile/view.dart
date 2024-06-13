@@ -28,7 +28,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         title: Text(
           "Edit Profile",
           style: TextStyle(
-              color: Colors.black, fontWeight: FontWeight.w600, fontSize: 20),
+              color: Colors.black, fontWeight: FontWeight.w600, fontSize: 20.sp),
         ),
         leading: Icon(
           Icons.arrow_back_ios,
@@ -91,7 +91,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     border: InputBorder.none,
                     hintText: "User Name",
                     enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(12),
                         borderSide:
                             BorderSide(color: Theme.of(context).primaryColor))),
               ),
@@ -118,7 +118,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     border: InputBorder.none,
                     hintText: "Your Gmail",
                     enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(12),
                         borderSide:
                             BorderSide(color: Theme.of(context).primaryColor))),
               ),
@@ -144,7 +144,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     suffixIcon: IconButton(
                       icon: Icon(passwordVisible
                           ? Icons.visibility
-                          : Icons.visibility_off),
+                          : Icons.visibility_off  ,color: Theme.of(context).primaryColor,),
                       onPressed: () {
                         setState(
                           () {
@@ -158,7 +158,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     border: InputBorder.none,
                     hintText: "Your Password",
                     enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(12),
                         borderSide:
                             BorderSide(color: Theme.of(context).primaryColor))),
               ),

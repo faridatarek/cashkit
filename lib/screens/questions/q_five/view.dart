@@ -56,7 +56,7 @@ class _QuestionFiveScreenState extends State<QuestionFiveScreen> {
                             textAlign: TextAlign.center,
                             "Enter how many children do you have? ",
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w600),
+                                fontSize: 18.sp, fontWeight: FontWeight.w600),
                           ),
                           SizedBox(
                             height: 45.h,
@@ -65,13 +65,13 @@ class _QuestionFiveScreenState extends State<QuestionFiveScreen> {
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(8),
                                 boxShadow: [
-                                  // ظل
+
                                   BoxShadow(
                                     color: Colors.grey.withOpacity(0.2),
-                                    // لون الظل
+
                                     offset: Offset(0.0, 5.0),
-                                    // إزاحة الظل
-                                    blurRadius: 10.0, // ضبابية الظل
+
+                                    blurRadius: 10.0,
                                   ),
                                 ],
                                 color: Colors.white,
@@ -86,7 +86,7 @@ class _QuestionFiveScreenState extends State<QuestionFiveScreen> {
                               keyboardType: TextInputType.number,
                               decoration: InputDecoration(
                                 hintText: "Number of children",
-                                hintStyle: TextStyle(fontSize: 16),
+                                hintStyle: TextStyle(fontSize: 16.sp),
                                 border: InputBorder.none,
                               ),
                             ),
@@ -106,12 +106,12 @@ class _QuestionFiveScreenState extends State<QuestionFiveScreen> {
                               textAlign: TextAlign.center,
                               "I don’t have any children",
                               style: TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                   color: Theme.of(context).primaryColor),
                             ),
                           ),
-                          SizedBox(height: 100.h,),
+                          SizedBox(height: 40.h,),
                           InkWell(
                             onTap: () {
                               Navigator.push(
@@ -120,37 +120,40 @@ class _QuestionFiveScreenState extends State<QuestionFiveScreen> {
                                     builder: (context) => SavingScreen(),
                                   ));
                             },
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 12),
-                              margin: EdgeInsets.only(left: 230),
-                              height: 44.h,
-                              width: 124.w,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  color: Theme.of(context).primaryColor,
-                                  border: Border.all(
-                                    color: Color(0xffDCDCDC),
-                                  )),
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    Icons.arrow_forward,
-                                    size: 14,
-                                    color: Color(0xffDCDCDC),
-                                  ),
-                                  SizedBox(
-                                    width: 4.w,
-                                  ),
-                                  Text(
-                                    "Continue",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 14,
+                            child: Padding(
+                              padding:  EdgeInsets.only(bottom: 80.h),
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 10.w, vertical: 5.h),
+                                margin: EdgeInsets.only(left: 170),
+                                height: 44.h,
+                                width: 124.w,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    color: Theme.of(context).primaryColor,
+                                    border: Border.all(
+                                      color: Color(0xffDCDCDC),
+                                    )),
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.arrow_forward,
+                                      size: 14,
                                       color: Color(0xffDCDCDC),
                                     ),
-                                  )
-                                ],
+                                    SizedBox(
+                                      width: 4.w,
+                                    ),
+                                    Text(
+                                      "Continue",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 14,
+                                        color: Color(0xffDCDCDC),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           ),

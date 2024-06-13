@@ -21,7 +21,7 @@ class EditAllQuestionScreen extends StatelessWidget {
         title: Text(
           "Questions ",
           style: TextStyle(
-              color: Colors.black, fontWeight: FontWeight.w600, fontSize: 20),
+              color: Colors.black, fontWeight: FontWeight.w600, fontSize: 20.sp),
         ),
         leading: Icon(
           Icons.arrow_back_ios,
@@ -31,37 +31,37 @@ class EditAllQuestionScreen extends StatelessWidget {
       body: ListView(
         children: [
           SizedBox(
-              height: 90, width: double.infinity, child: EditQuestionOne()),
+              height: 120.h, width: double.infinity, child: EditQuestionOne()),
           SizedBox(
             height: 10.h,
           ),
           SizedBox(
-              height: 90, width: double.infinity, child: EditQuestionTwo()),
+              height: 120.h, width: double.infinity, child: EditQuestionTwo()),
           SizedBox(
             height: 10.h,
           ),
           SizedBox(
-              height: 90, width: double.infinity, child: EditQuestionThree()),
+              height: 120.h, width: double.infinity, child: EditQuestionThree()),
           SizedBox(
             height: 10.h,
           ),
           SizedBox(
-              height: 90, width: double.infinity, child: EditQuestionFour()),
+              height: 120.h, width: double.infinity, child: EditQuestionFour()),
           SizedBox(
             height: 10.h,
           ),
           SizedBox(
-              height: 90, width: double.infinity, child: EditQuestionFive()),
+              height: 120.h, width: double.infinity, child: EditQuestionFive()),
           SizedBox(
             height: 10.h,
           ),
           SizedBox(
-              height: 90, width: double.infinity, child: EditQuestionSix()),
+              height: 120.h, width: double.infinity, child: EditQuestionSix()),
           SizedBox(
             height: 20.h,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            padding:EdgeInsets.symmetric(horizontal: 16.0,vertical: 16.h),
             child: BTN(
               text: 'Save',
               onPrees: () {},

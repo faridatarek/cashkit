@@ -94,7 +94,7 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => RoscaMonthTwoScreen(),
+                  builder: (context) => RoscaHomeScreen(),
                 ));
           },
           style: ElevatedButton.styleFrom(
@@ -104,7 +104,7 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
                 borderRadius: BorderRadius.circular(10.r),
               )),
           child: Text(
-            "Next Month",
+            "View ROSCAs",
             style: TextStyle(
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w700,
@@ -120,12 +120,12 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
               children: [
                 Text(
                   "Month: 01-2024",
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16.sp),
                 ),
                 Spacer(),
                 Text(
                   "Total Paid: $totalPaid",
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16.sp),
                 ),
               ],
             ),
@@ -143,8 +143,8 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
               child: Row(
                 children: [
                   Container(
-                    width: 32.w,
-                    height: 32.h,
+                    width: 33.w,
+                    height: 34.h,
                     margin: EdgeInsets.symmetric(horizontal: 12),
                     padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
@@ -156,7 +156,7 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
                       child: Text(
                         "1",
                         style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w600,
                             color: Theme.of(context).primaryColor),
                       ),
@@ -165,7 +165,7 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
                   Text(
                     "Sara",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -203,7 +203,7 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
                       Text(
                         hasPaidOne ? 'pay' : 'Didn’t  Pay',
                         style: TextStyle(
-                            fontSize: 12, fontWeight: FontWeight.w400),
+                            fontSize: 12.sp, fontWeight: FontWeight.w400),
                       ),
                     ],
                   ),
@@ -224,8 +224,8 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
               child: Row(
                 children: [
                   Container(
-                    width: 32.w,
-                    height: 32.h,
+                    width: 33.w,
+                    height: 34.h,
                     margin: EdgeInsets.symmetric(horizontal: 12),
                     padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
@@ -237,7 +237,7 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
                       child: Text(
                         "2",
                         style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w600,
                             color: Theme.of(context).primaryColor),
                       ),
@@ -246,7 +246,7 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
                   Text(
                     "Ahmed",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -284,7 +284,7 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
                       Text(
                         hasPaidTwo ? 'pay' : 'Didn’t  Pay',
                         style: TextStyle(
-                            fontSize: 12, fontWeight: FontWeight.w400),
+                            fontSize: 12.sp, fontWeight: FontWeight.w400),
                       ),
                     ],
                   ),
@@ -305,8 +305,8 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
               child: Row(
                 children: [
                   Container(
-                    width: 32.w,
-                    height: 32.h,
+                    width: 33.w,
+                    height: 34.h,
                     margin: EdgeInsets.symmetric(horizontal: 12),
                     padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
@@ -318,7 +318,7 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
                       child: Text(
                         "3",
                         style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w600,
                             color: Theme.of(context).primaryColor),
                       ),
@@ -327,7 +327,7 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
                   Text(
                     "Mohamed",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -365,7 +365,7 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
                       Text(
                         hasPaidThree ? 'pay' : 'Didn’t  Pay',
                         style: TextStyle(
-                            fontSize: 12, fontWeight: FontWeight.w400),
+                            fontSize: 12.sp, fontWeight: FontWeight.w400),
                       ),
                     ],
                   ),

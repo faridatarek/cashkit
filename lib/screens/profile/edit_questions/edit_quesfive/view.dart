@@ -1,5 +1,6 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EditQuestionFive extends StatefulWidget {
   @override
@@ -15,13 +16,13 @@ class _EditQuestionFiveState extends State<EditQuestionFive> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding:  EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               "Enter how many children do you have?",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+              style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600),
             ),
             SizedBox(
               height: 16,
@@ -29,7 +30,7 @@ class _EditQuestionFiveState extends State<EditQuestionFive> {
             DropdownButtonHideUnderline(
               child: DropdownButton2<String>(
                 isExpanded: true,
-                hint: const Row(
+                hint:  Row(
                   children: [
                     SizedBox(
                       width: 4,
@@ -38,7 +39,7 @@ class _EditQuestionFiveState extends State<EditQuestionFive> {
                       child: Text(
                         'Select Item',
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -52,8 +53,8 @@ class _EditQuestionFiveState extends State<EditQuestionFive> {
                           value: item,
                           child: Text(
                             item,
-                            style: const TextStyle(
-                              fontSize: 16,
+                            style:  TextStyle(
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w500,
                               color: Colors.black,
                             ),

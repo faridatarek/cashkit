@@ -45,9 +45,16 @@ class Rating extends StatelessWidget {
                     (
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                    Text(" Send",style: TextStyle(fontSize: 20.sp,color: Color(0xff047857),fontWeight: FontWeight.w500)),
-                      Text("Write a Review",style: TextStyle(fontSize: 20.sp,color: Color(0xff292929),fontWeight: FontWeight.w600)),
-                      Text(" Cancel",style: TextStyle(fontSize: 20.sp,color: Color(0xff047857),fontWeight: FontWeight.w500)),
+                    Text(" Send",style: TextStyle(fontSize: 16.sp,color: Color(0xff047857),fontWeight: FontWeight.w500)),
+                      Text("Write a Review",style: TextStyle(fontSize: 16.sp,color: Color(0xff292929),fontWeight: FontWeight.w600)),
+                      InkWell(
+                        onTap:  () {
+                          Navigator.pop(
+                            context,
+
+                          );
+                        },
+                          child: Text(" Cancel",style: TextStyle(fontSize: 16.sp,color: Color(0xff047857),fontWeight: FontWeight.w500))),
                   ],),
                 ),
                 Padding(
@@ -55,20 +62,20 @@ class Rating extends StatelessWidget {
                     left: 80.w,top: 10.h,bottom: 10
                   ),
                   child: Row(children: [
-                    Icon(Icons.star,color: Color(0xffFFB400),size: 35),
+                    Icon(Icons.star,color: Color(0xffFFB400),size: 30),
                     SizedBox(width: 3.w,),
-                    Icon(Icons.star,color: Color(0xffFFB400),size: 35),
+                    Icon(Icons.star,color: Color(0xffFFB400),size: 30),
                     SizedBox(width: 3.w,),
-                    Icon(Icons.star,color: Color(0xffFFB400),size: 35),
+                    Icon(Icons.star,color: Color(0xffFFB400),size: 30),
                     SizedBox(width: 3.w,),
-                    Icon(Icons.star,color: Color(0xffFFB400),size: 35),
+                    Icon(Icons.star,color: Color(0xffFFB400),size: 30),
                     SizedBox(width: 3.w,),
-                    Icon(Icons.star,color: Color(0xffFFB400),size: 35),
+                    Icon(Icons.star,color: Color(0xffFFB400),size: 30),
                     SizedBox(width: 3.w,)
 
                   ],),
                 ),
-                Center(child: Text("Tap a Star To Rate       ",style: TextStyle(fontSize: 15.sp,color: Color(0xff989898),fontWeight: FontWeight.w400)))
+                Center(child: Text("  Tap a Star To Rate       ",style: TextStyle(fontSize: 13.sp,color: Color(0xff989898),fontWeight: FontWeight.w400)))
               ,SizedBox(height: 25.h)
                     ,Container(
                       color:Color(0xff989898).withOpacity(0.6) ,
@@ -77,7 +84,7 @@ class Rating extends StatelessWidget {
               ,SizedBox(height: 18.h),
                     Padding(
                       padding:  EdgeInsets.only(left: 9.0.w),
-                      child: Text("Title",style: TextStyle(fontSize: 17.sp,color: Color(0xff989898),fontWeight: FontWeight.w400)),
+                      child: Text("Title",style: TextStyle(fontSize: 15.sp,color: Color(0xff989898),fontWeight: FontWeight.w400)),
                     )
                    ,SizedBox(height: 16.h)
                     ,Container(
@@ -87,7 +94,7 @@ class Rating extends StatelessWidget {
               SizedBox(height: 16.h),
                     Padding(
                       padding:  EdgeInsets.only(left: 9.0.w),
-                      child: Text("Review (Optional)",style: TextStyle(fontSize: 17.sp,color: Color(0xff989898),fontWeight: FontWeight.w400)),
+                      child: Text("Review (Optional)",style: TextStyle(fontSize: 15.sp,color: Color(0xff989898),fontWeight: FontWeight.w400)),
                     )
 
               ])

@@ -59,7 +59,7 @@ class _AddMemberScreenState extends State<AddMemberScreen> {
                               Border.all(color: Theme.of(context).primaryColor),
                           color: Colors.white),
                       child: Image.asset(
-                        "assets/images/correct.png",
+                        "assets/images/Confirm.png",
                         width: 50.w,
                         height: 50.h,
                       ),
@@ -101,7 +101,11 @@ class _AddMemberScreenState extends State<AddMemberScreen> {
                               ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                       backgroundColor: Colors.white70),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pop(
+                                        context,
+                                  );
+                                  },
                                   child: Text(
                                     "Cancel",
                                     style: TextStyle(color: Colors.black),
@@ -143,7 +147,7 @@ class _AddMemberScreenState extends State<AddMemberScreen> {
               decoration: InputDecoration(
                 suffixIcon: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      fixedSize: Size(80.w, 50.h),
+                      fixedSize: Size(80.w, 57.h),
                       backgroundColor: Theme.of(context).primaryColor,
                     ),
                     onPressed: () {

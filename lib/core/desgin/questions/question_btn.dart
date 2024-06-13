@@ -13,10 +13,10 @@ class QuestionBTNScreen extends StatelessWidget {
     return GestureDetector(
       onTap: onPrees,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-        margin: EdgeInsets.only(left: 230),
+        padding: EdgeInsets.symmetric( vertical: 12,horizontal: 10.w),
+        margin: EdgeInsets.only(left: 200.w),
         height: 44.h,
-        width: 124.w,
+        width: 125.w,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
             color: isSelected?Theme.of(context).primaryColor:Color(0xffEFEFEF),
@@ -35,7 +35,7 @@ class QuestionBTNScreen extends StatelessWidget {
             ),
             Text(
               "Continue",
-              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14,color: Color(0xffDCDCDC),),
+              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14.sp,color: Color(0xffDCDCDC),),
             )
           ],
         ),

@@ -7,6 +7,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
 
+import '../rosca_home/view.dart';
+
 class CreatRosca extends StatefulWidget {
   const CreatRosca({Key? key}) : super(key: key);
 
@@ -142,8 +144,8 @@ class _CreatRoscaState extends State<CreatRosca> {
                   fontWeight: FontWeight.w600)),
           leading: InkWell(
               onTap: () {
-                // Navigator.push(context,
-                //     MaterialPageRoute(builder: (context) =>NavScreen ()));
+                Navigator.push(context,
+                     MaterialPageRoute(builder: (context) =>RoscaHomeScreen ()));
               },
               child: Icon(
                 Icons.arrow_back_ios,

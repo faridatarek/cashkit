@@ -59,8 +59,8 @@ class _QuestionFourScreenState extends State<QuestionFourScreen> {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => QuestionFiveScreen(),));
               },
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                margin: EdgeInsets.only(left: 230),
+                padding: EdgeInsets.symmetric(horizontal:5.w, vertical: 12.h),
+                margin: EdgeInsets.only(left:195),
                 height: 44.h,
                 width: 124.w,
                 decoration: BoxDecoration(
@@ -111,11 +111,11 @@ class _QuestionFourScreenState extends State<QuestionFourScreen> {
             ],
           ),
           SizedBox(
-            height: 48,
+            height: 30.h,
           ),
           Text(
             textAlign: TextAlign.center,
-            'What is your edite_income over the week / month?',
+            'What is your income over the week / month?',
             style: TextStyle(
                 fontWeight: FontWeight.w700,
                 fontSize: 16,

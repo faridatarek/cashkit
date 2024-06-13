@@ -1,5 +1,6 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EditQuestionTwo extends StatefulWidget {
   @override
@@ -22,12 +23,12 @@ class _EditQuestionTwoState extends State<EditQuestionTwo> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Tell us about your home',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600),),
+            Text('Tell us about your home',style: TextStyle(fontSize: 16.sp,fontWeight: FontWeight.w600),),
             SizedBox(height: 16,),
             DropdownButtonHideUnderline(
               child: DropdownButton2<String>(
                 isExpanded: true,
-                hint: const Row(
+                hint:  Row(
                   children: [
                     SizedBox(
                       width: 4,
@@ -36,7 +37,7 @@ class _EditQuestionTwoState extends State<EditQuestionTwo> {
                       child: Text(
                         'Select Item',
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -50,8 +51,8 @@ class _EditQuestionTwoState extends State<EditQuestionTwo> {
                   value: item,
                   child: Text(
                     item,
-                    style: const TextStyle(
-                      fontSize: 16,
+                    style:  TextStyle(
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w500,
                       color: Colors.black,
                     ),

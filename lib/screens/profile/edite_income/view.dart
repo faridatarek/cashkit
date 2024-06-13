@@ -75,7 +75,7 @@ class _EditIncomeScreenState extends State<EditIncomeScreen> {
           ),
           Text(
             textAlign: TextAlign.center,
-            'What is your income over \nthe week / month?',
+            'Edit your income over \nthe week / month?',
             style: TextStyle(
                 fontWeight: FontWeight.w700,
                 fontSize: 16,
@@ -99,14 +99,14 @@ class _EditIncomeScreenState extends State<EditIncomeScreen> {
                 children: [
                   Text(
                     "EGP",
-                    style: TextStyle(fontSize: 22),
+                    style: TextStyle(fontSize: 20.sp),
                   ),
                   Expanded(
                     child: TextFormField(
                       controller: _controller,
                       textDirection: TextDirection.ltr,
                       style: TextStyle(
-                        fontSize: 24,
+                        fontSize: 24.sp,
                         fontWeight: FontWeight.w600,
                       ),
                       keyboardType: TextInputType.number,
@@ -115,7 +115,7 @@ class _EditIncomeScreenState extends State<EditIncomeScreen> {
                         hintText: "000",
                         labelStyle: TextStyle(
                           color: Colors.black,
-                          fontSize: 24,
+                          fontSize: 24.sp,
                           fontWeight: FontWeight.w600,
                         ),
                         enabledBorder: OutlineInputBorder(
@@ -212,11 +212,9 @@ class _EditIncomeScreenState extends State<EditIncomeScreen> {
                           borderRadius: BorderRadius.circular(8)),
                       backgroundColor: Colors.white),
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pop(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => QuestionSexScreen(),
-                        ));
+                      );
                   },
                   child: Text(
                     "Cancel",

@@ -42,7 +42,7 @@ class _QuestionThreeScreenState extends State<QuestionThreeScreen> {
             ),
           ),
           SizedBox(
-            height: 20.h,
+            height:30.h,
           ),
         ],
       ),
@@ -65,14 +65,14 @@ class _QuestionThreeScreenState extends State<QuestionThreeScreen> {
             ],
           ),
           SizedBox(
-            height: 48,
+            height: 20.h,
           ),
           Text(
             textAlign: TextAlign.center,
             'Do you currently have any debt?',
             style: TextStyle(
                 fontWeight: FontWeight.w700,
-                fontSize: 16,
+                fontSize: 15,
                 color: Color(0xff292929)),
           ),
           SizedBox(
@@ -120,9 +120,9 @@ class _QuestionThreeScreenState extends State<QuestionThreeScreen> {
               ),
             ),
           ),
-          SizedBox(
-            height: 32.h,
-          ),
+     /*     SizedBox(
+            height: 5.h,
+          ),*/
           GestureDetector(
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => QuestionFourScreen(),));
@@ -131,7 +131,7 @@ class _QuestionThreeScreenState extends State<QuestionThreeScreen> {
               child: Text(
                 "I don’t currently have a debt",
                 style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.w600,
                     color: Theme.of(context).primaryColor),
               ),

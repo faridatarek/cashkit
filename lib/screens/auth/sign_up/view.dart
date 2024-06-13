@@ -261,17 +261,13 @@ class _signUpState extends State<signUp> {
                       height: 28.h,
                     ),
                     BTN(text: "Sign Up", onPrees: () {
-    if (_allValidationsPassed(context)) {
-    Navigator.pushReplacement(
-    context,
-    MaterialPageRoute(builder: (context) => QuestionOneScreen ()),
-    );
-    } else {
-    // Handle the case where validations did not pass
-    ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(content: Text('Your password not good')),
-    );
-                    }}),
+                     if (_allValidationsPassed(context)) {
+                       Navigator.pushReplacement(
+                              context,
+                      MaterialPageRoute(builder: (context) => QuestionOneScreen ()),
+                                     );
+                                           }}
+                     ),
                     SizedBox(
                       height: 28.h,
                     ),

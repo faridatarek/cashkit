@@ -36,7 +36,7 @@ class _QuestionOneScreenState extends State<QuestionOneScreen> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 50),
+            padding:  EdgeInsets.only(bottom:15.h),
             child: QuestionBTNScreen(
               onPrees: () {
                 Navigator.push(

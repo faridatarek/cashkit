@@ -10,6 +10,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
 
+import '../../profile/edit_savingbox/view.dart';
+
 class Creat_goals extends StatefulWidget {
   const Creat_goals({Key? key}) : super(key: key);
 
@@ -222,7 +224,7 @@ class _Creat_goalsState extends State<Creat_goals> {
                                         Navigator.pushReplacement(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => Rating(),
+                                            builder: (context) => EditSavingBox(),
                                           ),
                                         );
                                       },

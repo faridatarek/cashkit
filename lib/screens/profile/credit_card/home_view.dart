@@ -3,6 +3,8 @@ import 'package:cashkit/screens/profile/credit_card/yourcard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../view.dart';
+
 class CreditHomeScreen extends StatelessWidget {
   const CreditHomeScreen({Key? key}) : super(key: key);
 
@@ -23,9 +25,18 @@ class CreditHomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color(0xffEFEFEF),
         elevation: 0,
-        leading: Icon(
-          Icons.arrow_back_ios,
-          color: Colors.black,
+        leading: InkWell(
+          onTap: (){
+            Navigator.pushReplacement(context,
+              MaterialPageRoute(
+                builder: (context) =>ProfileScreen(),
+              ),
+            );
+          },
+          child: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+          ),
         ),
         title: Text(
           "Credit Card",

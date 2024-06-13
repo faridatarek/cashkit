@@ -42,7 +42,7 @@ class _AddCardScreenState extends State<AddCardScreen> {
           Text(
             "Transfer from",
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 18.sp,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -80,8 +80,8 @@ class _AddCardScreenState extends State<AddCardScreen> {
                               value: item,
                               child: Text(
                                 item,
-                                style: const TextStyle(
-                                  fontSize: 16,
+                                style: TextStyle(
+                                  fontSize: 16.sp,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.black,
                                 ),
@@ -151,7 +151,7 @@ class _AddCardScreenState extends State<AddCardScreen> {
           Text(
             "Card Detail",
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 18.sp,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -187,7 +187,7 @@ class _AddCardScreenState extends State<AddCardScreen> {
             children: [
               Container(
                 padding: EdgeInsets.only(left: 10),
-                width: 150,
+                width: 150.w,
                 height: 56,
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -202,7 +202,7 @@ class _AddCardScreenState extends State<AddCardScreen> {
               ),
               Container(
                 padding: EdgeInsets.only(left: 10),
-                width: 150,
+                width: 150.w,
                 height: 56,
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -221,9 +221,9 @@ class _AddCardScreenState extends State<AddCardScreen> {
             height: 20,
           ),
           Text(
-            "Your Name",
+            "Your Name(optional)",
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 17.sp,
               fontWeight: FontWeight.w600,
             ),
           ),
