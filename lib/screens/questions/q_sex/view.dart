@@ -122,7 +122,7 @@ class _QuestionSexScreenState
                     Text(
                       text[index],
                       style:
-                          TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                          TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w500),
                     )
                   ],
                 ),

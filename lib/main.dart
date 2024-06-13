@@ -1,5 +1,6 @@
 
 
+import 'package:cashkit/core/res/color.dart';
 import 'package:cashkit/screens/Goals/create_goals/view.dart';
 import 'package:cashkit/screens/auth/sign_up/view.dart';
 import 'package:cashkit/screens/budget/Emergency_budget/mainCateg_emergency/view.dart';
@@ -35,13 +36,12 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'CashKit',
           theme: ThemeData(
-            primaryColor:Color(0xff047857),
-
             fontFamily: "Poppins",
-
-            scaffoldBackgroundColor: Color(0xffEFEFEF),
-
+            scaffoldBackgroundColor: const Color(0xffEFEFEF),
+            primaryColor: getMaterialColor(primaryColor.value),
+            primarySwatch: getMaterialColor(primaryColor.value),
           ),
+
 
 
           home:LogoScreen(),

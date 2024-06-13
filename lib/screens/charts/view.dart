@@ -18,7 +18,7 @@ class Charts_screen extends StatelessWidget {
 
  ];
   final GlobalKey<AnimatedCircularChartState> _chartKey = GlobalKey();
- final Size _chartSize = Size(250.0, 10.0);
+ final Size _chartSize = Size(200.0, 10.0);
   double billsPercentage =50;
   double foodPercentage =30;
   double housingPercentage =15;
@@ -38,7 +38,7 @@ class Charts_screen extends StatelessWidget {
           },
           child: Icon(Icons.arrow_back_ios,color: Color(0xff292929),))),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(7.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,11 +56,9 @@ class Charts_screen extends StatelessWidget {
 
                       spreadRadius:1, //spread radius
                       blurRadius:10, // blur radius
-                      //changes position of shadow
-                      //first paramerter of offset is left-right
-                      //second parameter is top to down
+
                     ),
-                    //you can set more BoxShadow() here
+
                   ],
                 ),
               child:Padding(
@@ -77,103 +75,110 @@ class Charts_screen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 60.h,),
-            Stack(
-              alignment: AlignmentDirectional.centerStart,
-              children:[
+            Row(
+              children: [
+                Stack(
+                  alignment: AlignmentDirectional.topStart,
+                  children:[
 
-                Padding(
-                  padding:  EdgeInsets.only(left:90.0.w,top: 18.h),
-                  child: Text("EGP 6,000",style: TextStyle(fontSize: 15.sp,color: Color(0xff243465),fontWeight: FontWeight.w600)),
-                ),
-                Padding(
-                  padding:  EdgeInsets.only(left:80.0.w,bottom: 30.h),
-                  child: Text("Total Expenses",style: TextStyle(fontSize: 12.sp,color: Color(0xff848A9C),fontWeight: FontWeight.w500)),
-                ),
-                Row(children: [
-                AnimatedCircularChart(
-
-
-                  holeRadius:45.r,
-
-                  edgeStyle: SegmentEdgeStyle.flat,
-
-                  key: _chartKey,
-                  size: _chartSize,
-                  initialChartData: <CircularStackEntry>[
-                    CircularStackEntry(
-
-                      <CircularSegmentEntry>[
-
-                        CircularSegmentEntry(
-
-                          billsPercentage,
-                          Color(0xffFFA84A),
-                          rankKey: 'bills',
-                        ),
-
-                        CircularSegmentEntry(
-
-                          housingPercentage ,
-                          Color(0xffFB67CA),
-                          rankKey: 'housing',
-                        ),
-                        CircularSegmentEntry(
-
-                          shoppingPercentage,
-                          Color(0xff9B88ED),
-                          rankKey: 'shopping',
-                        ),
-                        CircularSegmentEntry(
-
-                          foodPercentage,
-                          Color(0xff04BFDA),
-                          rankKey: 'food',
-                        ),
-                        CircularSegmentEntry(
-
-                          100 - (shoppingPercentage+foodPercentage+ housingPercentage+billsPercentage),
-                          Color(0xffEFEFEF),
-                          rankKey: 'remaining',
-                        ),
-
-                      ],
-
-
+                    Padding(
+                      padding:  EdgeInsets.only(left:50.0.w,bottom: 60.h,top: 15.h),
+                      child: Text("Total Expenses",style: TextStyle(fontSize: 14.sp,color: Color(0xff848A9C),fontWeight: FontWeight.w500)),
                     ),
-                  ],
-                  chartType: CircularChartType.Radial,
-                  percentageValues: true,
+                    Padding(
+                      padding:  EdgeInsets.only(top: 40),
+                      child: AnimatedCircularChart(
+
+
+                        holeRadius:60.r,
+                         holeLabel: "EGP 6,000",
+                        labelStyle:TextStyle(fontSize: 13.sp,color: Color(0xff243465),fontWeight: FontWeight.w600) ,
+                        edgeStyle: SegmentEdgeStyle.flat,
+
+                        key: _chartKey,
+                        size: _chartSize,
+                        initialChartData: <CircularStackEntry>[
+                          CircularStackEntry(
+
+                            <CircularSegmentEntry>[
+
+                              CircularSegmentEntry(
+
+                                billsPercentage,
+                                Color(0xffFFA84A),
+                                rankKey: 'bills',
+                              ),
+
+                              CircularSegmentEntry(
+
+                                housingPercentage ,
+                                Color(0xffFB67CA),
+                                rankKey: 'housing',
+                              ),
+                              CircularSegmentEntry(
+
+                                shoppingPercentage,
+                                Color(0xff9B88ED),
+                                rankKey: 'shopping',
+                              ),
+                              CircularSegmentEntry(
+
+                                foodPercentage,
+                                Color(0xff04BFDA),
+                                rankKey: 'food',
+                              ),
+                              CircularSegmentEntry(
+
+                                100 - (shoppingPercentage+foodPercentage+ housingPercentage+billsPercentage),
+                                Color(0xffEFEFEF),
+                                rankKey: 'remaining',
+                              ),
+
+                            ],
+
+
+                          ),
+                        ],
+                        chartType: CircularChartType.Radial,
+                        percentageValues: true,
 
 
 
 
+                      ),
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.only(left:190.0),
+                      child: Container(
+                        height:90.h,
+                        width:105.w,
+                        child: ListView.separated(
+                          separatorBuilder: (context, index) {
+                            return SizedBox(height: 6.h);
+                          },
+
+                          itemCount: allCateg_data_list.length,
+                          itemBuilder: (context, index) {
+                            return Row(
+                              children: [
+                                CircleAvatar(backgroundColor: allCateg_data_list[index].categColor,radius: 5.r,),
+                                SizedBox(width: 4.w,),
+                                Text("${allCateg_data_list[index].categName}",style: TextStyle(fontSize: 10.sp,color: Color(0xff292929),fontWeight: FontWeight.w500)),
+                              ],) ;
+                          },
+                        ),
+                      ),
+                    ),
+
+                  ]
                 ),
-                Container(
-                  height:100.h,
-                  width: 125.w,
-                  child: ListView.separated(
-                    separatorBuilder: (context, index) {
-                      return SizedBox(height: 6.h);
-                    },
+                SizedBox(width: 20.w,),
 
-                    itemCount: allCateg_data_list.length,
-                    itemBuilder: (context, index) {
-                      return Row(children: [
-                        CircleAvatar(backgroundColor: allCateg_data_list[index].categColor,radius: 7.r,),
-                        SizedBox(width: 4.w,),
-                        Text("${allCateg_data_list[index].categName}",style: TextStyle(fontSize: 16.sp,color: Color(0xff292929),fontWeight: FontWeight.w500)),
-                      ],) ;
-                    },
-                  ),
-                ),
-
-
-              ],),
-
-              ]
+              ],
             ),
-            SizedBox(height: 60.h,),
-            Text("Top categories of expenses,February",style: TextStyle(fontSize: 20.sp,color: Color(0xff292929),fontWeight: FontWeight.w600)),
+            SizedBox(height: 40.h,),
+            Text("Top categories of expenses,February",style: TextStyle(fontSize: 16.sp,color: Color(0xff292929),fontWeight: FontWeight.w600)),
              SizedBox(height: 10.h,),
                 Padding(
               padding: const EdgeInsets.all(8.0),
@@ -210,11 +215,11 @@ class Charts_screen extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Row(children: [
-                              CircleAvatar(backgroundColor:  Color(0xffF6F6F6),child: allCateg_data_list[index].categImg,radius: 20.r,),
+                              CircleAvatar(backgroundColor:  Color(0xffF6F6F6),child: allCateg_data_list[index].categImg,radius: 18.r,),
                               SizedBox(width: 6.w,),
-                              Text("${allCateg_data_list[index].categName}",style: TextStyle(fontSize: 16.sp,color: Color(0xff292929),fontWeight: FontWeight.w500)),
+                              Text("${allCateg_data_list[index].categName}",style: TextStyle(fontSize: 14.sp,color: Color(0xff292929),fontWeight: FontWeight.w500)),
                              Spacer(),
-                              Text(" -EGP ${allCateg_data_list[index].categSpend}",style: TextStyle(fontSize: 16.sp,color: Color(0xffF14242),fontWeight: FontWeight.w500)),
+                              Text(" -EGP ${allCateg_data_list[index].categSpend}",style: TextStyle(fontSize: 14.sp,color: Color(0xffF14242),fontWeight: FontWeight.w500)),
                             ],),
 
                           ),

@@ -32,9 +32,12 @@ class EditSavingBox extends StatelessWidget {
           SizedBox(
             height: 48.h,
           ),
-          Text(
-            "Enter the amount of money that \n you want to save ",
-            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "Enter the amount of money \n that you want to save ",
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18.sp),
+            ),
           ),
           SizedBox(
             height: 24.h,
