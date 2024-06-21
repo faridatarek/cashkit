@@ -23,7 +23,7 @@ class ForgetPasswordScreen extends StatelessWidget {
             height: 20.h,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 16.0, top: 48),
+            padding: const EdgeInsets.only(left: 6.0, top: 60),
             child: IconButton(
                 onPressed: () {
                   Navigator.pop(context);
@@ -32,18 +32,18 @@ class ForgetPasswordScreen extends StatelessWidget {
                 icon: Icon(
                   Icons.arrow_back_ios,
                   color: Colors.white,
-                  size: 30.sp,
+                  size: 26.sp,
                 )),
           ),
           SizedBox(
             height: 80.h,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 16.0, top: 130),
+            padding: const EdgeInsets.only(left: 16.0, top: 145),
             child: Text("Forgot Password",
                 style: TextStyle(
                     fontWeight: FontWeight.w700,
-                    fontSize: 25.sp,
+                    fontSize: 22.sp,
                     color: Colors.white)),
           ),
           SingleChildScrollView(
@@ -60,22 +60,28 @@ class ForgetPasswordScreen extends StatelessWidget {
                         topRight: Radius.circular(24.r))),
                 child: Column(
                   children: [
-                    Text(
-                      "Please enter your email to get a verification code.",
-                      style: TextStyle(
-                          fontSize: 17.sp,
-                          fontWeight: FontWeight.w400,
-                          color: const Color(0xff989898)),
+                    Padding(
+                      padding:  EdgeInsets.only(top:10.h),
+                      child: Text(
+                        "Please enter your email to get a verification code.",
+                        style: TextStyle(
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w400,
+                            color: const Color(0xff989898)),
+                      ),
                     ),
                     SizedBox(
-                      height: 32.h,
+                      height: 25.h,
                     ),
-                    TextFormField(
-                      decoration: InputDecoration(
+                    Container(
+                      height: 52.h,
+                      child: TextFormField(
+                        decoration: InputDecoration(
 
-                        label: Text( "Email ",style: TextStyle(fontSize:16.sp,fontWeight: FontWeight.w400)),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8.r)),
+                          label: Text( "Email ",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8.r)),
+                        ),
                       ),
                     ),
                     SizedBox(

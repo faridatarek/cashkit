@@ -22,7 +22,7 @@ class EditSavingBox extends StatelessWidget {
         title: Text(
           "Saving Box",
           style: TextStyle(
-              fontWeight: FontWeight.w600, fontSize: 20, color: Colors.black),
+              fontWeight: FontWeight.w600, fontSize: 20.sp, color: Colors.black),
         ),
         centerTitle: true,
       ),
@@ -30,21 +30,22 @@ class EditSavingBox extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            height: 48.h,
+            height: 55.h,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              "Enter the amount of money \n that you want to save ",
+              "Enter the amount of money \n     that you want to save ",
               style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18.sp),
             ),
           ),
           SizedBox(
-            height: 24.h,
+            height: 35.h,
           ),
           Container(
-            height: 48.h,
-            width: 248.w,
+            height: 60.h,
+            width: MediaQuery.of(context).size.width,
+            margin: EdgeInsets.symmetric(horizontal:65.w),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
               color: Colors.white,
@@ -61,10 +62,10 @@ class EditSavingBox extends StatelessWidget {
                       color: Colors.black),
                 ),
                 SizedBox(
-                  width: 10.w,
+                  width: 5.w,
                 ),
                 Text(
-                  "1000",
+                  "1,000",
                   style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w700,
@@ -74,7 +75,7 @@ class EditSavingBox extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 56.h,
+            height: 45.h,
           ),
           Row(
             children: [
@@ -83,7 +84,7 @@ class EditSavingBox extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
-                    fixedSize: Size(100.w, 48.h),
+                    fixedSize: Size(118.w, 48.h),
                   ),
                   onPressed: () {
                     showDialog(
@@ -140,20 +141,19 @@ class EditSavingBox extends StatelessWidget {
                     );
                   },
                   child: Text("Save")),
-              Spacer(),
+              SizedBox(width: 20.w,),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      fixedSize: Size(100.w, 48.h),
+                      fixedSize: Size(118.w, 48.h),
                       side: BorderSide(color: Theme.of(context).primaryColor),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8)),
-                      backgroundColor: Colors.white),
+                      backgroundColor:Color(0xffEFEFEF)),
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pop(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => QuestionSexScreen(),
-                        ));
+
+                        );
                   },
                   child: Text(
                     "Cancel",

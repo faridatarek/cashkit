@@ -25,7 +25,7 @@ class _EditQuestionThreeState extends State<EditQuestionThree> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Do you currently have any debt?',style: TextStyle(fontSize: 16.sp,fontWeight: FontWeight.w600),),
+            Text('Do you currently have any debt?',style: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.w600),),
             SizedBox(height: 16,),
             DropdownButtonHideUnderline(
               child: DropdownButton2<String>(
@@ -39,7 +39,7 @@ class _EditQuestionThreeState extends State<EditQuestionThree> {
                       child: Text(
                         'Select Item',
                         style: TextStyle(
-                          fontSize: 16.sp,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -54,7 +54,7 @@ class _EditQuestionThreeState extends State<EditQuestionThree> {
                   child: Text(
                     item,
                     style:  TextStyle(
-                      fontSize: 16.sp,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.w500,
                       color: Colors.black,
                     ),
@@ -73,7 +73,7 @@ class _EditQuestionThreeState extends State<EditQuestionThree> {
                   // width: double.infinity,
                   padding: const EdgeInsets.only(right: 14),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(14),
+                    borderRadius: BorderRadius.circular(8.r),
                     border: Border.all(
                       color: Colors.white,
                     ),

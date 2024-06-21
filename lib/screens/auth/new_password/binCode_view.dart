@@ -22,7 +22,7 @@ class PinCodeScreen extends StatelessWidget {
             height: 20,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 16.0, top: 48),
+            padding: const EdgeInsets.only(left: 6.0, top: 60),
             child: IconButton(
                 onPressed: () {
                   Navigator.pop(context);
@@ -30,18 +30,18 @@ class PinCodeScreen extends StatelessWidget {
                 icon: const Icon(
                   Icons.arrow_back_ios,
                   color: Colors.white,
-                  size: 30,
+                  size: 26,
                 )),
           ),
           const SizedBox(
             height: 80,
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 16.0, top: 130),
+           Padding(
+            padding: EdgeInsets.only(left: 16.0, top: 145),
             child: Text("Enter Code",
                 style: TextStyle(
                     fontWeight: FontWeight.w700,
-                    fontSize: 25,
+                    fontSize: 22.sp,
                     color: Colors.white)),
           ),
           SingleChildScrollView(
@@ -58,26 +58,29 @@ class PinCodeScreen extends StatelessWidget {
                         topRight: Radius.circular(24))),
                 child: Column(
                   children: [
-                    Row(
-                      children: [
-                         Text(
-                          "Sent code on",
-                          style: TextStyle(
-                              fontSize: 17.sp,
-                              fontWeight: FontWeight.w400,
-                              color: Color(0xff989898)),
-                        ),
-                        Text(
-                          " lena123@gmail.com",
-                          style: TextStyle(
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w400,
-                              color: Theme.of(context).primaryColor),
-                        ),
-                      ],
+                    Padding(
+                      padding:  EdgeInsets.only(top:10),
+                      child: Row(
+                        children: [
+                           Text(
+                            "Sent code on",
+                            style: TextStyle(
+                                fontSize: 17.sp,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xff989898)),
+                          ),
+                          Text(
+                            " farida732@gmail.com",
+                            style: TextStyle(
+                                fontSize: 13.sp,
+                                fontWeight: FontWeight.w400,
+                                color: Theme.of(context).primaryColor),
+                          ),
+                        ],
+                      ),
                     ),
                     const SizedBox(
-                      height: 32,
+                      height: 28,
                     ),
                     PinCodeTextField(
                       appContext: (context),
@@ -92,8 +95,10 @@ class PinCodeScreen extends StatelessWidget {
                         fieldOuterPadding:
                         const EdgeInsets.symmetric(horizontal: 2),
 
-                        borderRadius: BorderRadius.circular(15),
-                        fieldHeight: 60.h,
+
+                        borderRadius: BorderRadius.all(Radius.circular(15)),
+                        
+                        fieldHeight: 55.h,
                         fieldWidth: 60.w,
                         activeColor: Theme.of(context).primaryColor,
                         inactiveColor: const Color(0xffF3F3F3),
@@ -102,7 +107,7 @@ class PinCodeScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      height: 32,
+                      height: 28,
                     ),
                     BTN(text: "Verify", onPrees: () {
                       Navigator.push(context,
@@ -114,16 +119,20 @@ class PinCodeScreen extends StatelessWidget {
                     Text(
                       "Resend Code in 24s",
                       style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w500,
-                          color: Theme.of(context).primaryColor),
+
+                        color: Theme.of(context).primaryColor)
                     ),
-                    const Text(
+                    SizedBox(height: 7.h,),
+                     Text(
                       "Resend Code",
                       style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w500,
-                          color: Color(0xffBDBDBD)),
+                          color: Color(0xffBDBDBD))
+
+
                     ),
                   ],
                 ),

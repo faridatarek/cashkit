@@ -26,8 +26,8 @@ class _EditQuestionFourState extends State<EditQuestionFour> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("What is your marital status ?",style: TextStyle(fontSize: 16.sp,fontWeight: FontWeight.w600),),
-            SizedBox(height: 16,),
+            Text("What is your marital status ?",style: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.w600),),
+            SizedBox(height:16,),
             DropdownButtonHideUnderline(
               child: DropdownButton2<String>(
                 isExpanded: true,
@@ -40,7 +40,7 @@ class _EditQuestionFourState extends State<EditQuestionFour> {
                       child: Text(
                         'Select Item',
                         style: TextStyle(
-                          fontSize: 16.sp,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -55,7 +55,7 @@ class _EditQuestionFourState extends State<EditQuestionFour> {
                   child: Text(
                     item,
                     style:  TextStyle(
-                      fontSize: 16.sp,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.w500,
                       color: Colors.black,
                     ),
@@ -74,7 +74,7 @@ class _EditQuestionFourState extends State<EditQuestionFour> {
                   // width: double.infinity,
                   padding: const EdgeInsets.only(right: 14),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(14),
+                    borderRadius: BorderRadius.circular(8.r),
                     border: Border.all(
                       color: Colors.white,
                     ),

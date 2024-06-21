@@ -1,8 +1,8 @@
+import 'package:cashkit/screens/profile/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../nav_bar/view.dart';
-
 class NotificationsScreen extends StatelessWidget {
   const NotificationsScreen({Key? key}) : super(key: key);
 
@@ -19,7 +19,9 @@ class NotificationsScreen extends StatelessWidget {
       // "Budget overspending",
     ];
     List subTitle = [
-      "Congratulations! You’re back in positive balance (EGP 3000). You can breathe a bit easier for a while.",
+      "             Congratulations! You’re back in  "
+          "\n             positive balance (EGP 3000). You can        "
+          "  \n             breathe a bit easier for a while.",
       "Internet bill will be due in 3 days.",
       // "Your monthly expense almost break the budget.",
     ];
@@ -37,7 +39,22 @@ class NotificationsScreen extends StatelessWidget {
                 ),
                     (route) => true);
           },
-          child: Icon(Icons.delete),
+          child: Container(
+            height: 65.h,
+            width:65.w,
+            decoration: BoxDecoration(shape: BoxShape.circle,
+                gradient: LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  colors: [
+                    Color(0xff047857),
+
+
+                    Color(0xffAFFE9C),
+                  ],
+                )),
+            child: Icon(Icons.delete,color:Color(0xffF6F6F6),size: 28, ),
+          ),
         ),
       ),
       appBar: AppBar(
@@ -60,86 +77,169 @@ class NotificationsScreen extends StatelessWidget {
         title: Text(
           "Notifications",
           style: TextStyle(
-              fontWeight: FontWeight.w600, fontSize: 20.sp, color: Colors.black),
+              fontWeight: FontWeight.w600, fontSize: 18.sp, color: Colors.black),
         ),
         centerTitle: true,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 16.0),
-            child: Text(
-              "Today",
-              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16.sp),
+      body: SingleChildScrollView(
+
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding:  EdgeInsets.only(left: 16.0,bottom: 2.h),
+              child: Text(
+                "Today",
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14.sp),
+              ),
             ),
-          ),
-          Expanded(
-            child: ListView.builder(
-              itemBuilder: (context, index) => Padding(
-                padding: const EdgeInsets.symmetric(
-                    vertical: 10.0, horizontal: 16.0),
-                child: ListTile(
-                  trailing: Text(date[index]),
-                  tileColor: Colors.white,
-                  contentPadding:
-                  EdgeInsets.symmetric(vertical: 30, horizontal: 10),
-                  leading: Image.asset(images[index],
-                      width: 28, height: 28, fit: BoxFit.fill),
-                  title: Text(
-                    title[index],
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black),
-                  ),
-                  subtitle: Text(
-                    subTitle[index],
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
+            Container(
+
+              height: 205.h,
+              child: ListView.builder(
+                itemBuilder: (context, index) => Padding(
+                  padding:  EdgeInsets.symmetric(
+                      vertical:10.h, horizontal: 16.0),
+                  child: Container(
+
+                    decoration: BoxDecoration(
+
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(4.r)), //border corner radius
+                      boxShadow:[
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2), //color of shadow
+
+                          spreadRadius:1,
+                          blurRadius:10,
+                        ),
+
+                      ],
+                    ),
+                    child: Padding(
+                      padding:  EdgeInsets.only(bottom:20.h,),
+                      child: Column(
+
+                        children: [
+                          Padding(
+                            padding:  EdgeInsets.only(top: 8.h),
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding:  EdgeInsets.only(right: 8.0.w,left: 8.w),
+                                  child: Image.asset(images[index],
+                                      width: 32.w, height: 28.h, fit: BoxFit.fill),
+                                ),
+                                Text(
+                                  title[index],
+                                  style: TextStyle(
+                                      fontSize: 13.sp,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black),
+                                ),
+                                  Spacer(),
+                                  Padding(
+                                padding:  EdgeInsets.only(right: 8.w),
+                                child: Text(date[index],style: TextStyle(fontSize: 10.sp)),
+                              ),
+
+
+                              ],
+                            ),
+                          ),
+                          Text(
+                            subTitle[index],
+                            maxLines: 4,style: TextStyle(fontSize: 11.sp,color: Colors.black45),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-              ),
-              itemCount: title.length,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 16.0, top: 5),
-            child: Text(
-              "Yesterday",
-              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16.sp),
-            ),
-          ),
-          SizedBox(
-            height: 25.h,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: ListTile(
-              trailing: Text("1:30 pm"),
-              tileColor: Colors.white,
-              contentPadding:
-              EdgeInsets.symmetric(vertical: 30, horizontal: 10),
-              leading: Image.asset("assets/images/n3.png",
-                  width: 28, height: 28, fit: BoxFit.fill),
-              title: Text(
-                "Budget overspending",
-                style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black),
-              ),
-              subtitle: Text(
-                "Your monthly expense almost break the budget.",
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
+                itemCount: title.length,
               ),
             ),
-          ),
-          SizedBox(
-            height: 110.h,
-          )
-        ],
+
+
+
+            Padding(
+              padding:  EdgeInsets.only(left: 16.0, top: 25.h),
+              child: Text(
+                "Yesterday",
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14.sp),
+              ),
+            ),
+            SizedBox(
+              height: 12.h,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Container(
+                decoration: BoxDecoration(
+
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(4.r)), //border corner radius
+                  boxShadow:[
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.2), //color of shadow
+
+                      spreadRadius:1,
+                      blurRadius:10,
+                    ),
+
+                  ],
+                ),
+                child:
+                Padding(
+                  padding:  EdgeInsets.only(bottom:20.h),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding:  EdgeInsets.only(top: 8.h),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding:  EdgeInsets.only(right: 8.0.w,left: 10.w),
+                              child:Image.asset("assets/images/n3.png",
+                                  width: 32.w, height: 28.h, fit: BoxFit.fill),
+                            ),
+                            Text(
+                              "Budget overspending",
+                              style: TextStyle(
+                                  fontSize: 13.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black),
+                            ),
+                            Spacer(),
+                            Padding(
+                              padding:  EdgeInsets.only(right: 8.w),
+                              child: Text("1:30 pm",style: TextStyle(fontSize: 10.sp)),
+                            ),
+
+
+                          ],
+                        ),
+                      ),
+                      Text(
+                        "     Your monthly expense almost break "
+                            "\n      the budget.",
+                        maxLines: 4,style: TextStyle(fontSize: 11.sp,color: Colors.black45),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  ),
+                ),
+
+
+
+              ),
+            ),
+            SizedBox(
+              height: 210.h,
+            )
+          ],
+        ),
       ),
     );
   }
@@ -155,7 +255,7 @@ class DeleteScreen extends StatelessWidget {
       appBar: AppBar(
         leading: InkWell(
           onTap: () {
-            Navigator.pop(context);
+            Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => NavScreen(),));
           },
           child: Icon(
             Icons.arrow_back_ios,
@@ -167,7 +267,7 @@ class DeleteScreen extends StatelessWidget {
         title: Text(
           "Notifications",
           style: TextStyle(
-              fontWeight: FontWeight.w600, fontSize: 20.sp, color: Colors.black),
+              fontWeight: FontWeight.w600, fontSize: 18.sp, color: Colors.black),
         ),
         centerTitle: true,
       ),
@@ -178,13 +278,13 @@ class DeleteScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset("assets/images/deletenot.png"),
+              Image.asset("assets/images/deletenot.png",width: 100.w,height: 100.h),
               SizedBox(
-                height: 24.h,
+                height: 14.h,
               ),
               Text(
                 "No notifications yet",
-                style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.w600),
+                style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600),
               ),
               SizedBox(
                 height: 8.h,
@@ -192,7 +292,7 @@ class DeleteScreen extends StatelessWidget {
               Text(
                 textAlign: TextAlign.center,
                 "You have no notifications right now. Come back later.",
-                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16.sp),
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 11.sp),
               )
             ],
           ),

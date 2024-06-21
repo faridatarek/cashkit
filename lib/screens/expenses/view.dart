@@ -41,13 +41,14 @@ class _ExpensesState extends State<Expenses> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Column(crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text("Money Out",style: TextStyle(fontSize: 15.sp,color: Color(0xff989898),fontWeight: FontWeight.w400),),
-                                SizedBox(height:6.h),
-                                Text("EGP 2,100",style: TextStyle(fontSize: 18.sp,color: Color(0xff292929),fontWeight: FontWeight.w600),)
+                                Text(" Money Out",style: TextStyle(fontSize: 13.sp,color: Color(0xff989898),fontWeight: FontWeight.w400),),
+                                SizedBox(height:5.h),
+                                Text(" EGP 2,100",style: TextStyle(fontSize: 14.sp,color: Color(0xff292929),fontWeight: FontWeight.w600),)
                               ]),
                           Container(
-                            width:120.w,
+                            width:115.w,
                             height: 45.h,
                             decoration: BoxDecoration(
 
@@ -64,8 +65,7 @@ class _ExpensesState extends State<Expenses> {
 
                               ],
                             ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(5.0),
+                            child: Center(
                               child: DropdownButton<String>(
                                 value: _selectedInterval,
                                 onChanged: (String? newValue) {
@@ -77,7 +77,7 @@ class _ExpensesState extends State<Expenses> {
                                     .map<DropdownMenuItem<String>>((String value) {
                                   return DropdownMenuItem<String>(
                                     value: value,
-                                    child: Text(value,style: TextStyle(fontSize: 11.sp,color: Color(0xff525252),fontWeight: FontWeight.w600), ),
+                                    child: Text(value,style: TextStyle(fontSize: 11.sp,color: Color(0xff525252),fontWeight: FontWeight.w400), ),
                                   );
                                 }).toList(),
                               ),
@@ -107,8 +107,8 @@ class _ExpensesState extends State<Expenses> {
                   ),),
                 SizedBox(height: 5.h,),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("Nov 27",style: TextStyle(fontSize: 16.sp,color: Color(0xff292929),fontWeight: FontWeight.w700),),
+                  padding:  EdgeInsets.only(left: 8.0,top: 18.h,bottom: 5.h),
+                  child: Text("May 27",style: TextStyle(fontSize: 14.sp,color: Color(0xff292929),fontWeight: FontWeight.w700),),
                 )
                 ,Container(
 
@@ -117,30 +117,24 @@ class _ExpensesState extends State<Expenses> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Container(
-                          decoration: BoxDecoration(
-
-                            color:Color(0xffEFEFEF),
-                            borderRadius: BorderRadius.all(Radius.circular(4)), //border corner radius
-
-                          ),
-                          height:48.h,width:35.w,
-                          child:Image.asset("assets/images/emojione-v1_shopping-bags.png",) ,
-                        ),
+                        Image.asset("assets/images/Frame 1000005311.png",width: 40.w,height: 46.h),
                         SizedBox(width:5,),
                         Container
-                          ( height:48.h,width:270.w,
+                          ( height:48.h,width:269.w,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text("shopping",style: TextStyle(fontSize:15.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
+                              Padding(
+                                padding:  EdgeInsets.only(top:6.0),
+                                child: Row(
 
-                                  Text("EGP 300 of EGP 800",style: TextStyle(fontSize: 11.sp,fontWeight: FontWeight.w400,color: Color(0xff525252))),
-                                ],),
-                              SizedBox(height:15,),
+                                  children: [
+                                    Text("Shopping",style: TextStyle(fontSize:12.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
+                                     Spacer(),
+                                    Text("EGP 300 of EGP 800",style: TextStyle(fontSize: 9.sp,fontWeight: FontWeight.w400,color: Color(0xff525252))),
+                                  ],),
+                              ),
+                              SizedBox(height:10.h,),
                               LoadingProg(totalAmount:800,spentAmount: 300,width: 312.w),
                             ],),
                         )
@@ -148,7 +142,7 @@ class _ExpensesState extends State<Expenses> {
                   ),
                   margin: EdgeInsets.symmetric(vertical: 5,horizontal: 8),
                   width:MediaQuery.of(context).size.width,
-                  height:80.h,
+                  height:70.h,
                   decoration: BoxDecoration(
 
                     color: Colors.white,
@@ -166,7 +160,7 @@ class _ExpensesState extends State<Expenses> {
                       //you can set more BoxShadow() here
                     ],
                   ),),
-                SizedBox(height: 5.h,),
+
                 Container(
 
                   child: Padding(
@@ -174,30 +168,24 @@ class _ExpensesState extends State<Expenses> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Container(
-                          decoration: BoxDecoration(
-
-                            color:Color(0xffEFEFEF),
-                            borderRadius: BorderRadius.all(Radius.circular(4)), //border corner radius
-
-                          ),
-                          height:48.h,width:35.w,
-                          child:Image.asset("assets/images/noto_house (2).png",) ,
-                        ),
+                        Image.asset("assets/images/Frame 35080.png",height:46.h,width: 40.w ),
                         SizedBox(width:5,),
                         Container
-                          ( height:48.h,width:270.w,
+                          ( height:48.h,width:269.w,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text("Housing",style: TextStyle(fontSize:15.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
+                              Padding(
+                                padding:  EdgeInsets.only(top:5),
+                                child: Row(
 
-                                  Text("EGP 800 of EGP 1,000",style: TextStyle(fontSize: 12.sp,fontWeight: FontWeight.w400,color: Color(0xff525252))),
-                                ],),
-                              SizedBox(height:15,),
+                                  children: [
+                                    Text("Housing",style: TextStyle(fontSize:12.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
+ Spacer(),
+                                    Text("EGP 800 of EGP 1,000",style: TextStyle(fontSize: 9.sp,fontWeight: FontWeight.w400,color: Color(0xff525252))),
+                                  ],),
+                              ),
+                              SizedBox(height:10.h,),
                               LoadingProg(totalAmount: 1000,spentAmount: 800,width: 312.w),
                             ],),
                         )
@@ -205,7 +193,7 @@ class _ExpensesState extends State<Expenses> {
                   ),
                   margin: EdgeInsets.symmetric(vertical: 5,horizontal: 8),
                   width:MediaQuery.of(context).size.width,
-                  height:80.h,
+                  height:70.h,
                   decoration: BoxDecoration(
 
                     color: Colors.white,
@@ -221,10 +209,10 @@ class _ExpensesState extends State<Expenses> {
 
                     ],
                   ),),
-                SizedBox(height: 5.h,),
+                SizedBox(height: 10.h,),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("Nov 26",style: TextStyle(fontSize: 16.sp,color: Color(0xff292929),fontWeight: FontWeight.w700),),
+                  padding:  EdgeInsets.only(left: 8.0),
+                  child: Text("May 26",style: TextStyle(fontSize: 14.sp,color: Color(0xff292929),fontWeight: FontWeight.w700),),
                 ),
                 SizedBox(height: 5.h,),
                 Container(
@@ -234,30 +222,24 @@ class _ExpensesState extends State<Expenses> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Container(
-                          decoration: BoxDecoration(
-
-                            color:Color(0xffEFEFEF),
-                            borderRadius: BorderRadius.all(Radius.circular(4)), //border corner radius
-
-                          ),
-                          height:48.h,width:35.w,
-                          child:Image.asset("assets/images/emojione_fork-and-knife.png",) ,
-                        ),
+                        Image.asset("assets/images/Frame 1000005314.png",width: 40.w,height: 46.h),
                         SizedBox(width:5,),
                         Container
-                          ( height:48,width:240,
+                          ( height:48,width:235,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Row(
+                              Padding(
+                                padding:  EdgeInsets.only(top:6),
+                                child: Row(
 
-                                children: [
-                                  Text("Foods & Drinks",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
-                                 SizedBox(width: 5,),
-                                  Text("EGP 500 of EGP 800",style: TextStyle(fontSize: 11.sp,fontWeight: FontWeight.w400,color: Color(0xff525252))),
-                                ],),
-                              SizedBox(height:15,),
+                                  children: [
+                                    Text("Foods & Drinks",style: TextStyle(fontSize:12.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
+                                    Spacer(),
+                                    Text("EGP 500 of EGP 800",style: TextStyle(fontSize: 9.sp,fontWeight: FontWeight.w400,color: Color(0xff525252))),
+                                  ],),
+                              ),
+                              SizedBox(height:10.h,),
                               LoadingProg(totalAmount:800,spentAmount: 500,width: 300.w),
                             ],),
                         )
@@ -265,7 +247,7 @@ class _ExpensesState extends State<Expenses> {
                   ),
                   margin: EdgeInsets.symmetric(vertical: 5,horizontal: 8),
                   width:MediaQuery.of(context).size.width,
-                  height:80.h,
+                  height:70.h,
                   decoration: BoxDecoration(
 
                     color: Colors.white,
@@ -288,29 +270,23 @@ class _ExpensesState extends State<Expenses> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Container(
-                          decoration: BoxDecoration(
-
-                            color:Color(0xffEFEFEF),
-                            borderRadius: BorderRadius.all(Radius.circular(4)), //border corner radius
-
-                          ),
-                          height:48.h,width:35.w,
-                          child:Image.asset("assets/images/twemoji_man-biking.png",) ,
-                        ),
+                        Image.asset("assets/images/Frame 1000005315.png",height:46.h,width: 40.w ),
                         SizedBox(width:5,),
                         Container
-                          ( height:48,width:240,
+                          ( height:48,width:235,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Row(
-                                children: [
-                                  Text("Entertainment",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
-SizedBox(width: 5,),
-                                  Text("EGP 200 of EGP 400",style: TextStyle(fontSize: 11.sp,fontWeight: FontWeight.w400,color: Color(0xff525252))),
-                                ],),
-                              SizedBox(height:15,),
+                              Padding(
+                                padding:  EdgeInsets.only(top:6),
+                                child: Row(
+                                  children: [
+                                    Text("Entertainment",style: TextStyle(fontSize:12.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
+                                    Spacer(),
+                                    Text("EGP 200 of EGP 400",style: TextStyle(fontSize: 9.sp,fontWeight: FontWeight.w400,color: Color(0xff525252))),
+                                  ],),
+                              ),
+                              SizedBox(height:10.h,),
                               LoadingProg(totalAmount:400,spentAmount: 200,width: 270.w),
                             ],),
                         )
@@ -318,7 +294,7 @@ SizedBox(width: 5,),
                   ),
                   margin: EdgeInsets.symmetric(vertical: 5,horizontal: 8),
                   width:MediaQuery.of(context).size.width,
-                  height:80.h,
+                  height:70.h,
                   decoration: BoxDecoration(
 
                     color: Colors.white,
@@ -343,30 +319,25 @@ SizedBox(width: 5,),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Container(
-                          decoration: BoxDecoration(
-
-                            color:Color(0xffEFEFEF),
-                            borderRadius: BorderRadius.all(Radius.circular(4)), //border corner radius
-
-                          ),
-                          height:48,width:35,
-                          child:Image.asset("assets/images/22989_cabriolet_car_mazda_red_transport_icon 1.png",) ,
-                        ),
+                        Image.asset("assets/images/Frame 1000005316.png",height:46.h,width: 40.w ),
                         SizedBox(width:5,),
                         Container
-                          ( height:48.h,width:270.w,
+                          ( height:48.h,width:265.w,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text("Vehicle",style: TextStyle(fontSize:15.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
+                              Padding(
+                                padding:  EdgeInsets.only(top:6),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text("Vehicle",style: TextStyle(fontSize:12.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
+                                    Spacer(),
 
-                                  Text("EGP 150 of EGP 300",style: TextStyle(fontSize: 12.sp,fontWeight: FontWeight.w400,color: Color(0xff525252))),
-                                ],),
-                              SizedBox(height:15,),
+                                    Text("EGP 150 of EGP 300",style: TextStyle(fontSize: 9.sp,fontWeight: FontWeight.w400,color: Color(0xff525252))),
+                                  ],),
+                              ),
+                              SizedBox(height:10.h,),
                               LoadingProg(totalAmount:300,spentAmount: 150,width: 312.w),
                             ],),
                         )
@@ -374,7 +345,7 @@ SizedBox(width: 5,),
                   ),
                   margin: EdgeInsets.symmetric(vertical: 5,horizontal: 8),
                   width:MediaQuery.of(context).size.width,
-                  height:80.h,
+                  height:70.h,
                   decoration: BoxDecoration(
 
                     color: Colors.white,
@@ -392,10 +363,10 @@ SizedBox(width: 5,),
                       //you can set more BoxShadow() here
                     ],
                   ),),
-                SizedBox(height: 5.h,),
+                SizedBox(height: 10.h,),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("Nov 25",style: TextStyle(fontSize: 16.sp,color: Color(0xff292929),fontWeight: FontWeight.w700),),
+                  padding:  EdgeInsets.only(left: 8.0),
+                  child: Text("May 25",style: TextStyle(fontSize: 14.sp,color: Color(0xff292929),fontWeight: FontWeight.w700),),
                 ),
                 SizedBox(height: 5.h,),
                 Container(
@@ -405,30 +376,24 @@ SizedBox(width: 5,),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Container(
-                          decoration: BoxDecoration(
-
-                            color:Color(0xffEFEFEF),
-                            borderRadius: BorderRadius.all(Radius.circular(4)), //border corner radius
-
-                          ),
-                          height:48.h,width:35.w,
-                          child:Image.asset("assets/images/Money.png",) ,
-                        ),
+                        Image.asset("assets/images/Frame 1000005313.png",width: 40.w,height: 46.h),
                         SizedBox(width:5,),
                         Container
                           ( height:48.h,width:269.w,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Row(
+                              Padding(
+                                padding:  EdgeInsets.only(top:6.0.h),
+                                child: Row(
 
-                                children: [
-                                  Text("Financial Expenses",style: TextStyle(fontSize:12.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
-SizedBox(width: 5,),
-                                  Text("EGP 200 of EGP 300",style: TextStyle(fontSize: 10.sp,fontWeight: FontWeight.w400,color: Color(0xff525252))),
-                                ],),
-                              SizedBox(height:15,),
+                                  children: [
+                                    Text("Financial Expenses",style: TextStyle(fontSize:12.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
+Spacer(),
+                                    Text("EGP 200 of EGP 300",style: TextStyle(fontSize: 9.sp,fontWeight: FontWeight.w400,color: Color(0xff525252))),
+                                  ],),
+                              ),
+                              SizedBox(height:10.h,),
                               LoadingProg(totalAmount:300,spentAmount: 200,width: 312.w),
                             ],),
                         )
@@ -436,7 +401,7 @@ SizedBox(width: 5,),
                   ),
                   margin: EdgeInsets.symmetric(vertical: 5,horizontal: 8),
                   width:MediaQuery.of(context).size.width,
-                  height:80.h,
+                  height:70.h,
                   decoration: BoxDecoration(
 
                     color: Colors.white,
@@ -462,30 +427,24 @@ SizedBox(width: 5,),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Container(
-                          decoration: BoxDecoration(
-
-                            color:Color(0xffEFEFEF),
-                            borderRadius: BorderRadius.all(Radius.circular(4)), //border corner radius
-
-                          ),
-                          height:48.h,width:35.w,
-                          child:Image.asset("assets/images/22989_cabriolet_car_mazda_red_transport_icon 1.png",) ,
-                        ),
+                        Image.asset("assets/images/Frame 1000005316.png",height:46.h,width: 40.w ),
                         SizedBox(width:5,),
                         Container
-                          ( height:48,width:240,
+                          ( height:48,width:235,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text("Vehicle",style: TextStyle(fontSize:15.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
-
-                                  Text("EGP 150 of EGP 300",style: TextStyle(fontSize: 12.sp,fontWeight: FontWeight.w400,color: Color(0xff525252))),
-                                ],),
-                              SizedBox(height:15,),
+                              Padding(
+                                padding:  EdgeInsets.only(top:6.0.h),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text("Vehicle",style: TextStyle(fontSize:12.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
+                                    SizedBox(width: 5.w,),
+                                    Text("EGP 150 of EGP 300",style: TextStyle(fontSize: 9.sp,fontWeight: FontWeight.w400,color: Color(0xff525252))),
+                                  ],),
+                              ),
+                              SizedBox(height:10.h,),
                               LoadingProg(totalAmount:300,spentAmount: 150,width: 312.w),
                             ],),
                         )
@@ -493,7 +452,7 @@ SizedBox(width: 5,),
                   ),
                   margin: EdgeInsets.symmetric(vertical: 5,horizontal: 8),
                   width:MediaQuery.of(context).size.width,
-                  height:80.h,
+                  height:70.h,
                   decoration: BoxDecoration(
 
                     color: Colors.white,

@@ -6,12 +6,12 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Toggle_spash extends StatefulWidget {
+class Toggle_splash extends StatefulWidget {
   @override
-  _Toggle_spashState createState() => _Toggle_spashState();
+  _Toggle_splashState createState() => _Toggle_splashState();
 }
 
-class _Toggle_spashState extends State<Toggle_spash> {
+class _Toggle_splashState extends State<Toggle_splash> {
   PageController _pageController = PageController();
   int _currentPage = 0;
   Timer? _timer;
@@ -77,17 +77,20 @@ class _Toggle_spashState extends State<Toggle_spash> {
                 ),
               ),
             ),
-            DotsIndicator(
-              dotsCount: _photos.length,
-              position: _currentPage.toInt(),
-              decorator: DotsDecorator(
-               spacing: EdgeInsets.all(5),
-                color: Colors.white, // Inactive dot color
-                activeColor:  Theme.of(context).primaryColor, // Active dot color
+            Padding(
+              padding:  EdgeInsets.only(top: 12.h),
+              child: DotsIndicator(
+                dotsCount: _photos.length,
+                position: _currentPage.toInt(),
+                decorator: DotsDecorator(
+                 spacing: EdgeInsets.all(5),
+                  color: Colors.white, // Inactive dot color
+                  activeColor:  Theme.of(context).primaryColor, // Active dot color
+                ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16),
+              padding:  EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.h),
               child: ElevatedButton(
                 onPressed: () {
               Navigator.push(
@@ -98,7 +101,7 @@ class _Toggle_spashState extends State<Toggle_spash> {
               );
               },
                 style: ElevatedButton.styleFrom(
-                    minimumSize: Size(double.infinity.w, 50.h),
+                    minimumSize: Size(double.infinity.w, 48.h),
                     backgroundColor: Theme.of(context).primaryColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.r),
@@ -106,7 +109,7 @@ class _Toggle_spashState extends State<Toggle_spash> {
                 child: Text(
                   "Sign Up",
                   style: TextStyle(
-                      fontSize: 18.sp,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w700,
                       color: Colors.white),
                 ),
@@ -124,8 +127,8 @@ class _Toggle_spashState extends State<Toggle_spash> {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                    minimumSize: Size(double.infinity.w, 50.h),
-                    side: BorderSide(color: Theme.of(context).primaryColor,width: 1.6),
+                    minimumSize: Size(double.infinity.w, 48.h),
+                    side: BorderSide(color: Theme.of(context).primaryColor,width:0.8),
                     backgroundColor:Colors.white70 ,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.r),
@@ -133,7 +136,7 @@ class _Toggle_spashState extends State<Toggle_spash> {
                 child: Text(
                   "Log In",
                   style: TextStyle(
-                      fontSize: 18.sp,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w700,
                       color: Theme.of(context).primaryColor),
                 ),

@@ -66,8 +66,9 @@ class _YourBudget_needsState extends State<YourBudget_needs> {
                   top: 15.h, left: 8.w, right: 6.w, bottom: 10.h),
               child: Container(
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding:  EdgeInsets.only(left: 10.0,right: 10,top: 20),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -76,63 +77,69 @@ class _YourBudget_needsState extends State<YourBudget_needs> {
                             decoration: BoxDecoration(
                               color: Color(0xffEFEFEF),
                               borderRadius: BorderRadius.all(
-                                  Radius.circular(4)), //border corner radius
+                                  Radius.circular(25)), //border corner radius
                             ),
-                            height: 46.w,
-                            width: 46.w,
+                          /*  height: 46.w,
+                            width: 46.w,*/
                             child: CircleAvatar(
                               child: budget.selectedimgCategory,
                               backgroundColor: Color(0xffEFEFEF),
-                              radius: 20,
+                              radius:27.r,
                             ),
                           ),
-                          SizedBox(width: 5),
+                          SizedBox(width:7.w),
                           Container(
                             height: 48.h,
-                            width: 261.w,
+                            width: 255.w,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Row(
-                                  mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 5.0),
-                                      child: Text(
+                                Padding(
+                                  padding:  EdgeInsets.only(top:2.h),
+                                  child: Row(
+                                    children: [
+                                      Text(
                                           budget.selectedCategory,
                                           style: TextStyle(
                                               fontSize: 13.sp,
                                               fontWeight: FontWeight.w600,
                                               color: Color(0xff292929))),
-                                    ),
-                                    Text(
-                                        "EGP ${spentAmount_needs} of EGP ${budget.mainAmount.toStringAsFixed(2)}",
-                                        style: TextStyle(
-                                            fontSize: 9.sp,
-                                            fontWeight: FontWeight.w400,
-                                            color: Color(0xff525252))),
-                                  ],
+                                     Spacer(),
+                                      Text(
+                                          "EGP ${spentAmount_needs} of EGP ${budget.mainAmount.toStringAsFixed(2)}",
+                                          style: TextStyle(
+                                              fontSize: 9.sp,
+                                              fontWeight: FontWeight.w400,
+                                              color: Color(0xff525252))),
+                                    ],
+                                  ),
                                 ),
-                                SizedBox(height: 15.h),
+                                SizedBox(height: 12.h),
                                 LoadingProg(
                                     totalAmount: budget.mainAmount,
-                                    spentAmount: spentAmount_needs,width: 320.w),
+                                    spentAmount: spentAmount_needs,width: 295.w),
                               ],
                             ),
                           ),
                         ],
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 18.h),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: selectedSubcategories_needs.map((subcategory) {
                           return Container(
-                            padding: EdgeInsets.all(5.0),
+                            padding: EdgeInsets.only(right:5.h),
                             child: Row(
                               children: [
                                 Checkbox(
-                                  activeColor: Theme.of(context).primaryColor,
+
+                                  activeColor:Theme.of(context).primaryColor,
+
+                                  shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)
+                                  ),
+                                  //checkColor: ,
+                                  focusColor: Color(0xffCDCDCD) ,
+
                                   value: _isCheckedList_needs[index],
                                   onChanged: (bool? value) {
                                     setState(() {
@@ -149,20 +156,20 @@ class _YourBudget_needsState extends State<YourBudget_needs> {
                                   decoration: BoxDecoration(
                                     color: Color(0xffEFEFEF),
                                     borderRadius:
-                                    BorderRadius.all(Radius.circular(4)),
+                                    BorderRadius.all(Radius.circular(25)),
                                   ),
-                                  height: 40,
-                                  width: 40.w,
+                                /*  height: 40,
+                                  width: 40.w,*/
                                   child: CircleAvatar(
                                     child: budget.subCategoryimg,
                                     backgroundColor: Color(0xffEFEFEF),
-                                    radius: 30.r,
+                                    radius: 25.r,
                                   ),
                                 ),
                                 SizedBox(width: 5),
                                 Container(
                                   height: 48,
-                                  width: 195.w,
+                                  width: 202.w,
                                   child: Column(
                                     crossAxisAlignment:
                                     CrossAxisAlignment.start,
@@ -171,12 +178,15 @@ class _YourBudget_needsState extends State<YourBudget_needs> {
                                         mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text(
-                                              budget.selectedSubcategory,
-                                              style: TextStyle(
-                                                  fontSize: 12.sp,
-                                                  fontWeight: FontWeight.w600,
-                                                  color: Color(0xff292929))),
+                                          Padding(
+                                            padding: EdgeInsets.only(top:6.h),
+                                            child: Text(
+                                                budget.selectedSubcategory,
+                                                style: TextStyle(
+                                                    fontSize: 12.sp,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: Color(0xff292929))),
+                                          ),
                                           Text(
                                               "EGP ${_isCheckedList_needs[index] ? budget.mainAmount.toString() : spentAmount_needs.toString()} of EGP ${budget.mainAmount}",
                                               style: TextStyle(
@@ -186,10 +196,10 @@ class _YourBudget_needsState extends State<YourBudget_needs> {
                                                   color: Color(0xff525252))),
                                         ],
                                       ),
-                                      SizedBox(height: 15),
+                                      SizedBox(height: 12.h),
                                       LoadingProg(
                                           totalAmount: budget.mainAmount,
-                                          spentAmount: spentAmount_needs,width: 328.w),
+                                          spentAmount: spentAmount_needs,width: 335.w),
                                     ],
                                   ),
                                 ),
@@ -202,6 +212,7 @@ class _YourBudget_needsState extends State<YourBudget_needs> {
                   ),
                 ),
                 margin: EdgeInsets.symmetric(vertical: 5, horizontal:3.w),
+                height: 150.h,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -238,13 +249,13 @@ class _YourBudget_needsState extends State<YourBudget_needs> {
               child: Text(
                 "Add new Expenses",
                 style: TextStyle(
-                    fontSize: 18.sp,
+                    fontSize: 16.sp,
                     fontWeight: FontWeight.w700,
                     color: Colors.white),
               ),
               backgroundColor: Theme.of(context).primaryColor,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.r),
+                borderRadius: BorderRadius.circular(8.r),
               ),
               materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
             ),

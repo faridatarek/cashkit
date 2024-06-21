@@ -68,7 +68,7 @@ class _signUpState extends State<signUp> {
             height: double.infinity,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 16.0, top: 48),
+            padding: const EdgeInsets.only(left: 6.0, top: 48),
             child: IconButton(
                 onPressed: () {},
                 icon: Icon(
@@ -85,7 +85,7 @@ class _signUpState extends State<signUp> {
             child: Text("Sign up",
                 style: TextStyle(
                     fontWeight: FontWeight.w700,
-                    fontSize: 25.sp,
+                    fontSize: 22.sp,
                     color: Colors.white)),
           ),
 
@@ -108,133 +108,151 @@ class _signUpState extends State<signUp> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    Padding(
+                      padding:  EdgeInsets.only(left: 2.0.w,top: 10.h),
+                      child: Text(
 
-                      "Create your account",
-                      style: TextStyle(
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.black),
+                        "Create your account",
+                        style: TextStyle(
+                            fontSize: 18.sp,
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xff292929)),
+                      ),
                     ),
                     SizedBox(
-                      height: 32.h,
+                      height: 23.h,
                     ),
-                    TextFormField(
+                    Container(
+                      height: 52.h,
+                      child: TextFormField(
 
-                      decoration: InputDecoration(
-                        floatingLabelBehavior: FloatingLabelBehavior.never,
-                        enabledBorder:  OutlineInputBorder(
+                        decoration: InputDecoration(
+                          floatingLabelBehavior: FloatingLabelBehavior.never,
+                          enabledBorder:  OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.r),
 
+                              borderSide: BorderSide(
+
+                                color: Color(0xffBDBDBD),
+                                width: 1.0,
+                              )),
+                          focusedBorder:  OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: Color(0xffBDBDBD),
-                              width: 1.0,
-                            )),
-                        focusedBorder:  OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color:Theme.of(context).primaryColor,
-                            width: 2.0,
+                              color:Theme.of(context).primaryColor,
+                              width: 2.0,
+                            ),
                           ),
+
+                         label: Text( "Full Name ",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
+
+                          border: OutlineInputBorder(
+
+
+                              borderRadius: BorderRadius.circular(8.r)),
                         ),
-
-                       label: Text( "Full Name ",style: TextStyle(fontSize:14,fontWeight: FontWeight.w400)),
-
-                        border: OutlineInputBorder(
-
-
-                            borderRadius: BorderRadius.circular(8.r)),
                       ),
                     ),
                     SizedBox(
                       height:18.h,
                     ),
-                    TextFormField(
 
-                      decoration: InputDecoration(
-                        floatingLabelBehavior: FloatingLabelBehavior.never,
-                        enabledBorder:  OutlineInputBorder(
+                    Container(
+                      height: 52.h,
+                      child: TextFormField(
 
+                        decoration: InputDecoration(
+                          floatingLabelBehavior: FloatingLabelBehavior.never,
+                          enabledBorder:  OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8.r),
+                              borderSide: BorderSide(
+                                color: Color(0xffBDBDBD),
+                                width: 1.0,
+                              )),
+                          focusedBorder:  OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: Color(0xffBDBDBD),
-                              width: 1.0,
-                            )),
-                        focusedBorder:  OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color:Theme.of(context).primaryColor,
-                            width: 2.0,
+                              color:Theme.of(context).primaryColor,
+                              width: 2.0,
+                            ),
                           ),
+
+
+                          label: Text( "Email ",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
+
+                          border: OutlineInputBorder(
+
+
+                              borderRadius: BorderRadius.circular(8.r)),
                         ),
-
-
-                        label: Text( "Email ",style: TextStyle(fontSize:14,fontWeight: FontWeight.w400)),
-
-                        border: OutlineInputBorder(
-
-
-                            borderRadius: BorderRadius.circular(8.r)),
                       ),
                     ),
                     SizedBox(
                       height:18.h,
                     ),
-                    TextFormField(
-                      obscureText: _isObsecured,
+                    Container(
+                      height: 52.h,
+                      child: TextFormField(
+                        obscureText: _isObsecured,
 
 
-                      onChanged: _updatePassword,
-                      decoration: InputDecoration(
-                        floatingLabelBehavior: FloatingLabelBehavior.never,
-                        enabledBorder:  OutlineInputBorder(
-
+                        onChanged: _updatePassword,
+                        decoration: InputDecoration(
+                          floatingLabelBehavior: FloatingLabelBehavior.never,
+                          enabledBorder:  OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8.r),
+                              borderSide: BorderSide(
+                                color: Color(0xffBDBDBD),
+                                width: 1.0,
+                              )),
+                          focusedBorder:  OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: Color(0xffBDBDBD),
-                              width: 1.0,
-                            )),
-                        focusedBorder:  OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color:Theme.of(context).primaryColor,
-                            width: 2.0,
+                              color:Theme.of(context).primaryColor,
+                              width: 2.0,
+                            ),
                           ),
+
+                label: Text("Password ",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
+                          suffixIcon:  IconButton(onPressed:_toggleObscured,
+                              icon: Icon(_isObsecured?Icons.visibility_off:Icons.visibility
+                               ,color: Color(0xffCDCDCD),)),
+                          border: OutlineInputBorder(
+
+
+                              borderRadius: BorderRadius.circular(8.r)),
                         ),
-
-                label: Text("Password ",style: TextStyle(fontSize:14,fontWeight: FontWeight.w400)),
-                        suffixIcon:  IconButton(onPressed:_toggleObscured,
-                            icon: Icon(_isObsecured?Icons.visibility:Icons.visibility_off
-                              ,color: Theme.of(context).primaryColor,)),
-                        border: OutlineInputBorder(
-
-
-                            borderRadius: BorderRadius.circular(8.r)),
                       ),
                     ),
                     SizedBox(
                       height:18.h,
                     ),
-                    TextFormField(
-                      obscureText:_isObsecuredConfirm ,
+                    Container(
+                      height: 52.h,
+                      child: TextFormField(
+                        obscureText:_isObsecuredConfirm ,
 
-                      decoration: InputDecoration(
-                        floatingLabelBehavior: FloatingLabelBehavior.never,
-                        enabledBorder:  OutlineInputBorder(
-
+                        decoration: InputDecoration(
+                          floatingLabelBehavior: FloatingLabelBehavior.never,
+                          enabledBorder:  OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8.r),
+                              borderSide: BorderSide(
+                                color: Color(0xffBDBDBD),
+                                width: 1.0,
+                              )),
+                          focusedBorder:  OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: Color(0xffBDBDBD),
-                              width: 1.0,
-                            )),
-                        focusedBorder:  OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color:Theme.of(context).primaryColor,
-                            width: 2.0,
+                              color:Theme.of(context).primaryColor,
+                              width: 2.0,
+                            ),
                           ),
+
+                         label: Text( "Confirm Password ",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
+                          suffixIcon:  IconButton(onPressed: toggleObscuredConfrm ,
+                              icon: Icon(_isObsecuredConfirm?Icons.visibility_off:Icons.visibility
+                                ,color: Color(0xffCDCDCD),)),
+                          border: OutlineInputBorder(
+
+
+                              borderRadius: BorderRadius.circular(8.r)),
                         ),
-
-                       label: Text( "Confirm Password ",style: TextStyle(fontSize:14,fontWeight: FontWeight.w400)),
-                        suffixIcon:  IconButton(onPressed: toggleObscuredConfrm ,
-                            icon: Icon(_isObsecuredConfirm?Icons.visibility:Icons.visibility_off
-                              ,color: Theme.of(context).primaryColor,)),
-                        border: OutlineInputBorder(
-
-
-                            borderRadius: BorderRadius.circular(8.r)),
                       ),
                     ),
 
@@ -245,8 +263,8 @@ class _signUpState extends State<signUp> {
 
                       "Your password must contain",
                       style: TextStyle(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w500,
                           color: Colors.black54),
                     ),
                     SizedBox(
@@ -258,7 +276,7 @@ class _signUpState extends State<signUp> {
                     _buildValidationIcon(hasSpecialChar, '1 or more numbers special character'),
                     SizedBox(height: 16.0),
                     SizedBox(
-                      height: 28.h,
+                      height: 20.h,
                     ),
                     BTN(text: "Sign Up", onPrees: () {
                      if (_allValidationsPassed(context)) {
@@ -277,47 +295,36 @@ class _signUpState extends State<signUp> {
                         Container(
                           height: 2,width:36,color:  Color(0xffBDBDBD),
                         ),
-                        Text(" Or sign up with ",style: TextStyle(fontSize: 14,color:Color(0xffBDBDBD) )),
+                        Text(" or sign up with ",style: TextStyle(fontSize: 14,color:Color(0xffBDBDBD) )),
                         Container( height: 2,width: 36,color: Color(0xffBDBDBD),)
                       ],),
                     SizedBox(
-                      height:18.h,
+                      height:28.h,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                            decoration:BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(12),border: Border.all(width:1,color: Color(0xffBDBDBD),)),
-                            width:96.w,
-                            height: 50.h,
-                            child:Image.network("https://th.bing.com/th/id/R.0fa3fe04edf6c0202970f2088edea9e7?rik=joOK76LOMJlBPw&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fgoogle-logo-png-open-2000.png&ehk=0PJJlqaIxYmJ9eOIp9mYVPA4KwkGo5Zob552JPltDMw%3d&risl=&pid=ImgRaw&r=0")),
-                        SizedBox(width: 15.w),
-                        Container(
-                            decoration:BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(12),border: Border.all(width:1,color: Color(0xffBDBDBD),)),
-                            width:96.w,
-                            height: 50.h,
-                            child:Image.network(fit: BoxFit.fill,"https://th.bing.com/th/id/OIP.f1yTTEz6vnVeF9ymigPWNQHaHa?rs=1&pid=ImgDetMain")),
-                        SizedBox(width: 15.w), Container(
-                            decoration:BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(12),border: Border.all(width:1,color: Color(0xffBDBDBD),)),
-                            width:96.w,
-                            height: 50.h,
-                            child:Image.asset("assets/images/xTw.png")),
+                      Image.asset("assets/images/Frame 1000004579 (1).png",height: 58.h,width: 100.w),
+                        SizedBox(width: 10.w),
+                        Image.asset("assets/images/Frame facebook.png",height: 58.h,width: 100.w),
+                        SizedBox(width: 10.w),
+                        Image.asset("assets/images/Frame X.png",height: 58.h,width: 100.w),
                       ],
                     ),
-                    SizedBox(height: 20.h),
+                    SizedBox(height: 28.h),
                     Padding(
                       padding: const EdgeInsets.only(bottom:40),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('Already have an account?',style: TextStyle(color: Color(0xffBDBDBD),fontSize:14.sp)),
+                          Text('Already have an account?',style: TextStyle(color: Color(0xffBDBDBD),fontSize:13.sp)),
 
                           InkWell(
                               onTap: (){
                                 Navigator.push(context,
                                     MaterialPageRoute(builder: (context) =>login ()));
                               },
-                              child: Text(' Log in',style: TextStyle(color:Theme.of(context).primaryColor,fontSize:16.sp,fontWeight: FontWeight.bold))),
+                              child: Text(' Log in',style: TextStyle(color:Theme.of(context).primaryColor,fontSize:13.sp,fontWeight: FontWeight.bold))),
                         ],
                       ),
                     ),
@@ -336,9 +343,9 @@ class _signUpState extends State<signUp> {
       children: [
         Icon(
           isValid ? Icons.check_circle : Icons.check_circle ,
-          color: isValid ?Color(0xff047857) : Colors.black12,
+          color: isValid ?Color(0xff047857) : Colors.black12,size: 18,
         ),
-        SizedBox(width: 8.w),
+        SizedBox(width: 8.w,height: 22.h),
         Text(message,style: TextStyle(fontSize:13.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
       ],
     );

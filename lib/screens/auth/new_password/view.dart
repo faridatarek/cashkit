@@ -52,7 +52,7 @@ class _newPassState extends State<newPass> {
             height: double.infinity,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 16.0, top: 48),
+            padding: const EdgeInsets.only(left:6, top: 48),
             child: IconButton(
                 onPressed: () {},
                 icon: Icon(
@@ -69,7 +69,7 @@ class _newPassState extends State<newPass> {
             child: Text("Set your password",
                 style: TextStyle(
                     fontWeight: FontWeight.w700,
-                    fontSize: 25.sp,
+                    fontSize: 22.sp,
                     color: Colors.white)),
           ),
 
@@ -96,7 +96,7 @@ class _newPassState extends State<newPass> {
 
                       "In order to keep your account safe you need to create a strong password.",
                       style: TextStyle(
-                        fontSize: 15.sp,
+                        fontSize: 13.sp,
                         fontWeight: FontWeight.w400,
                         color: Color(0xff989898),
 
@@ -106,67 +106,76 @@ class _newPassState extends State<newPass> {
                     ),
 
                     SizedBox(
-                      height:18.h,
+                      height:9.h,
                     ),
-                    TextFormField(
-                      obscureText: _isObsecured,
+                    Container(
+                      height: 52.h,
+                      child: TextFormField(
+                        obscureText: _isObsecured,
 
 
-                      onChanged: _updatePassword,
-                      decoration: InputDecoration(
-                        floatingLabelBehavior: FloatingLabelBehavior.never,
-                        enabledBorder:  OutlineInputBorder(
+                        onChanged: _updatePassword,
+                        decoration: InputDecoration(
+                          floatingLabelBehavior: FloatingLabelBehavior.never,
+                          enabledBorder:  OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.r),
+                              borderSide: BorderSide(
+                                color: Color(0xffBDBDBD),
+                                width: 1.0,
+                              )),
+                          focusedBorder:  OutlineInputBorder(
+                            borderRadius:BorderRadius.circular(8.r) ,
 
                             borderSide: BorderSide(
-                              color: Color(0xffBDBDBD),
-                              width: 1.0,
-                            )),
-                        focusedBorder:  OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color:Theme.of(context).primaryColor,
-                            width: 2.0,
+                              color:Theme.of(context).primaryColor,
+                              width: 2.0,
+                            ),
                           ),
+
+                          label: Text("Password ",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
+                          suffixIcon:  IconButton(onPressed:_toggleObscured,
+                              icon: Icon(_isObsecured?Icons.visibility_off:Icons.visibility
+                                ,color: Color(0xffCDCDCD),)),
+                          border: OutlineInputBorder(
+
+
+                              borderRadius: BorderRadius.circular(8.r)),
                         ),
-
-                        label: Text("Password ",style: TextStyle(fontSize:14,fontWeight: FontWeight.w400)),
-                        suffixIcon:  IconButton(onPressed:_toggleObscured,
-                            icon: Icon(_isObsecured?Icons.visibility:Icons.visibility_off
-                              ,color: Theme.of(context).primaryColor,)),
-                        border: OutlineInputBorder(
-
-
-                            borderRadius: BorderRadius.circular(8.r)),
                       ),
                     ),
                     SizedBox(
                       height:18.h,
                     ),
-                    TextFormField(
-                      obscureText:_isObsecuredConfirm ,
+                    Container(
+                      height: 52.h,
+                      child: TextFormField(
+                        obscureText:_isObsecuredConfirm ,
 
-                      decoration: InputDecoration(
-                        floatingLabelBehavior: FloatingLabelBehavior.never,
-                        enabledBorder:  OutlineInputBorder(
-
+                        decoration: InputDecoration(
+                          floatingLabelBehavior: FloatingLabelBehavior.never,
+                          enabledBorder:  OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8.r),
+                              borderSide: BorderSide(
+                                color: Color(0xffBDBDBD),
+                                width: 1.0,
+                              )),
+                          focusedBorder:  OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8.r),
                             borderSide: BorderSide(
-                              color: Color(0xffBDBDBD),
-                              width: 1.0,
-                            )),
-                        focusedBorder:  OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color:Theme.of(context).primaryColor,
-                            width: 2.0,
+                              color:Theme.of(context).primaryColor,
+                              width: 2.0,
+                            ),
                           ),
+
+                   label: Text("Confirm Password",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
+                          suffixIcon:  IconButton(onPressed: toggleObscuredConfrm ,
+                              icon: Icon(_isObsecuredConfirm?Icons.visibility_off:Icons.visibility
+                                ,color: Color(0xffCDCDCD),)),
+                          border: OutlineInputBorder(
+
+
+                              borderRadius: BorderRadius.circular(8.r)),
                         ),
-
-                   label: Text("Confirm Password",style: TextStyle(fontSize:14,fontWeight: FontWeight.w400)),
-                        suffixIcon:  IconButton(onPressed: toggleObscuredConfrm ,
-                            icon: Icon(_isObsecuredConfirm?Icons.visibility:Icons.visibility_off
-                              ,color: Theme.of(context).primaryColor,)),
-                        border: OutlineInputBorder(
-
-
-                            borderRadius: BorderRadius.circular(8.r)),
                       ),
                     ),
 
@@ -177,8 +186,8 @@ class _newPassState extends State<newPass> {
 
                       "Your password must contain",
                       style: TextStyle(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w500,
                           color: Colors.black54),
                     ),
                     SizedBox(
@@ -190,7 +199,7 @@ class _newPassState extends State<newPass> {
                     _buildValidationIcon(hasSpecialChar, '1 or more numbers special character'),
                     SizedBox(height: 16.0),
                     SizedBox(
-                      height:15.h,
+                      height: 20.h,
                     ),
                     BTN(text: "Change Password", onPrees: () => _allValidationsPassed(context),
                     ),
@@ -205,18 +214,20 @@ class _newPassState extends State<newPass> {
       ),
     );
   }
+
   Widget _buildValidationIcon(bool isValid, String message) {
     return Row(
       children: [
         Icon(
           isValid ? Icons.check_circle : Icons.check_circle ,
-          color: isValid ?Color(0xff047857) : Colors.black12,
+          color: isValid ?Color(0xff047857) : Colors.black12,size: 18,
         ),
-        SizedBox(width: 8.w),
+        SizedBox(width: 8.w,height: 22.h),
         Text(message,style: TextStyle(fontSize:13.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
       ],
     );
   }
+
 
 
   bool _allValidationsPassed(BuildContext context) {

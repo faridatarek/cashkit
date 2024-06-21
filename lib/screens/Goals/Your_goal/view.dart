@@ -17,7 +17,7 @@ class Your_goal extends StatelessWidget {
           backgroundColor: Colors.transparent,
           elevation: 0,
           centerTitle: true,
-          title: Text("Your Goal",style: TextStyle(fontSize: 20.sp,color: Color(0xff292929),fontWeight: FontWeight.w600))
+          title: Text("Your Goal",style: TextStyle(fontSize: 18.sp,color: Color(0xff292929),fontWeight: FontWeight.w600))
           ,leading: InkWell(
           onTap:  (){
             Navigator.push(context,
@@ -58,59 +58,59 @@ class Your_goal extends StatelessWidget {
         ),],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding:  EdgeInsets.only(top:20.0,right:15.w,left: 15.w),
         child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
             children: [
          Container(
            child:Padding(
              padding: const EdgeInsets.all(12.0),
-             child: Text("${data.goalName}",style: TextStyle(fontSize: 17,color: Color(0xff292929),fontWeight: FontWeight.w500),),
+             child: Text("${data.goalName}",style: TextStyle(fontSize: 15.sp,color: Color(0xff292929),fontWeight: FontWeight.w500),),
            ),
            height: 55,
            width:MediaQuery.of(context).size.width,
            decoration: BoxDecoration(
            borderRadius: BorderRadius.circular(10),border: Border.all(color:Theme.of(context).primaryColor,
-             width: 1.7,)
+             width:1,)
            ),
          ),
           SizedBox(height: 18,),
           Container(
             child:Padding(
               padding: const EdgeInsets.all(12.0),
-              child: Text("${data.totalAmount}",style: TextStyle(fontSize: 17,color: Color(0xff292929),fontWeight: FontWeight.w500),),
+              child: Text("${data.totalAmount}",style: TextStyle(fontSize: 15.sp,color: Color(0xff292929),fontWeight: FontWeight.w500),),
             ),
             height: 55,
             width:MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),border: Border.all(color:Theme.of(context).primaryColor,
-              width: 1.7,)
+              width:1,)
             ),
           ),
           SizedBox(height: 18,),
           Container(
             child:Padding(
               padding: const EdgeInsets.all(12.0),
-              child: Text("${data.firstdate}",style: TextStyle(fontSize: 17,color: Color(0xff292929),fontWeight: FontWeight.w500),),
+              child: Text("${data.firstdate}",style: TextStyle(fontSize: 15.sp,color: Color(0xff292929),fontWeight: FontWeight.w500),),
             ),
             height: 55,
             width:MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),border: Border.all(color:Theme.of(context).primaryColor,
-              width: 1.7,)
+              width: 1)
             ),
           ),
           SizedBox(height: 18,),
           Container(
             child:Padding(
               padding: const EdgeInsets.all(12.0),
-              child: Text("${data.lastdate}",style: TextStyle(fontSize: 17,color: Color(0xff292929),fontWeight: FontWeight.w500),),
+              child: Text("${data.lastdate}",style: TextStyle(fontSize: 15.sp,color: Color(0xff292929),fontWeight: FontWeight.w500),),
             ),
             height: 55,
             width:MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),border: Border.all(color:Theme.of(context).primaryColor,
-              width: 1.7,)
+              width: 1)
             ),
           )
         ]),

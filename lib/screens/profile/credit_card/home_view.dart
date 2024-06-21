@@ -41,7 +41,7 @@ class CreditHomeScreen extends StatelessWidget {
         title: Text(
           "Credit Card",
           style: TextStyle(
-              fontWeight: FontWeight.w600, fontSize: 20, color: Colors.black),
+              fontWeight: FontWeight.w600, fontSize: 18.sp, color: Colors.black),
         ),
         centerTitle: true,
       ),

@@ -45,8 +45,8 @@ class Rating extends StatelessWidget {
                     (
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                    Text(" Send",style: TextStyle(fontSize: 16.sp,color: Color(0xff047857),fontWeight: FontWeight.w500)),
-                      Text("Write a Review",style: TextStyle(fontSize: 16.sp,color: Color(0xff292929),fontWeight: FontWeight.w600)),
+                    Text(" Send",style: TextStyle(fontSize: 14.sp,color: Color(0xff047857),fontWeight: FontWeight.w500)),
+                      Text("Write a Review",style: TextStyle(fontSize: 14.sp,color: Color(0xff292929),fontWeight: FontWeight.w600)),
                       InkWell(
                         onTap:  () {
                           Navigator.pop(
@@ -54,47 +54,51 @@ class Rating extends StatelessWidget {
 
                           );
                         },
-                          child: Text(" Cancel",style: TextStyle(fontSize: 16.sp,color: Color(0xff047857),fontWeight: FontWeight.w500))),
+                          child: Text(" Cancel",style: TextStyle(fontSize: 14.sp,color: Color(0xff047857),fontWeight: FontWeight.w500))),
                   ],),
                 ),
                 Padding(
                   padding:  EdgeInsets.only(
-                    left: 80.w,top: 10.h,bottom: 10
+                    left: 97.w,top: 10.h,bottom: 10
                   ),
                   child: Row(children: [
-                    Icon(Icons.star,color: Color(0xffFFB400),size: 30),
+                    Icon(Icons.star,color: Color(0xffFFB400),size: 27.r),
                     SizedBox(width: 3.w,),
-                    Icon(Icons.star,color: Color(0xffFFB400),size: 30),
+                    Icon(Icons.star,color: Color(0xffFFB400),size: 27.r),
                     SizedBox(width: 3.w,),
-                    Icon(Icons.star,color: Color(0xffFFB400),size: 30),
+                    Icon(Icons.star,color: Color(0xffFFB400),size: 27.r),
                     SizedBox(width: 3.w,),
-                    Icon(Icons.star,color: Color(0xffFFB400),size: 30),
+                    Icon(Icons.star,color: Color(0xffFFB400),size: 27.r),
                     SizedBox(width: 3.w,),
-                    Icon(Icons.star,color: Color(0xffFFB400),size: 30),
+                    Icon(Icons.star,color: Color(0xffFFB400),size: 27.r),
                     SizedBox(width: 3.w,)
 
                   ],),
                 ),
-                Center(child: Text("  Tap a Star To Rate       ",style: TextStyle(fontSize: 13.sp,color: Color(0xff989898),fontWeight: FontWeight.w400)))
+                Padding(
+                  padding:  EdgeInsets.only(
+                      left: 107.w,bottom: 10,),
+                  child: Text("  Tap a star to rate       ",style: TextStyle(fontSize: 11.sp,color: Color(0xff989898),fontWeight: FontWeight.w300)),
+                )
               ,SizedBox(height: 25.h)
-                    ,Container(
-                      color:Color(0xff989898).withOpacity(0.6) ,
-                width:MediaQuery.of(context).size.width.w,height: 0.70.h,
-                    )
+              ,Container(
+            color:Color(0xff989898).withOpacity(0.2) ,
+            width:MediaQuery.of(context).size.width,height: 0.70.h,
+          )
               ,SizedBox(height: 18.h),
                     Padding(
-                      padding:  EdgeInsets.only(left: 9.0.w),
-                      child: Text("Title",style: TextStyle(fontSize: 15.sp,color: Color(0xff989898),fontWeight: FontWeight.w400)),
+                      padding:  EdgeInsets.only(left: 15.0.w),
+                      child: Text("Title",style: TextStyle(fontSize: 13.sp,color: Color(0xff989898),fontWeight: FontWeight.w400)),
                     )
                    ,SizedBox(height: 16.h)
                     ,Container(
                       color:Color(0xff989898).withOpacity(0.2) ,
-                      width:MediaQuery.of(context).size.width.w,height: 0.70.h,
+                      width:MediaQuery.of(context).size.width,height: 0.70.h,
                     ),
               SizedBox(height: 16.h),
                     Padding(
-                      padding:  EdgeInsets.only(left: 9.0.w),
-                      child: Text("Review (Optional)",style: TextStyle(fontSize: 15.sp,color: Color(0xff989898),fontWeight: FontWeight.w400)),
+                      padding:  EdgeInsets.only(left: 15.0.w),
+                      child: Text("Review (Optional)",style: TextStyle(fontSize: 13.sp,color: Color(0xff989898),fontWeight: FontWeight.w400)),
                     )
 
               ])

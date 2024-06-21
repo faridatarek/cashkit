@@ -141,56 +141,56 @@ class _Creat_goalsState extends State<Creat_goals> {
                 borderRadius: BorderRadius.circular(8.0), // Set border radius
               ),
 
-              content: Text("The amount of money required to achieve your goal exceeds the amount in the saving box ,you can:",style: TextStyle(fontSize:18.sp,fontWeight: FontWeight.w600)),
+              content: Padding(
+                padding:  EdgeInsets.only(top: 10.0.h),
+                child: Text("The amount of money required to achieve your goal exceeds the amount \n"
+                    "in the saving box ,you can:",style: TextStyle(fontSize:13.sp,fontWeight: FontWeight.w500)),
+              ),
 
               actions: <Widget>[
 
                 Center(
                   child: Container(
-                    height: 250.h,
+                    height: 180.h,
 
                     child: Column(
 
                       children: [
                       Container(
 
+
                         child: Padding(
-                          padding: const EdgeInsets.all(7.0),
+                          padding: EdgeInsets.only(left:7.w,top: 10.h),
                           child:  Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
 
                             children: [
-                              CircleAvatar(child: CircleAvatar(radius:7.r,backgroundColor: Colors.white),radius: 9.r,backgroundColor: Colors.black),
+                              CircleAvatar(child: CircleAvatar(radius:7.r,backgroundColor: Colors.white),radius: 8.r,backgroundColor: Colors.black),
                               SizedBox(width:5.w,),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(" Edit Goal",style: TextStyle(fontWeight: FontWeight.w800,fontSize: 14.sp)),
-
+                                  Text(" Edit Goal",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 12.sp)),
                                   TextButton(
                                     onPressed: () {
                                       Navigator.pop(context); // Close the alert dialog
                                     },
-                                    child: Column(
-                                      children: [
-                                        Text('Change the amount',style: TextStyle(fontWeight: FontWeight.w400,fontSize:12.sp,color: Color(0xff656565),)),
-                                        Text('  saved every month.',style: TextStyle(fontWeight: FontWeight.w400,fontSize:12.sp,color: Color(0xff656565),)),
-                                      ],
-                                    ),
+                                    child: Text('Increase End Date or decrease \n'
+                                        'the budget.',style: TextStyle(fontWeight: FontWeight.w400,fontSize:9.sp,color: Color(0xff656565),)),
                                   ),
                                 ],
                               ),
                             ],
                           ),
                         ),
-                        margin: EdgeInsets.symmetric(vertical: 5,horizontal:8),
+                        margin: EdgeInsets.only(left: 8.w,top: 5.h,right: 1.w,bottom: 3.h,),
                         width:MediaQuery.of(context).size.width.w,
-                        height:85.h,
+                        height:75.h,
 
                         decoration: BoxDecoration(
 
                           color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(8)), //border corner radius
+                          borderRadius: BorderRadius.all(Radius.circular(8.r)), //border corner radius
                           boxShadow:[
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.4), //color of shadow
@@ -202,23 +202,21 @@ class _Creat_goalsState extends State<Creat_goals> {
 
                           ],
                         ),),
-
                         Container(
 
+
                           child: Padding(
-                            padding: const EdgeInsets.all(7.0),
+                            padding: EdgeInsets.only(left:7.w,top: 10.h),
                             child:  Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
 
                               children: [
-                                CircleAvatar(child: CircleAvatar(radius:7.r,backgroundColor: Colors.white),radius: 9.r,backgroundColor: Colors.black),
+                                CircleAvatar(child: CircleAvatar(radius:7.r,backgroundColor: Colors.white),radius: 8.r,backgroundColor: Colors.black),
                                 SizedBox(width:5.w,),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(" Edit saving box",style: TextStyle(fontWeight: FontWeight.w800,fontSize: 14.sp)),
-
-
+                                    Text(" Edit Saving Box",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 12.sp)),
                                     TextButton(
                                       onPressed: () {
                                         Navigator.pushReplacement(
@@ -228,26 +226,22 @@ class _Creat_goalsState extends State<Creat_goals> {
                                           ),
                                         );
                                       },
-                                      child: Column(
-                                        children: [
-                                          Text('Increase End Date ',style: TextStyle(fontWeight: FontWeight.w400,fontSize:12.sp,color: Color(0xff656565))),
-                                          Text('    or decrease budget.',style: TextStyle(fontWeight: FontWeight.w400,fontSize:12.sp,color: Color(0xff656565))),
-                                        ],
-                                      ),
+                                      child: Text('Change the amount saved \n'
+                                          'every month.',style: TextStyle(fontWeight: FontWeight.w400,fontSize:9.sp,color: Color(0xff656565),)),
                                     ),
                                   ],
                                 ),
                               ],
                             ),
                           ),
-                          margin: EdgeInsets.symmetric(vertical: 5,horizontal:8),
-                          width:255.w,
-                          height:85.h,
+                          margin: EdgeInsets.only(left: 8.w,top: 5.h,right: 1.w,bottom: 3.h,),
+                          width:MediaQuery.of(context).size.width.w,
+                          height:75.h,
 
                           decoration: BoxDecoration(
 
                             color: Colors.white,
-                            borderRadius: BorderRadius.all(Radius.circular(8)), //border corner radius
+                            borderRadius: BorderRadius.all(Radius.circular(8.r)), //border corner radius
                             boxShadow:[
                               BoxShadow(
                                 color: Colors.grey.withOpacity(0.4), //color of shadow
@@ -259,6 +253,8 @@ class _Creat_goalsState extends State<Creat_goals> {
 
                             ],
                           ),),
+
+
 
 
                     ],),
@@ -290,37 +286,45 @@ class _Creat_goalsState extends State<Creat_goals> {
             title: JelloIn
               (
               duration: Duration(seconds:4),
-              child: Image.asset(
-                "assets/images/star-creatGoal.png",
-                width: 118.w,
-                height: 118.h,
+              child: Padding(
+                padding:  EdgeInsets.only(top:25.h),
+                child: Image.asset(
+                  "assets/images/star-creatGoal.png",
+                  width: 80.w,
+                  height: 50.h,
+                ),
               ),
             ),
-            titlePadding: EdgeInsets.symmetric(vertical: 32),
+            titlePadding: EdgeInsets.symmetric(vertical:10),
             actions: [
-              Column(
-                children: [
-                  Text(
-                    "Your goal is added successfully",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize:17.sp),
-                  ),
-                  SizedBox(height:10.h,),
-                  Align(
-                    alignment: Alignment.center,
-                    child: Padding(
-                      padding: const EdgeInsets.only(bottom: 28.0,right: 22,left: 22),
+              Center(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding:  EdgeInsets.only(left:5),
                       child: Text(
-                        textAlign: TextAlign.center,
-                        "I hope you achieve your goal.",
+                        "Your goal is added successfully",
                         style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 16),
+                            fontWeight: FontWeight.w600,
+                            fontSize:12.sp),
                       ),
                     ),
-                  ),
-                ],
+                    SizedBox(height:5.h,),
+                    Align(
+                      alignment: Alignment.center,
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 28.0,right: 22,left: 22),
+                        child: Text(
+                          textAlign: TextAlign.center,
+                          "I hope you achieve your goal.",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 11.sp),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               )
             ],
           );
@@ -337,7 +341,7 @@ class _Creat_goalsState extends State<Creat_goals> {
           backgroundColor: Colors.transparent,
           elevation: 0,
           centerTitle: true,
-          title: Text("Create New Goal",style: TextStyle(fontSize: 20.sp,color: Color(0xff292929),fontWeight: FontWeight.w600))
+          title: Text("Create New Goal",style: TextStyle(fontSize: 18.sp,color: Color(0xff292929),fontWeight: FontWeight.w600))
           ,leading: InkWell(
           onTap:  (){
             Navigator.push(context,
@@ -348,125 +352,142 @@ class _Creat_goalsState extends State<Creat_goals> {
         padding: const EdgeInsets.only(top: 15,right: 13,left: 13),
         child: SingleChildScrollView(
           child: Column(children: [
-            TextFormField(
-              controller: nameController,
-              decoration: InputDecoration(
-                floatingLabelBehavior: FloatingLabelBehavior.never,
-                enabledBorder:  OutlineInputBorder(
+            Container(
+              height: 52.h,
+              child: TextFormField(
+                controller: nameController,
+                decoration: InputDecoration(
+                  floatingLabelBehavior: FloatingLabelBehavior.never,
+                  enabledBorder:  OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.r),
 
+                      borderSide: BorderSide(
+                        color: Color(0xffBDBDBD),
+                        width: 1.0,
+                      )),
+                  focusedBorder:  OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Color(0xffBDBDBD),
-                      width: 1.0,
-                    )),
-                focusedBorder:  OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color:Theme.of(context).primaryColor,
-                    width: 2.0,
+                      color:Theme.of(context).primaryColor,
+                      width: 2.0,
+                    ),
                   ),
+
+                  label: Text( "Goal Name",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
+
+
+                  border: OutlineInputBorder(
+
+
+                      borderRadius: BorderRadius.circular(8.r)),
                 ),
-
-                labelText: "Goal Name",
-
-                border: OutlineInputBorder(
-
-
-                    borderRadius: BorderRadius.circular(8.r)),
               ),
             ),
             SizedBox(
               height:15.h,
             ),
-            TextFormField(
-              controller: budgetController,
-              keyboardType: TextInputType.numberWithOptions(),
-              decoration: InputDecoration(
-                floatingLabelBehavior: FloatingLabelBehavior.never,
-                enabledBorder:  OutlineInputBorder(
-
+            Container(
+              height: 52.h,
+              child: TextFormField(
+                controller: budgetController,
+                keyboardType: TextInputType.numberWithOptions(),
+                decoration: InputDecoration(
+                  floatingLabelBehavior: FloatingLabelBehavior.never,
+                  enabledBorder:  OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.r),
+                      borderSide: BorderSide(
+                        color: Color(0xffBDBDBD),
+                        width: 1.0,
+                      )),
+                  focusedBorder:  OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Color(0xffBDBDBD),
-                      width: 1.0,
-                    )),
-                focusedBorder:  OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color:Theme.of(context).primaryColor,
-                    width: 2.0,
+                      color:Theme.of(context).primaryColor,
+                      width: 2.0,
+                    ),
                   ),
+                  label: Text( "Budget",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898)))
+                 ,
+
+                  border: OutlineInputBorder(
+
+
+                      borderRadius: BorderRadius.circular(8.r)),
                 ),
-
-                labelText: "Budget",
-
-                border: OutlineInputBorder(
-
-
-                    borderRadius: BorderRadius.circular(8.r)),
               ),
             ),
             SizedBox(
               height:15.h,
             ),
 
-            TextFormField(
-              controller: _dateControllerStart,
-              readOnly: true,
-              onTap: () => _selectDateStart(context),
-              decoration: InputDecoration(
-                suffixIcon: Icon(Icons.calendar_today,color:Theme.of(context).primaryColor),
-                floatingLabelBehavior: FloatingLabelBehavior.never,
-                enabledBorder:  OutlineInputBorder(
+            Container(
+              height: 52.h,
+              child: TextFormField(
+                controller: _dateControllerStart,
+                readOnly: true,
+                onTap: () => _selectDateStart(context),
+                decoration: InputDecoration(
+                  suffixIcon: Icon(Icons.calendar_today,color: Color(0xffCDCDCD),size: 20),
+                  floatingLabelBehavior: FloatingLabelBehavior.never,
+                  enabledBorder:  OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.r),
 
+                      borderSide: BorderSide(
+                        color: Color(0xffBDBDBD),
+                        width: 1.0,
+                      )),
+                  focusedBorder:  OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.r),
                     borderSide: BorderSide(
-                      color: Color(0xffBDBDBD),
-                      width: 1.0,
-                    )),
-                focusedBorder:  OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color:Theme.of(context).primaryColor,
-                    width: 2.0,
+                      color:Theme.of(context).primaryColor,
+                      width: 2.0,
+                    ),
                   ),
+                    label: Text(  _selectedDateStart == null
+                        ? 'Start date'
+                        : DateFormat('d MMMM y').format(_selectedDateStart!),style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
+
+
+
+
+                  border: OutlineInputBorder(
+
+
+                      borderRadius: BorderRadius.circular(8.r)),
                 ),
-
-                labelText:
-                  _selectedDateStart == null
-                      ? 'Start date'
-                      : DateFormat('d MMMM y').format(_selectedDateStart!),
-                /*  style: TextStyle(fontSize: 15.sp),*/
-
-
-                border: OutlineInputBorder(
-
-
-                    borderRadius: BorderRadius.circular(8.r)),
               ),
             ),
             SizedBox(height: 20),
-            TextFormField(
-              controller: _dateControllerEnd,
-              readOnly:true,
-              onTap: () => _selectDateEnd(context),
-              decoration: InputDecoration(
-                suffixIcon: Icon(Icons.calendar_today,color: Theme.of(context).primaryColor),
-                floatingLabelBehavior: FloatingLabelBehavior.never,
-                enabledBorder:  OutlineInputBorder(
+            Container(
+              height: 52.h,
+              child: TextFormField(
+                controller: _dateControllerEnd,
+                readOnly:true,
+                onTap: () => _selectDateEnd(context),
+                decoration: InputDecoration(
 
+                  suffixIcon: Icon(Icons.calendar_today,color: Color(0xffCDCDCD),size: 20),
+                  floatingLabelBehavior: FloatingLabelBehavior.never,
+                  enabledBorder:  OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.r),
+                      borderSide: BorderSide(
+                        color: Color(0xffBDBDBD),
+                        width: 1.0,
+                      )),
+                  focusedBorder:  OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.r),
                     borderSide: BorderSide(
-                      color: Color(0xffBDBDBD),
-                      width: 1.0,
-                    )),
-                focusedBorder:  OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color:Theme.of(context).primaryColor,
-                    width: 2.0,
+                      color:Theme.of(context).primaryColor,
+                      width: 2.0,
+                    ),
                   ),
+                  label: Text( _selectedDateEnd == null
+                      ? 'End date'
+                      : DateFormat('d MMMM y').format(_selectedDateEnd!),style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
+
+
+                  border: OutlineInputBorder(
+
+                      borderRadius: BorderRadius.circular(8.r)),
                 ),
-
-                labelText:_selectedDateEnd == null
-                    ? 'Start date'
-                    : DateFormat('d MMMM y').format(_selectedDateEnd!),
-
-                border: OutlineInputBorder(
-
-                    borderRadius: BorderRadius.circular(8.r)),
               ),
             ),
 
@@ -480,16 +501,16 @@ class _Creat_goalsState extends State<Creat_goals> {
                     ? () => saveDataAndNavigate(context)
                     : null,
                 style: ElevatedButton.styleFrom(
-                    minimumSize: Size(double.infinity.w, 50.h),
+                    minimumSize: Size(double.infinity.w, 48.h),
 
                     backgroundColor: Theme.of(context).primaryColor,
                     shape: RoundedRectangleBorder(
 
-                      borderRadius: BorderRadius.circular(10.r),
+                      borderRadius: BorderRadius.circular(8.r),
                     )),
                 child: Text(
                   "Create",
-                  style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700,color: Colors.white),
+                  style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w700,color: Colors.white),
                 ),
               ),
             ),

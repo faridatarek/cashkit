@@ -81,10 +81,10 @@ class _MainCateg_needsState extends State<MainCateg_needs> {
         centerTitle: true,
       leadingWidth:200.w,
         leading: Padding(
-          padding:  EdgeInsets.only(left: 10.w,top: 15.h),
+          padding:  EdgeInsets.only(left: 12.w,top: 27.h),
           child: Text(
             "Add Budget",
-            style: TextStyle(fontSize: 20.sp, color: Color(0xff292929), fontWeight: FontWeight.w600),
+            style: TextStyle(fontSize: 16.sp, color: Color(0xff292929), fontWeight: FontWeight.w600),
           ),
         ),
       ),
@@ -95,7 +95,8 @@ class _MainCateg_needsState extends State<MainCateg_needs> {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Container(
-                color: Colors.white,height: 180.h,
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.r),color: Colors.white,),
+                height: 170.h,
                 child: Column(children: [
                   InkWell(
                     onTap: () {
@@ -116,7 +117,7 @@ class _MainCateg_needsState extends State<MainCateg_needs> {
                     },
                     child: Container(
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadiusDirectional.circular(10),
+                        borderRadius: BorderRadiusDirectional.circular(8.r),
                         color: Colors.white,
                       ),
                       height: 80,
@@ -125,24 +126,24 @@ class _MainCateg_needsState extends State<MainCateg_needs> {
                         children: [
                           Padding(
                             padding: EdgeInsets.only(left: 10.0.w),
-                            child: CircleAvatar(child: selectedImg_needs, backgroundColor: Color(0xffEFEFEF), radius: 30.r),
+                            child: CircleAvatar(child: selectedImg_needs, backgroundColor: Color(0xffEFEFEF), radius: 25.r),
                           ),
                           SizedBox(width: 15.w),
                           Text(
                             selectedCategoryName_needs,
-                            style: TextStyle(fontSize: 16.sp, color: Color(0xff9B9B9B), fontWeight: FontWeight.w800),
+                            style: TextStyle(fontSize: 15.sp, color: Color(0xffBDBDBD), fontWeight: FontWeight.w500),
                           ),
                           Spacer(),
                           Padding(
-                            padding: EdgeInsets.only(right: 10.0.w),
-                            child: Icon(Icons.arrow_forward_ios, size: 20,color: Color(0xff3B3B3D)),
+                            padding: EdgeInsets.only(right: 10.0.w,top: 5.h),
+                            child: Icon(Icons.arrow_forward_ios, size: 18,color: Color(0xff3B3B3D).withOpacity(0.6)),
                           ),
                         ],
                       ),
                     ),
                   ),
                   SizedBox(height: 4.h,),
-                  Container(color: Color(0xffDCDCDC),height:2.h,width: MediaQuery.of(context).size.width*0.95), SizedBox(height: 5.h,),
+                  Container(color: Color(0xffDCDCDC).withOpacity(0.5),height:0.8.h,width: MediaQuery.of(context).size.width*0.95), SizedBox(height: 5.h,),
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadiusDirectional.circular(10),
@@ -155,16 +156,17 @@ class _MainCateg_needsState extends State<MainCateg_needs> {
                       child: Center(
                         child: TextFormField(
                           decoration: InputDecoration(
+
                             label: Text(
                               "Amount",
-                              style: TextStyle(fontSize: 16.sp, color: Color(0xff9B9B9B), fontWeight: FontWeight.w600),
+                              style: TextStyle(fontSize: 15.sp, color:Color(0xffBDBDBD), fontWeight: FontWeight.w500),
                             ),
                             icon: CircleAvatar(
                               child: Image.asset(
-                                "assets/images/amount_icon.png",
+                                "assets/images/amount_icon.png",width: 30.w,height: 30.h,
                               ),
                               backgroundColor: Color(0xffEFEFEF),
-                              radius: 30.r,
+                              radius: 25.r,
                             ),
                           ),
                           keyboardType: TextInputType.number,
@@ -309,44 +311,56 @@ class CategoryListScreen_needs extends StatelessWidget {
             centerTitle: true,
           leadingWidth:200.w,
           leading: Padding(
-            padding:  EdgeInsets.only(left: 10.w,top: 15.h),
+            padding:  EdgeInsets.only(left: 12.w,top: 25.h),
             child: Text(
               "Main Categories",
-              style: TextStyle(fontSize: 18.sp, color: Color(0xff292929), fontWeight: FontWeight.w600),
+              style: TextStyle(fontSize: 16.sp, color: Color(0xff292929), fontWeight: FontWeight.w600),
             ),
           ),
         ),
-        body:ListView.builder(
-          itemCount: categories_needs.length,
-          itemBuilder: (context, index) {
-            return Column(
-              children: [
-                Padding(
-                  padding:  EdgeInsets.only(left: 10.0.w,right: 10.w),
-                  child: Container(
-                    height: 70.h,
-                    decoration: BoxDecoration(  color: Colors.white,borderRadius: BorderRadiusDirectional.circular(10)),
+        body:Padding(
+          padding:  EdgeInsets.only(top: 10.h),
+          child: ListView.builder(
+            itemCount: categories_needs.length,
+            itemBuilder: (context, index) {
+              return Column(
+                children: [
+                  Padding(
+                    padding:  EdgeInsets.only(left: 10.0.w,right: 10.w),
+                    child: Container(
+                      height: 65.h,
+                      decoration: BoxDecoration(  color: Colors.white,borderRadius: BorderRadiusDirectional.circular(8.r),
+                        boxShadow:[
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.1), //color of shadow
+
+                            spreadRadius:3,
+                            blurRadius:4,
+                          ),
+
+                        ], ),
 
 
-                    child: Center(
-                      child: ListTile(
-                        leading:CircleAvatar(child:   categories_needs[index]['image'],backgroundColor: Color(0xffEFEFEF),radius: 30.r),
+                      child: Center(
+                        child: ListTile(
+                          leading:CircleAvatar(child:   categories_needs[index]['image'],backgroundColor: Color(0xffEFEFEF),radius: 28.r),
 
-                        title: Text(
-                          categories_needs[index]['name'],
-                          style: TextStyle(color: Color(0xff292929),fontWeight: FontWeight.w600,fontSize: 18.sp),
+                          title: Text(
+                            categories_needs[index]['name'],
+                            style: TextStyle(color: Color(0xff292929),fontWeight: FontWeight.w600,fontSize: 14.sp),
+                          ),
+                          onTap: () {
+                            Navigator.pop(context, categories_needs[index]);
+                          },
                         ),
-                        onTap: () {
-                          Navigator.pop(context, categories_needs[index]);
-                        },
                       ),
                     ),
                   ),
-                ),
-                SizedBox(height: 15.0.h), // Add space between categories
-              ],
-            );
-          },
+                  SizedBox(height: 15.0.h), // Add space between categories
+                ],
+              );
+            },
+          ),
         )
 
     );

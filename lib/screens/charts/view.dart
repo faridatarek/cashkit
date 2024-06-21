@@ -30,7 +30,7 @@ class Charts_screen extends StatelessWidget {
           backgroundColor: Colors.transparent,
           elevation: 0,
           centerTitle: true,
-          title: Text("statistics",style: TextStyle(fontSize: 20.sp,color: Color(0xff292929),fontWeight: FontWeight.w600))
+          title: Text("statistics",style: TextStyle(fontSize: 18.sp,color: Color(0xff292929),fontWeight: FontWeight.w600))
           ,leading: InkWell(
           onTap:  (){
             Navigator.push(context,
@@ -64,12 +64,12 @@ class Charts_screen extends StatelessWidget {
               child:Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Row(children: [
-                    Icon(Icons.arrow_back_ios,color: Color(0xff292929),),
+                    Icon(Icons.arrow_back_ios,color: Color(0xff292929),size: 18),
                   Spacer(),
 
-                  Center(child: Text("February 2024",style: TextStyle(fontSize: 16.sp,color: Color(0xff292929),fontWeight: FontWeight.w600)))
+                  Center(child: Text("May 2024",style: TextStyle(fontSize: 15.sp,color: Color(0xff292929),fontWeight: FontWeight.w500)))
             ,Spacer(),
-                  Icon(Icons.arrow_forward_ios,color: Color(0xff292929),),
+                  Icon(Icons.arrow_forward_ios,color: Color(0xff292929),size: 18),
                 ]),
               ) ,
               ),
@@ -82,17 +82,19 @@ class Charts_screen extends StatelessWidget {
                   children:[
 
                     Padding(
-                      padding:  EdgeInsets.only(left:50.0.w,bottom: 60.h,top: 15.h),
-                      child: Text("Total Expenses",style: TextStyle(fontSize: 14.sp,color: Color(0xff848A9C),fontWeight: FontWeight.w500)),
+                      padding:  EdgeInsets.only(left:58.0.w,bottom: 60.h,top: 20.h),
+                      child: Text("Total Expenses",style: TextStyle(fontSize: 12.sp,color: Color(0xff848A9C),fontWeight: FontWeight.w500)),
                     ),
+
                     Padding(
                       padding:  EdgeInsets.only(top: 40),
                       child: AnimatedCircularChart(
 
 
                         holeRadius:60.r,
-                         holeLabel: "EGP 6,000",
-                        labelStyle:TextStyle(fontSize: 13.sp,color: Color(0xff243465),fontWeight: FontWeight.w600) ,
+                         holeLabel:
+                         "EGP 5,000",
+                        labelStyle:TextStyle(fontSize: 11.sp,color: Color(0xff243465),fontWeight: FontWeight.w600) ,
                         edgeStyle: SegmentEdgeStyle.flat,
 
                         key: _chartKey,
@@ -177,8 +179,11 @@ class Charts_screen extends StatelessWidget {
 
               ],
             ),
-            SizedBox(height: 40.h,),
-            Text("Top categories of expenses,February",style: TextStyle(fontSize: 16.sp,color: Color(0xff292929),fontWeight: FontWeight.w600)),
+            SizedBox(height: 60.h,),
+            Padding(
+              padding:  EdgeInsets.only(left:10.w),
+              child: Text("Top categories of expenses,May",style: TextStyle(fontSize: 14.sp,color: Color(0xff292929),fontWeight: FontWeight.w500)),
+            ),
              SizedBox(height: 10.h,),
                 SingleChildScrollView(
                   child: Padding(
@@ -195,7 +200,7 @@ class Charts_screen extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return Container(
                             width: 396.w,
-                            height: 66.h,
+                            height: 58.h,
                             decoration: BoxDecoration(
 
                               color: Colors.white,
@@ -216,11 +221,11 @@ class Charts_screen extends StatelessWidget {
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Row(children: [
-                                CircleAvatar(backgroundColor:  Color(0xffF6F6F6),child: allCateg_data_list[index].categImg,radius: 18.r,),
+                                CircleAvatar(backgroundColor:  Color(0xffF6F6F6),child: allCateg_data_list[index].categImg,radius: 16.r,),
                                 SizedBox(width: 6.w,),
-                                Text("${allCateg_data_list[index].categName}",style: TextStyle(fontSize: 14.sp,color: Color(0xff292929),fontWeight: FontWeight.w500)),
+                                Text("${allCateg_data_list[index].categName}",style: TextStyle(fontSize: 13.sp,color: Color(0xff292929),fontWeight: FontWeight.w500)),
                                Spacer(),
-                                Text(" -EGP ${allCateg_data_list[index].categSpend}",style: TextStyle(fontSize: 14.sp,color: Color(0xffF14242),fontWeight: FontWeight.w500)),
+                                Text(" -EGP ${allCateg_data_list[index].categSpend}",style: TextStyle(fontSize: 12.sp,color: Color(0xffF14242),fontWeight: FontWeight.w400)),
                               ],),
 
                             ),

@@ -14,7 +14,7 @@ class Premium extends StatelessWidget {
           backgroundColor: Colors.transparent,
           elevation: 0,
           centerTitle: true,
-          title: Text("Premium",style: TextStyle(fontSize: 20.sp,color: Color(0xff292929),fontWeight: FontWeight.w600))
+          title: Text("Premium",style: TextStyle(fontSize: 18.sp,color: Color(0xff292929),fontWeight: FontWeight.w600))
           ,leading: InkWell(
           onTap:  (){
             Navigator.push(context,

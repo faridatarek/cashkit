@@ -63,7 +63,7 @@ class _EditIncomeScreenState extends State<EditIncomeScreen> {
         title: Text(
           "Edit Income",
           style: TextStyle(
-              fontWeight: FontWeight.w600, fontSize: 20, color: Colors.black),
+              fontWeight: FontWeight.w600, fontSize: 20.sp, color: Colors.black),
         ),
         centerTitle: true,
       ),
@@ -78,16 +78,16 @@ class _EditIncomeScreenState extends State<EditIncomeScreen> {
             'Edit your income over \nthe week / month?',
             style: TextStyle(
                 fontWeight: FontWeight.w700,
-                fontSize: 16,
+                fontSize: 16.sp,
                 color: Color(0xff292929)),
           ),
           SizedBox(
             height: 32.h,
           ),
           Container(
-            height: 68.h,
-            width: double.infinity,
-            margin: EdgeInsets.symmetric(horizontal: 60),
+            height: 60.h,
+            width:  MediaQuery.of(context).size.width,
+            margin: EdgeInsets.symmetric(horizontal: 40),
             padding: EdgeInsets.only(left: 40.0.w, top: 10.h, right: 10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
@@ -97,16 +97,19 @@ class _EditIncomeScreenState extends State<EditIncomeScreen> {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    "EGP",
-                    style: TextStyle(fontSize: 20.sp),
+                  Padding(
+                    padding:  EdgeInsets.only(bottom: 10.0.h,left:9),
+                    child: Text(
+                      "EGP",
+                      style: TextStyle(fontSize: 18.sp),
+                    ),
                   ),
                   Expanded(
                     child: TextFormField(
                       controller: _controller,
                       textDirection: TextDirection.ltr,
                       style: TextStyle(
-                        fontSize: 24.sp,
+                        fontSize: 20.sp,
                         fontWeight: FontWeight.w600,
                       ),
                       keyboardType: TextInputType.number,
@@ -115,7 +118,7 @@ class _EditIncomeScreenState extends State<EditIncomeScreen> {
                         hintText: "000",
                         labelStyle: TextStyle(
                           color: Colors.black,
-                          fontSize: 24.sp,
+                          fontSize: 20.sp,
                           fontWeight: FontWeight.w600,
                         ),
                         enabledBorder: OutlineInputBorder(
@@ -139,11 +142,11 @@ class _EditIncomeScreenState extends State<EditIncomeScreen> {
                 GestureDetector(
                   onTap: _toggleColors,
                   child: Container(
-                    height: 44.h,
-                    width: 100.w,
+                    height: 46.h,
+                    width: 115.w,
                     decoration: BoxDecoration(
                         color: _isFirstContainerGreen
-                            ? Colors.white
+                            ?  Color(0xffF6F6F6)
                             : Theme.of(context).primaryColor,
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
@@ -161,11 +164,12 @@ class _EditIncomeScreenState extends State<EditIncomeScreen> {
                     ),
                   ),
                 ),
+                SizedBox(width: 5.w,),
                 GestureDetector(
                   onTap: _toggleColors,
                   child: Container(
-                    height: 44.h,
-                    width: 100.w,
+                    height: 46.h,
+                    width: 115.w,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         color: _isFirstContainerGreen
@@ -199,18 +203,18 @@ class _EditIncomeScreenState extends State<EditIncomeScreen> {
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
-                    fixedSize: Size(100.w, 48.h),
+                    fixedSize: Size(115.w, 48.h),
                   ),
                   onPressed: () {},
-                  child: Text("Sure")),
+                  child: Text("Save",style: TextStyle(color: Colors.white),)),
               Spacer(),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      fixedSize: Size(100.w, 48.h),
+                      fixedSize: Size(118.w, 48.h),
                       side: BorderSide(color: Theme.of(context).primaryColor),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8)),
-                      backgroundColor: Colors.white),
+                     backgroundColor:Color(0xffEFEFEF)),
                   onPressed: () {
                     Navigator.pop(
                         context,

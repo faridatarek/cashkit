@@ -26,7 +26,7 @@ class _QuestionSexScreenState
   ];
   List text = [
     "Tracking incomes and expenses",
-    "Mange debts, loans",
+    "Manage debts, loans",
     "Cut down expenses",
     "Saving",
     "Manage all money in one place",
@@ -41,7 +41,7 @@ class _QuestionSexScreenState
         mainAxisSize: MainAxisSize.min,
         children: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 20),
+            padding: const EdgeInsets.only(bottom: 10),
             child: QuestionBTNScreen(
               onPrees: () { Navigator.push(context, MaterialPageRoute(builder: (context) => NavScreen(),));},
               isSelected: selectIndex != null,
@@ -81,7 +81,7 @@ class _QuestionSexScreenState
             'What is your primary financial goals?',
             style: TextStyle(
                 fontWeight: FontWeight.w700,
-                fontSize: 16,
+                fontSize: 16.sp,
                 color: Color(0xff292929)),
           ),
           SizedBox(
@@ -97,7 +97,7 @@ class _QuestionSexScreenState
               child: Container(
                 margin: EdgeInsets.only(bottom: 16),
                 padding: EdgeInsets.only(left: 16, top: 16, bottom: 20),
-                height: 60.h,
+                height: 55.h,
                 width: 396.w,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
@@ -112,8 +112,8 @@ class _QuestionSexScreenState
                     images[index] != null && images[index].isNotEmpty
                         ? Image.asset(
                             images[index],
-                            width: 24,
-                            height: 24,
+                            width: 24.w,
+                            height: 24.h,
                           )
                         : SizedBox.shrink(),
                     SizedBox(

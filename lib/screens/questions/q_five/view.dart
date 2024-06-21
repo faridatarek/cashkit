@@ -56,7 +56,7 @@ class _QuestionFiveScreenState extends State<QuestionFiveScreen> {
                             textAlign: TextAlign.center,
                             "Enter how many children do you have? ",
                             style: TextStyle(
-                                fontSize: 18.sp, fontWeight: FontWeight.w600),
+                                fontSize: 16.sp, fontWeight: FontWeight.w600),
                           ),
                           SizedBox(
                             height: 45.h,
@@ -222,7 +222,7 @@ class _QuestionFiveScreenState extends State<QuestionFiveScreen> {
               child: Container(
                 margin: EdgeInsets.only(bottom: 16),
                 padding: EdgeInsets.only(left: 16, top: 16, bottom: 20),
-                height: 60.h,
+                height: 55.h,
                 width: 396.w,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
@@ -236,8 +236,8 @@ class _QuestionFiveScreenState extends State<QuestionFiveScreen> {
                     images[index] != null && images[index].isNotEmpty
                         ? Image.asset(
                             images[index],
-                            width: 24,
-                            height: 24,
+                            width: 24.w,
+                            height: 24.h,
                           )
                         : SizedBox.shrink(),
                     SizedBox(
@@ -246,7 +246,7 @@ class _QuestionFiveScreenState extends State<QuestionFiveScreen> {
                     Text(
                       text[index],
                       style:
-                          TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                          TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w500),
                     )
                   ],
                 ),

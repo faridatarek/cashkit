@@ -60,8 +60,8 @@ class _QuestionFourScreenState extends State<QuestionFourScreen> {
               },
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal:5.w, vertical: 12.h),
-                margin: EdgeInsets.only(left:195),
-                height: 44.h,
+                margin: EdgeInsets.only(left:180),
+                height: 45.h,
                 width: 124.w,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
@@ -71,10 +71,13 @@ class _QuestionFourScreenState extends State<QuestionFourScreen> {
                     )),
                 child: Row(
                   children: [
-                    Icon(
-                      Icons.arrow_forward,
-                      size: 14,
-                      color: Color(0xffDCDCDC),
+                    Padding(
+                      padding:  EdgeInsets.only(top:2),
+                      child: Icon(
+                        Icons.arrow_forward,
+                        size: 15,
+                        color: Color(0xffDCDCDC),
+                      ),
                     ),
                     SizedBox(
                       width: 4.w,
@@ -118,16 +121,16 @@ class _QuestionFourScreenState extends State<QuestionFourScreen> {
             'What is your income over the week / month?',
             style: TextStyle(
                 fontWeight: FontWeight.w700,
-                fontSize: 16,
+                fontSize: 16.sp,
                 color: Color(0xff292929)),
           ),
           SizedBox(
             height: 32.h,
           ),
           Container(
-            height: 68.h,
-            width: double.infinity,
-            margin: EdgeInsets.symmetric(horizontal: 60),
+            height: 60.h,
+            width: MediaQuery.of(context).size.width,
+            margin: EdgeInsets.symmetric(horizontal: 40),
             padding: EdgeInsets.only(left: 40.0.w, top: 10.h, right: 10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
@@ -138,13 +141,16 @@ class _QuestionFourScreenState extends State<QuestionFourScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
 
                 children: [
-                  Text("EGP",style: TextStyle(fontSize: 22),),
+                  Padding(
+                    padding:  EdgeInsets.only(bottom: 10.0.h,left:9),
+                    child: Text("EGP",style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600,),),
+                  ),
                   Expanded(
                     child: TextFormField(
                       controller: _controller,
                       textDirection: TextDirection.ltr,
                       style: TextStyle(
-                        fontSize: 24,
+                        fontSize: 22.sp,
                         fontWeight: FontWeight.w600,
                       ),
                       keyboardType: TextInputType.number,
@@ -153,7 +159,7 @@ class _QuestionFourScreenState extends State<QuestionFourScreen> {
                         hintText: "000",
                         labelStyle: TextStyle(
                           color: Colors.black,
-                          fontSize: 24,
+                          fontSize: 22.sp,
                           fontWeight: FontWeight.w600,
                         ),
                         enabledBorder: OutlineInputBorder(
@@ -177,11 +183,11 @@ class _QuestionFourScreenState extends State<QuestionFourScreen> {
                 GestureDetector(
                   onTap: _toggleColors,
                   child: Container(
-                    height: 44.h,
-                    width: 100.w,
+                    height: 46.h,
+                    width: 115.w,
                     decoration: BoxDecoration(
                         color: _isFirstContainerGreen
-                            ? Colors.white
+                            ? Color(0xffF6F6F6)
                             : Theme.of(context).primaryColor,
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
@@ -191,7 +197,7 @@ class _QuestionFourScreenState extends State<QuestionFourScreen> {
                       child: Text(
                         "Weakly",
                         style: TextStyle(
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w400,
                           fontSize: 14,
                           color: Color(0xffDCDCDC),
                         ),
@@ -199,16 +205,17 @@ class _QuestionFourScreenState extends State<QuestionFourScreen> {
                     ),
                   ),
                 ),
+                SizedBox(width: 5.w,),
                 GestureDetector(
                   onTap: _toggleColors,
                   child: Container(
-                    height: 44.h,
-                    width: 100.w,
+                    height: 46.h,
+                    width: 115.w,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         color: _isFirstContainerGreen
                             ? Theme.of(context).primaryColor
-                            : Colors.white,
+                            :  Color(0xffF6F6F6),
                         border: Border.all(
                           color: Color(0xffDCDCDC),
                         )),

@@ -37,20 +37,36 @@ class _TabBarScreenState extends State<TabBarScreen> with SingleTickerProviderSt
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text(
-          "Your Budgets",
-          style: TextStyle(
-              fontSize: 24.sp,
-              color: Theme.of(context).primaryColor,
-              fontWeight: FontWeight.w600),
-        ),
+        leadingWidth: 200.w,
+        leading:Padding(
+          padding:  EdgeInsets.only(top:20.h,right: 10.w,left: 10.w),
+          child: Text(
+            "Your Budgets",
+            style: TextStyle(
+                fontSize: 18.sp,
+                color: Theme.of(context).primaryColor,
+                fontWeight: FontWeight.w600),
+          ),
+        ) ,
+
         bottom: ButtonsTabBar(
-          height: 60,
+          decoration: BoxDecoration(
+          color:Theme.of(context).primaryColor ,
+            boxShadow:[
+  BoxShadow(
+    color: Colors.grey.withOpacity(0.4), //color of shadow
+
+    spreadRadius:1,
+    blurRadius:10,
+  ),
+
+],),
+          height: 60,borderWidth: 60.w,
           controller: _tabController,
-          backgroundColor: Theme.of(context).primaryColor,
+        //  backgroundColor: Theme.of(context).primaryColor,
           unselectedBackgroundColor: Colors.white,
-          unselectedLabelStyle: TextStyle(color: Colors.black),
-          labelStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.w600,fontSize:14.sp),
+          unselectedLabelStyle: TextStyle(color:  Color(0xffBDBDBD)),
+          labelStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.w600,fontSize:12.sp),
           tabs: [
             Tab(text: 'Needs (50%)'),
             Tab(text: 'Wants (30%)'),
@@ -144,12 +160,13 @@ class NeedsTab extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Your needs", style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600, color: Color(0xff292929))),
-                          Text("EGP 0 of EGP 3,000", style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400, color: Color(0xff525252))),
+                          Text("Your Needs", style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w500, color: Color(0xff292929))),
+                          Text("EGP 0 of EGP 2,000", style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w400, color: Color(0xff525252))),
                         ],
                       ),
                       SizedBox(height: 15.h),
                       LinearProgressIndicator(
+
                         value: 0,
                         minHeight: 6.h,
                         color: Colors.black,
@@ -220,8 +237,8 @@ class WantsTab extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Your Wants", style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600, color: Color(0xff292929))),
-                          Text("EGP 0 of EGP 2,000", style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400, color: Color(0xff525252))),
+                          Text("Your Wants", style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w500, color: Color(0xff292929))),
+                          Text("EGP 0 of EGP 1,200", style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w400, color: Color(0xff525252))),
                         ],
                       ),
                       SizedBox(height: 15.h),
@@ -296,8 +313,8 @@ class EmergencyTab extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Your Emergency", style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w600, color: Color(0xff292929))),
-                          Text("EGP 0 of EGP 1,000", style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w400, color: Color(0xff525252))),
+                          Text("Your Emergency", style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w500, color: Color(0xff292929))),
+                          Text("EGP 0 of EGP 800", style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w400, color: Color(0xff525252))),
                         ],
                       ),
                       SizedBox(height: 15.h),

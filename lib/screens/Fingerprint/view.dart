@@ -1,139 +1,97 @@
-import 'package:cashkit/screens/splash/logo.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../splash/toggle_splash.dart';
 
-/*
-class FingerPrintScreen extends StatefulWidget {
-  const FingerPrintScreen({super.key});
 
+
+class FingerPrintAuthScreen extends StatefulWidget {
   @override
-  State<FingerPrintScreen> createState() => _FingerPrintScreenState();
+  _FingerPrintAuthScreenState createState() => _FingerPrintAuthScreenState();
 }
 
-class _FingerPrintScreenState extends State<FingerPrintScreen> {
-  final LocalAuthentication auth = LocalAuthentication();
-  _SupportState _supportState = _SupportState.unknown;
-  String _authorized = 'Not Authorized';
-  bool _isAuthenticating = false;
+class _FingerPrintAuthScreenState extends State<FingerPrintAuthScreen> {
+  bool isScanning = false;
 
-  @override
-  void initState() {
-    super.initState();
-    auth.isDeviceSupported().then(
-          (bool isSupported) => setState(() => _supportState = isSupported
-              ? _SupportState.supported
-              : _SupportState.unsupported),
-        );
-  }
+  void _onImageTap() {
+    setState(() {
+      isScanning = !isScanning;
+    });
 
-  Future<void> _authenticateWithBiometrics() async {
-    bool authenticated = false;
-    try {
-      setState(() {
-        _isAuthenticating = true;
-        _authorized = 'Authenticating';
-      });
-      authenticated = await auth.authenticate(
-        localizedReason: 'Please Put Your Finger',
-        options: const AuthenticationOptions(
-          stickyAuth: true,
-          biometricOnly: true,
-        ),
-      );
-      setState(() {
-        _isAuthenticating = false;
-        _authorized = 'Authenticating';
-      });
-    } on PlatformException catch (e) {
-      print(e);
-      setState(() {
-        _isAuthenticating = false;
-        _authorized = 'Error - ${e.message}';
-      });
-      return;
-    }
-    if (!mounted) {
-      return;
-    }
-    if (authenticated) {
-      Navigator.push(
+    if (isScanning) {
+
+      Future.delayed(Duration(seconds:2), () {
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => LogoScreen(),
-          ));
-      // Here Put Where we should Push!!!!
+            builder: (context) => Toggle_splash()
+          ),
+        );
+      });
     }
-
-    final String message = authenticated ? 'Authorized' : 'Not Authorized';
-    setState(() {
-      _authorized = message;
-    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        body: ListView(
-          padding: const EdgeInsets.only(top: 100),
-          children: <Widget>[
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  "Authentication Required",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: ListView(
+        padding: const EdgeInsets.only(top: 100, left: 20, right: 20),
+        children: <Widget>[
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                "Authentication Required",
+                style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 15.0),
+                child: Center(
+                  child: Text(
+                    "Please place your finger to ",
+                    style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14.sp),
+                  ),
                 ),
-                Text(
-                  "Please place your finger to your phone!",
-                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+              ),
+              Center(
+                child: Text(
+                  "your phone!",
+                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14.sp),
                 ),
-                SizedBox(
-                  height: 112,
-                ),
-                Column(
-                  children: <Widget>[
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.white, elevation: 0),
-                      onPressed: _authenticateWithBiometrics,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[
-                          Image.asset(
-                            _isAuthenticating
-                                ? "assets/images/scanning.png"
-                                : "assets/images/finger.png",
-                          ),
-                        ],
-                      ),
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              Column(
+                children: <Widget>[
+                  GestureDetector(
+                    onTap: _onImageTap,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Image.asset(
+                          isScanning
+                              ? "assets/images/fingerToScan.png"
+                              : "assets/images/Group 20505.png",
+                          height: 207.h,width: 207.w,
+                        ),
+                      ],
                     ),
-                    SizedBox(
-                      height: 50.h,
-                    ),
-                    Text(
-                      _isAuthenticating ? "Scanning..." : "Tab To Check...!",
-                      style: TextStyle(color: Colors.black),
-                    )
-                  ],
-                ),
-              ],
-            ),
-          ],
-        ),
+                  ),
+                  SizedBox(
+                    height: 50.h,
+                  ),
+                  Text(
+                    isScanning ? "Scanning..." : "Tap to scan...",
+                    style: TextStyle(color: Color(0xff525252),fontSize: 14.sp,fontWeight: FontWeight.w400),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
 }
-
-enum _SupportState {
-  unknown,
-  supported,
-  unsupported,
-}
-*/

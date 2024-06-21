@@ -22,10 +22,10 @@ class _EditQuestionFiveState extends State<EditQuestionFive> {
           children: [
             Text(
               "Enter how many children do you have?",
-              style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600),
+              style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w600),
             ),
             SizedBox(
-              height: 16,
+              height: 12,
             ),
             DropdownButtonHideUnderline(
               child: DropdownButton2<String>(
@@ -39,7 +39,7 @@ class _EditQuestionFiveState extends State<EditQuestionFive> {
                       child: Text(
                         'Select Item',
                         style: TextStyle(
-                          fontSize: 16.sp,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -54,7 +54,7 @@ class _EditQuestionFiveState extends State<EditQuestionFive> {
                           child: Text(
                             item,
                             style:  TextStyle(
-                              fontSize: 16.sp,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w500,
                               color: Colors.black,
                             ),
@@ -73,7 +73,7 @@ class _EditQuestionFiveState extends State<EditQuestionFive> {
                   // width: double.infinity,
                   padding: const EdgeInsets.only(right: 14),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(14),
+                    borderRadius: BorderRadius.circular(8.r),
                     border: Border.all(
                       color: Colors.white,
                     ),

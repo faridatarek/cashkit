@@ -18,7 +18,7 @@ class BTN extends StatelessWidget {
 
         onPressed: onPrees,
         style: ElevatedButton.styleFrom(
-            minimumSize: Size(double.infinity.w, 50.h),
+            minimumSize: Size(double.infinity.w, 48.h),
 
             backgroundColor: Theme.of(context).primaryColor,
             shape: RoundedRectangleBorder(
@@ -27,7 +27,7 @@ class BTN extends StatelessWidget {
             )),
         child: Text(
           text,
-          style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700,color: Colors.white),
+          style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w700,color: Colors.white),
         ),
       ),
     );

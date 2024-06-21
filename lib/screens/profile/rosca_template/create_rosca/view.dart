@@ -139,7 +139,7 @@ class _CreatRoscaState extends State<CreatRosca> {
           centerTitle: true,
           title: Text("Add ROSCA",
               style: TextStyle(
-                  fontSize: 20.sp,
+                  fontSize: 18.sp,
                   color: Color(0xff292929),
                   fontWeight: FontWeight.w600)),
           leading: InkWell(
@@ -155,130 +155,155 @@ class _CreatRoscaState extends State<CreatRosca> {
         padding: const EdgeInsets.only(top: 15, right: 13, left: 13),
         child: SingleChildScrollView(
           child: Column(children: [
-            TextFormField(
-              controller: nameController,
-              decoration: InputDecoration(
-                floatingLabelBehavior: FloatingLabelBehavior.never,
-                enabledBorder: OutlineInputBorder(
+            Container(
+              height: 52.h,
+              child: TextFormField(
+                controller: nameController,
+                decoration: InputDecoration(
+                  floatingLabelBehavior: FloatingLabelBehavior.never,
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.r),
+                      borderSide: BorderSide(
+                    color: Color(0xffBDBDBD),
+                    width: 1.0,
+                  )),
+                  focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                  color: Color(0xffBDBDBD),
-                  width: 1.0,
-                )),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Theme.of(context).primaryColor,
-                    width: 2.0,
+                      color: Theme.of(context).primaryColor,
+                      width: 2.0,
+                    ),
                   ),
-                ),
-                labelText: "ROSCA Name",
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.r)),
-              ),
-            ),
-            SizedBox(
-              height: 15.h,
-            ),
-            TextFormField(
-              controller: budgetController,
-              keyboardType: TextInputType.numberWithOptions(),
-              decoration: InputDecoration(
-                floatingLabelBehavior: FloatingLabelBehavior.never,
-                enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                  color: Color(0xffBDBDBD),
-                  width: 1.0,
-                )),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Theme.of(context).primaryColor,
-                    width: 2.0,
-                  ),
-                ),
-                labelText: "number of ROSCA members",
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.r)),
-              ),
-            ),
-            SizedBox(
-              height: 15.h,
-            ),
-            TextFormField(
-              controller: numberController,
-              keyboardType: TextInputType.numberWithOptions(),
-              decoration: InputDecoration(
-                floatingLabelBehavior: FloatingLabelBehavior.never,
-                enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                  color: Color(0xffBDBDBD),
-                  width: 1.0,
-                )),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Theme.of(context).primaryColor,
-                    width: 2.0,
-                  ),
-                ),
-                labelText: "Contributed Amount",
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.r)),
-              ),
-            ),
-            SizedBox(
-              height: 15.h,
-            ),
-            TextFormField(
-              controller: _dateControllerStart,
-              readOnly: true,
-              onTap: () => _selectDateStart(context),
-              decoration: InputDecoration(
-                suffixIcon: Icon(Icons.calendar_today,
-                    color: Theme.of(context).primaryColor),
-                floatingLabelBehavior: FloatingLabelBehavior.never,
-                enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                  color: Color(0xffBDBDBD),
-                  width: 1.0,
-                )),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Theme.of(context).primaryColor,
-                    width: 2.0,
-                  ),
-                ),
-                labelText: _selectedDateStart == null
-                    ? 'Start date'
-                    : DateFormat('d MMMM y').format(_selectedDateStart!),
-                /*  style: TextStyle(fontSize: 15.sp),*/
+                  label: Text("ROSCA Name",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
 
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.r)),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.r)),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 15.h,
+            ),
+            Container(height: 52.h,
+              child: TextFormField(
+                controller: budgetController,
+                keyboardType: TextInputType.numberWithOptions(),
+                decoration: InputDecoration(
+                  floatingLabelBehavior: FloatingLabelBehavior.never,
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.r),
+
+                      borderSide: BorderSide(
+                    color: Color(0xffBDBDBD),
+                    width: 1.0,
+                  )),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Theme.of(context).primaryColor,
+                      width: 2.0,
+                    ),
+                  ),
+                  label: Text("Number of ROSCA Members",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
+
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.r)),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 15.h,
+            ),
+            Container(
+              height: 52.h,
+              child: TextFormField(
+                controller: numberController,
+                keyboardType: TextInputType.numberWithOptions(),
+                decoration: InputDecoration(
+                  floatingLabelBehavior: FloatingLabelBehavior.never,
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.r),
+                      borderSide: BorderSide(
+                    color: Color(0xffBDBDBD),
+                    width: 1.0,
+                  )),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Theme.of(context).primaryColor,
+                      width: 2.0,
+                    ),
+                  ),
+                  label: Text("Contributed Amount",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
+
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.r)),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 15.h,
+            ),
+            Container(
+              height: 52.h,
+              child: TextFormField(
+                controller: _dateControllerStart,
+                readOnly: true,
+                onTap: () => _selectDateStart(context),
+                decoration: InputDecoration(
+                  suffixIcon: Icon(Icons.calendar_today,
+                      color: Color(0xffCDCDCD),size: 20),
+                  floatingLabelBehavior: FloatingLabelBehavior.never,
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.r),
+                      borderSide: BorderSide(
+                    color: Color(0xffBDBDBD),
+                    width: 1.0,
+                  )),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Theme.of(context).primaryColor,
+                      width: 2.0,
+                    ),
+                  ),
+                  label: Text( _selectedDateStart == null
+                      ? 'Start date'
+                      : DateFormat('d MMMM y').format(_selectedDateStart!),style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
+
+                  /*  style: TextStyle(fontSize: 15.sp),*/
+
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.r)),
+                ),
               ),
             ),
             SizedBox(height: 20),
-            TextFormField(
-              controller: _dateControllerEnd,
-              readOnly: true,
-              onTap: () => _selectDateEnd(context),
-              decoration: InputDecoration(
-                suffixIcon: Icon(Icons.calendar_today,
-                    color: Theme.of(context).primaryColor),
-                floatingLabelBehavior: FloatingLabelBehavior.never,
-                enabledBorder: OutlineInputBorder(
+            Container(
+              height: 52.h,
+              child: TextFormField(
+                controller: _dateControllerEnd,
+                readOnly: true,
+                onTap: () => _selectDateEnd(context),
+                decoration: InputDecoration(
+                  suffixIcon: Icon(Icons.calendar_today,
+                      color: Color(0xffCDCDCD),size: 20),
+                  floatingLabelBehavior: FloatingLabelBehavior.never,
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.r),
+                      borderSide: BorderSide(
+                    color: Color(0xffBDBDBD),
+                    width: 1.0,
+                  )),
+                  focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                  color: Color(0xffBDBDBD),
-                  width: 1.0,
-                )),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Theme.of(context).primaryColor,
-                    width: 2.0,
+                      color: Theme.of(context).primaryColor,
+                      width: 2.0,
+                    ),
                   ),
+                  label: Text( _selectedDateEnd == null
+                      ? 'End date'
+                      : DateFormat('d MMMM y').format(_selectedDateEnd!),style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
+
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.r)),
                 ),
-                labelText: _selectedDateEnd == null
-                    ? 'Start date'
-                    : DateFormat('d MMMM y').format(_selectedDateEnd!),
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.r)),
               ),
             ),
             SizedBox(height: 50.h),
@@ -292,7 +317,7 @@ class _CreatRoscaState extends State<CreatRosca> {
                         ))
                     : null,
                 style: ElevatedButton.styleFrom(
-                    minimumSize: Size(double.infinity.w, 50.h),
+                    minimumSize: Size(double.infinity.w, 48.h),
                     backgroundColor: Theme.of(context).primaryColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.r),
@@ -300,7 +325,7 @@ class _CreatRoscaState extends State<CreatRosca> {
                 child: Text(
                   "Create",
                   style: TextStyle(
-                      fontSize: 18.sp,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w700,
                       color: Colors.white),
                 ),

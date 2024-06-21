@@ -28,7 +28,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         title: Text(
           "Edit Profile",
           style: TextStyle(
-              color: Colors.black, fontWeight: FontWeight.w600, fontSize: 20.sp),
+              color: Colors.black, fontWeight: FontWeight.w600, fontSize: 18.sp),
         ),
         leading: Icon(
           Icons.arrow_back_ios,
@@ -47,12 +47,12 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   child: Image.asset(
                     "assets/images/profile_image.png",
                     fit: BoxFit.fill,
-                    width: 104,
-                    height: 111,
+                    width: 115.w,
+                    height: 100.h,
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 85.0, left: 75),
+                  padding: const EdgeInsets.only(top: 78.0, left: 75),
                   child: Center(
                     child: Container(
                         width: 30,
@@ -73,15 +73,12 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               height: 32.h,
             ),
             Container(
+              height: 52.h,
               margin: EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
-                border: Border.all(
-                  color: Theme.of(context)
-                      .primaryColor, // You can customize the color
-                  width: 1.0, // You can customize the width
-                ),
+
                 borderRadius: BorderRadius.circular(
-                    16.0), // You can customize the border radius
+                    9.r), // You can customize the border radius
               ),
               child: TextFormField(
                 keyboardType: TextInputType.text,
@@ -89,26 +86,28 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     contentPadding:
                         EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
                     border: InputBorder.none,
-                    hintText: "User Name",
+                    label: Text( "User Name",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
+              focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(9.r),
+    borderSide:
+    BorderSide(color: Theme.of(context).primaryColor)) ,
                     enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(9.r),
                         borderSide:
-                            BorderSide(color: Theme.of(context).primaryColor))),
+                            BorderSide(color: Color(0xff989898)))
+                ),
               ),
             ),
             SizedBox(
               height: 20.h,
             ),
             Container(
+              height: 52.h,
               margin: EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
-                border: Border.all(
-                  color: Theme.of(context)
-                      .primaryColor, // You can customize the color
-                  width: 1.0, // You can customize the width
-                ),
+
                 borderRadius: BorderRadius.circular(
-                    16.0), // You can customize the border radius
+                   9.r), // You can customize the border radius
               ),
               child: TextFormField(
                 keyboardType: TextInputType.emailAddress,
@@ -116,26 +115,30 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     contentPadding:
                         EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
                     border: InputBorder.none,
-                    hintText: "Your Gmail",
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
+                    label: Text( "Your Email",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
+
+
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(9.r),
                         borderSide:
-                            BorderSide(color: Theme.of(context).primaryColor))),
+                        BorderSide(color: Theme.of(context).primaryColor)) ,
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(9.r),
+                        borderSide:
+                        BorderSide(color: Color(0xff989898)))
+                ),
               ),
             ),
             SizedBox(
               height: 20.h,
             ),
             Container(
+              height: 52.h,
               margin: EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
-                border: Border.all(
-                  color: Theme.of(context)
-                      .primaryColor, // You can customize the color
-                  width: 1.0, // You can customize the width
-                ),
+
                 borderRadius: BorderRadius.circular(
-                    16.0), // You can customize the border radius
+                   9.r), // You can customize the border radius
               ),
               child: TextFormField(
                 keyboardType: TextInputType.visiblePassword,
@@ -143,8 +146,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 decoration: InputDecoration(
                     suffixIcon: IconButton(
                       icon: Icon(passwordVisible
-                          ? Icons.visibility
-                          : Icons.visibility_off  ,color: Theme.of(context).primaryColor,),
+                          ? Icons.visibility_off
+                          : Icons.visibility     ,color: Color(0xffCDCDCD),),
                       onPressed: () {
                         setState(
                           () {
@@ -156,11 +159,17 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     contentPadding:
                         EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
                     border: InputBorder.none,
-                    hintText: "Your Password",
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
+                    label: Text( "Your Password",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
+
+
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(9.r),
                         borderSide:
-                            BorderSide(color: Theme.of(context).primaryColor))),
+                        BorderSide(color: Theme.of(context).primaryColor)) ,
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(9.r),
+                        borderSide:
+                        BorderSide(color: Color(0xff989898)))),
               ),
             ),
             SizedBox(

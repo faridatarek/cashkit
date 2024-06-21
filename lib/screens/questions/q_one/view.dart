@@ -81,7 +81,7 @@ class _QuestionOneScreenState extends State<QuestionOneScreen> {
             'Which of these do you spend money on ?',
             style: TextStyle(
                 fontWeight: FontWeight.w700,
-                fontSize: 16,
+                fontSize: 16.sp,
                 color: Color(0xff292929)),
           ),
           SizedBox(
@@ -97,7 +97,7 @@ class _QuestionOneScreenState extends State<QuestionOneScreen> {
               child: Container(
                 margin: EdgeInsets.only(bottom: 16),
                 padding: EdgeInsets.only(left: 16, top: 16, bottom: 20),
-                height: 60.h,
+                height: 55.h,
                 width: 396.w,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
@@ -111,8 +111,8 @@ class _QuestionOneScreenState extends State<QuestionOneScreen> {
                     images[index] != null && images[index].isNotEmpty
                         ? Image.asset(
                             images[index],
-                            width: 24,
-                            height: 24,
+                            width: 24.w,
+                            height: 24.h,
                           )
                         : SizedBox.shrink(),
                     SizedBox(
@@ -121,7 +121,7 @@ class _QuestionOneScreenState extends State<QuestionOneScreen> {
                     Text(
                       text[index],
                       style:
-                          TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                          TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w500),
                     )
                   ],
                 ),

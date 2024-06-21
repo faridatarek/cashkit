@@ -66,7 +66,7 @@ class _QuestionTwoScreenState extends State<QuestionTwoScreen> {
             'Tell us about your home',
             style: TextStyle(
                 fontWeight: FontWeight.w700,
-                fontSize: 16,
+                fontSize: 16.sp,
                 color: Color(0xff292929)),
           ),
           SizedBox(
@@ -82,7 +82,7 @@ class _QuestionTwoScreenState extends State<QuestionTwoScreen> {
               child: Container(
                 margin: EdgeInsets.only(bottom: 16),
                 padding: EdgeInsets.only(left: 16, top: 16, bottom: 20),
-                height: 60.h,
+                height: 55.h,
                 width: 396.w,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
@@ -96,7 +96,7 @@ class _QuestionTwoScreenState extends State<QuestionTwoScreen> {
                     Text(
                       text[index],
                       style:
-                          TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                          TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w500),
                     )
                   ],
                 ),

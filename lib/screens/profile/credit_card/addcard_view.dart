@@ -32,7 +32,7 @@ class _AddCardScreenState extends State<AddCardScreen> {
         title: Text(
           "Add Card",
           style: TextStyle(
-              fontWeight: FontWeight.w600, fontSize: 20, color: Colors.black),
+           fontSize: 18.sp, color: Colors.black),
         ),
         centerTitle: true,
       ),
@@ -42,22 +42,22 @@ class _AddCardScreenState extends State<AddCardScreen> {
           Text(
             "Transfer from",
             style: TextStyle(
-              fontSize: 18.sp,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w600,
             ),
           ),
           SizedBox(
-            height: 20,
+            height: 10.h,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding:  EdgeInsets.symmetric(horizontal:3.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 DropdownButtonHideUnderline(
                   child: DropdownButton2<String>(
                     isExpanded: true,
-                    hint: const Row(
+                    hint:  Row(
                       children: [
                         SizedBox(
                           width: 4,
@@ -66,7 +66,7 @@ class _AddCardScreenState extends State<AddCardScreen> {
                           child: Text(
                             'Select Card',
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize:14.sp,
                               fontWeight: FontWeight.w500,
                               color: Colors.black,
                             ),
@@ -100,7 +100,7 @@ class _AddCardScreenState extends State<AddCardScreen> {
                       // width: double.infinity,
                       padding: const EdgeInsets.only(right: 14),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(14),
+                        borderRadius: BorderRadius.circular(8.r),
                         border: Border.all(
                           color: Colors.white,
                         ),
@@ -125,13 +125,13 @@ class _AddCardScreenState extends State<AddCardScreen> {
                       // width: double.infinity,
                       // scrollPadding: EdgeInsets.symmetric(horizontal: 14),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(14),
+                        borderRadius: BorderRadius.circular(14.r),
                         color: Colors.white,
                       ),
                       // offset: const Offset(, 0),
 
                       scrollbarTheme: ScrollbarThemeData(
-                        radius: const Radius.circular(40),
+                        radius: const Radius.circular(25),
                         thickness: MaterialStateProperty.all(6),
                         thumbVisibility: MaterialStateProperty.all(true),
                       ),
@@ -146,17 +146,17 @@ class _AddCardScreenState extends State<AddCardScreen> {
             ),
           ),
           SizedBox(
-            height: 20,
+            height: 15.h,
           ),
           Text(
             "Card Detail",
             style: TextStyle(
-              fontSize: 18.sp,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w600,
             ),
           ),
           SizedBox(
-            height: 20,
+            height: 10.h,
           ),
           Container(
             padding: EdgeInsets.only(left: 12, right: 12),
@@ -167,18 +167,22 @@ class _AddCardScreenState extends State<AddCardScreen> {
             child: Row(
               children: [
                 Expanded(
-                  child: TextFormField(
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                        hintText: "Card Number", border: InputBorder.none),
+                  child: Container(
+                    height: 52.h,
+                    child: TextFormField(
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                    label: Text("Card Number",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
+                      border: InputBorder.none),
+                    ),
                   ),
                 ),
-                Image.asset("assets/images/mastercard.png"),
+                Image.asset("assets/images/mastercard.png",width: 35.w,height: 25.h),
               ],
             ),
           ),
           SizedBox(
-            height: 20,
+            height: 15.h,
           ),
           Row(
             mainAxisSize: MainAxisSize.max,
@@ -187,23 +191,24 @@ class _AddCardScreenState extends State<AddCardScreen> {
             children: [
               Container(
                 padding: EdgeInsets.only(left: 10),
-                width: 150.w,
-                height: 56,
+                width: 157.w,
+                height: 52.h,
                 decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(8)),
+                    borderRadius: BorderRadius.circular(8.r)),
                 child: Center(
                   child: TextFormField(
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
-                        hintText: "Expiry Date", border: InputBorder.none),
+                        label: Text("Expiry Date",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
+                       border: InputBorder.none),
                   ),
                 ),
               ),
               Container(
                 padding: EdgeInsets.only(left: 10),
-                width: 150.w,
-                height: 56,
+                width: 157.w,
+                height: 52.h,
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(8)),
@@ -211,19 +216,20 @@ class _AddCardScreenState extends State<AddCardScreen> {
                   child: TextFormField(
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
-                        hintText: "VCC", border: InputBorder.none),
+                        label: Text("VCC",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
+                border: InputBorder.none),
                   ),
                 ),
               ),
             ],
           ),
           SizedBox(
-            height: 20,
+            height:15.h,
           ),
           Text(
             "Your Name(optional)",
             style: TextStyle(
-              fontSize: 17.sp,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -231,9 +237,9 @@ class _AddCardScreenState extends State<AddCardScreen> {
             margin: EdgeInsets.only(top: 12),
             padding: EdgeInsets.only(left: 12, right: 12),
             width: double.infinity.w,
-            height: 56.h,
+            height: 52.h,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8), color: Colors.white),
+                borderRadius: BorderRadius.circular(8.r), color: Colors.white),
             child: Row(
               children: [
                 SizedBox(
@@ -242,7 +248,8 @@ class _AddCardScreenState extends State<AddCardScreen> {
                 Expanded(
                   child: TextFormField(
                     decoration: InputDecoration(
-                        hintText: "Card Holder", border: InputBorder.none),
+                        label: Text( "Card Holder",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898))),
+                        border: InputBorder.none),
                   ),
                 ),
               ],
@@ -251,47 +258,53 @@ class _AddCardScreenState extends State<AddCardScreen> {
           SizedBox(
             height: 60,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      fixedSize: Size(150.w, 45.h),
-                      backgroundColor: Theme.of(context).primaryColor),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => AddMoneyScreen(),
-                        ));
-                  },
-                  child: Text(
-                    "Save",
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white),
-                  )),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      side: BorderSide(color: Theme.of(context).primaryColor),
-                      fixedSize: Size(150.w, 45.h),
-                      backgroundColor: Colors.white),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => CreditHomeScreen(),
-                        ));
-                  },
-                  child: Text(
-                    "Cancel",
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        color: Theme.of(context).primaryColor),
-                  )),
-            ],
+          Padding(
+            padding:  EdgeInsets.only(left:23.w),
+            child: Row(
+
+              children: [
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadiusDirectional.circular(8.r)),
+                        fixedSize: Size(130.w, 45.h),
+                        backgroundColor: Theme.of(context).primaryColor),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AddMoneyScreen(),
+                          ));
+                    },
+                    child: Text(
+                      "Save",
+                      style: TextStyle(
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white),
+                    )),
+                SizedBox(width: 18.w,),
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadiusDirectional.circular(8.r)),
+                        side: BorderSide(color: Theme.of(context).primaryColor),
+                        fixedSize: Size(130.w, 45.h),
+                        backgroundColor: Colors.white),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CreditHomeScreen(),
+                          ));
+                    },
+                    child: Text(
+                      "Cancel",
+                      style: TextStyle(
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.w700,
+                          color: Theme.of(context).primaryColor),
+                    )),
+              ],
+            ),
           )
         ],
       ),

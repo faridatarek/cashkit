@@ -67,7 +67,7 @@ class ProfileScreen extends StatelessWidget {
               "Profile Settings",
               style: TextStyle(
                   fontWeight: FontWeight.w600,
-                  fontSize: 24.sp,
+                  fontSize: 20.sp,
                   color: Theme.of(context).primaryColor),
             ),
             SizedBox(
@@ -83,29 +83,39 @@ class ProfileScreen extends StatelessWidget {
               },
               child: Container(
                 height: 80.h,
-                width: double.infinity.w,
+                width:MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   color: Colors.white,
                 ),
-                child: Center(
+                child: Padding(
+                  padding:  EdgeInsets.only(right: 8.0,bottom: 8,top: 8),
                   child: ListTile(
                     leading: Image.asset("assets/images/profile_image.png"),
-                    title: Text(
-                      "Lena Adel",
-                      style:
-                      TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
+                    title: Padding(
+                      padding:  EdgeInsets.only(bottom:5.0.h),
+                      child: Text(
+                        "Farida Tarek",
+                          //Farida Tarek
+                        style:
+                        TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w500),
+                      ),
                     ),
+
                     subtitle: Text(
-                      "lena@gmail.com",
+                      "faridaelamrety732@gmail.com",
+                      //faridaelamrety732
                       style:
-                      TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),
+                      TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w400),
                     ),
                     trailing: IconButton(
                         onPressed: () {},
-                        icon: Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Colors.black,size: 22,
+                        icon: Padding(
+                          padding:  EdgeInsets.only(left: 35.0.w),
+                          child: Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            color: Colors.black,size: 18,
+                          ),
                         )),
                   ),
                 ),
@@ -129,20 +139,20 @@ class ProfileScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                     color: Colors.white,
                   ),
-                  margin: EdgeInsets.only(bottom: 16),
-                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  margin: EdgeInsets.only(bottom:13.h),
+                  padding: EdgeInsets.only(left: 12.w),
                   width: double.infinity,
-                  height: 64.h,
+                  height: 56.h,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
                     children: [
                       Container(
                         child: Row(
                           children: [
                             Image.asset(
                               images[index],
-                              width: 20.w,
-                              height: 20.h,
+                              width: 30.w,
+                              height: 30.h,
                             ),
                             SizedBox(
                               width: 10.w,
@@ -151,12 +161,13 @@ class ProfileScreen extends StatelessWidget {
                               titles[index],
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
-                                  fontSize: 16,
+                                  fontSize: 14.sp,
                                   color: Colors.black),
                             ),
                           ],
                         ),
                       ),
+                      Spacer(),
                       IconButton(
                           onPressed: () {
                             Navigator.push(
@@ -190,28 +201,29 @@ class ProfileScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
                 margin: EdgeInsets.only(bottom: 16),
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(horizontal: 15.w),
                 width: double.infinity,
-                height: 64.h,
+                height: 56.h,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
+
                       child: Row(
                         children: [
                           Image.asset(
                             "assets/images/logout.png",
-                            width: 20.w,
-                            height: 20.h,
+                            width: 27.w,
+                            height: 30.h,
                           ),
                           SizedBox(
-                            width: 10.w,
+                            width: 8.w,
                           ),
                           Text(
                             "Log Out",
                             style: TextStyle(
                                 fontWeight: FontWeight.w500,
-                                fontSize: 16,
+                                fontSize: 14.sp,
                                 color: Colors.red),
                           ),
                         ],

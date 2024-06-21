@@ -20,10 +20,15 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
   bool hasPaidOne = false;
   bool hasPaidTwo = false;
   bool hasPaidThree = false;
+  bool hasPaidDeliver = false;
 
-  // int x = 1;
-  //
-  // String memberName = "sara";
+
+  void togglePaymentStatusDeliver() {
+    setState(() {
+      hasPaidDeliver = !hasPaidDeliver;
+
+    });
+  }
 
   void togglePaymentStatusOne() {
     setState(() {
@@ -37,6 +42,7 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
       }
     });
   }
+
 
   void togglePaymentStatusTwo() {
     setState(() {
@@ -71,9 +77,9 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
           backgroundColor: Colors.transparent,
           elevation: 0,
           centerTitle: true,
-          title: Text("ROSCA 1",
+          title: Text("ROSCA 3",
               style: TextStyle(
-                  fontSize: 20.sp,
+                  fontSize: 16.sp,
                   color: Color(0xff292929),
                   fontWeight: FontWeight.w600)),
           leading: InkWell(
@@ -87,7 +93,7 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
                 Icons.arrow_back_ios,
                 color: Color(0xff292929),
               ))),
-      bottomNavigationBar: Padding(
+     /* bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(bottom: 50.0, right: 16, left: 16),
         child: ElevatedButton(
           onPressed: () {
@@ -98,7 +104,7 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
                 ));
           },
           style: ElevatedButton.styleFrom(
-              minimumSize: Size(double.infinity.w, 50.h),
+              minimumSize: Size(double.infinity.w, 48.h),
               backgroundColor: Theme.of(context).primaryColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.r),
@@ -106,48 +112,99 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
           child: Text(
             "View ROSCAs",
             style: TextStyle(
-                fontSize: 18.sp,
+                fontSize: 15.sp,
                 fontWeight: FontWeight.w700,
                 color: Colors.white),
           ),
         ),
-      ),
+      ),*/
+
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 18),
+        padding: EdgeInsets.symmetric(horizontal:18.w,vertical:15.h),
         child: Column(
           children: [
             Row(
               children: [
                 Text(
-                  "Month: 01-2024",
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16.sp),
+                  "Month: 06-2024",
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14.sp),
                 ),
                 Spacer(),
                 Text(
                   "Total Paid: $totalPaid",
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16.sp),
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14.sp),
                 ),
               ],
             ),
             SizedBox(
-              height: 24,
+              height:17.h,
+            ),
+            Row(
+
+              children: <Widget>[
+                GestureDetector(
+                  onTap: togglePaymentStatusDeliver,
+                  child: Container(
+                    decoration: BoxDecoration(
+
+                      border: Border.all(
+                        color: Theme.of(context).primaryColor,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                    width: 20.w,
+                    height: 18.h,
+                    child: Center(
+                      child: hasPaidDeliver
+                          ? Icon(
+                        Icons.check,
+                        size: 14,
+                        color: hasPaidDeliver
+                            ? Theme.of(context).primaryColor
+                            : Colors.white,
+                      )
+                          : null,
+                    ),
+                  ),
+                ),
+                SizedBox(width: 3),
+                Text(
+                  hasPaidDeliver ? 'Total paid was delivered to Farida' : 'Tap to deliver the total paid to Farida',
+                  style: TextStyle(
+                      fontSize: 10.sp, fontWeight: FontWeight.w500,color: Colors.black),
+                ),
+              ],
+            ),
+            SizedBox(
+              height:17.h,
             ),
             Container(
               height: 68,
               padding: EdgeInsets.symmetric(horizontal: 10),
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
+                boxShadow:[
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.1), //color of shadow
+
+                    spreadRadius:3,
+                    blurRadius:4,
+                  ),
+
+                ],
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Row(
                 children: [
                   Container(
-                    width: 33.w,
-                    height: 34.h,
-                    margin: EdgeInsets.symmetric(horizontal: 12),
-                    padding: EdgeInsets.all(8),
+                    width: 30.w,
+                    height: 27.h,
+                    margin: EdgeInsets.symmetric(horizontal:1.w),
+                    padding: EdgeInsets.all(2),
                     decoration: BoxDecoration(
+
                         borderRadius: BorderRadius.all(Radius.circular(42)),
                         border:
                             Border.all(color: Theme.of(context).primaryColor),
@@ -156,17 +213,35 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
                       child: Text(
                         "1",
                         style: TextStyle(
-                            fontSize: 14.sp,
+                            fontSize: 13.sp,
                             fontWeight: FontWeight.w600,
                             color: Theme.of(context).primaryColor),
                       ),
                     ),
                   ),
-                  Text(
-                    "Sara",
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w600,
+                  Padding(
+                    padding:  EdgeInsets.only(top:18.h,left: 7.w),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Farida",
+                          style: TextStyle(
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        SizedBox(height: 2.h,),
+                        Text(
+                          "Eligibility Month:06-2024",
+                          style: TextStyle(
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xff989898)
+                          ),
+                        ),
+
+                      ],
                     ),
                   ),
                   Spacer(),
@@ -180,17 +255,17 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
                             color: Colors.white,
                             border: Border.all(
                               color: Theme.of(context).primaryColor,
-                              width: 2.0,
+                              width: 1,
                             ),
-                            borderRadius: BorderRadius.circular(16.0),
+                            borderRadius: BorderRadius.circular(30.0),
                           ),
-                          width: 24,
-                          height: 24,
+                          width: 20.w,
+                          height: 18.h,
                           child: Center(
                             child: hasPaidOne
                                 ? Icon(
                                     Icons.check,
-                                    size: 20,
+                                    size: 14,
                                     color: hasPaidOne
                                         ? Theme.of(context).primaryColor
                                         : Colors.white,
@@ -201,9 +276,9 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
                       ),
                       SizedBox(width: 3),
                       Text(
-                        hasPaidOne ? 'pay' : 'Didn’t  Pay',
+                        hasPaidOne ? 'Paid' : 'Didn’t  Pay',
                         style: TextStyle(
-                            fontSize: 12.sp, fontWeight: FontWeight.w400),
+                            fontSize: 10.sp, fontWeight: FontWeight.w400),
                       ),
                     ],
                   ),
@@ -211,23 +286,32 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
               ),
             ),
             SizedBox(
-              height: 24,
+              height:13.h,
             ),
             Container(
               height: 68,
               padding: EdgeInsets.symmetric(horizontal: 10),
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
+                boxShadow:[
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.1), //color of shadow
+
+                    spreadRadius:3,
+                    blurRadius:4,
+                  ),
+
+                ],
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Row(
                 children: [
                   Container(
-                    width: 33.w,
-                    height: 34.h,
-                    margin: EdgeInsets.symmetric(horizontal: 12),
-                    padding: EdgeInsets.all(8),
+                    width: 30.w,
+                    height: 27.h,
+                    margin: EdgeInsets.symmetric(horizontal: 1.w),
+                    padding: EdgeInsets.all(2),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(42)),
                         border:
@@ -237,17 +321,35 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
                       child: Text(
                         "2",
                         style: TextStyle(
-                            fontSize: 14.sp,
+                            fontSize: 13.sp,
                             fontWeight: FontWeight.w600,
                             color: Theme.of(context).primaryColor),
                       ),
                     ),
                   ),
-                  Text(
-                    "Ahmed",
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w600,
+                  Padding(
+                    padding:  EdgeInsets.only(top:18.h,left: 7.w),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Mariam",
+                          style: TextStyle(
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        SizedBox(height: 2.h,),
+                        Text(
+                          "Eligibility Month:07-2024",
+                          style: TextStyle(
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xff989898)
+                          ),
+                        ),
+
+                      ],
                     ),
                   ),
                   Spacer(),
@@ -261,17 +363,17 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
                             color: Colors.white,
                             border: Border.all(
                               color: Theme.of(context).primaryColor,
-                              width: 2.0,
+                              width: 1,
                             ),
                             borderRadius: BorderRadius.circular(16.0),
                           ),
-                          width: 24,
-                          height: 24,
+                          width: 20.w,
+                          height: 18.h,
                           child: Center(
                             child: hasPaidTwo
                                 ? Icon(
                                     Icons.check,
-                                    size: 20,
+                                    size: 14,
                                     color: hasPaidTwo
                                         ? Theme.of(context).primaryColor
                                         : Colors.white,
@@ -282,9 +384,9 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
                       ),
                       SizedBox(width: 3),
                       Text(
-                        hasPaidTwo ? 'pay' : 'Didn’t  Pay',
+                        hasPaidTwo ? 'Paid' : 'Didn’t  Pay',
                         style: TextStyle(
-                            fontSize: 12.sp, fontWeight: FontWeight.w400),
+                            fontSize: 10.sp, fontWeight: FontWeight.w400),
                       ),
                     ],
                   ),
@@ -292,23 +394,32 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
               ),
             ),
             SizedBox(
-              height: 24,
+              height: 13.h,
             ),
             Container(
               height: 68,
               padding: EdgeInsets.symmetric(horizontal: 10),
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
+                boxShadow:[
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.1), //color of shadow
+
+                    spreadRadius:3,
+                    blurRadius:4,
+                  ),
+
+                ],
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Row(
                 children: [
                   Container(
-                    width: 33.w,
-                    height: 34.h,
-                    margin: EdgeInsets.symmetric(horizontal: 12),
-                    padding: EdgeInsets.all(8),
+                    width: 30.w,
+                    height: 27.h,
+                    margin: EdgeInsets.symmetric(horizontal:1.w),
+                    padding: EdgeInsets.all(2),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(42)),
                         border:
@@ -318,17 +429,35 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
                       child: Text(
                         "3",
                         style: TextStyle(
-                            fontSize: 14.sp,
+                            fontSize: 13.sp,
                             fontWeight: FontWeight.w600,
                             color: Theme.of(context).primaryColor),
                       ),
                     ),
                   ),
-                  Text(
-                    "Mohamed",
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w600,
+                  Padding(
+                    padding:  EdgeInsets.only(top:18.h,left: 7.w),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Merna",
+                          style: TextStyle(
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        SizedBox(height: 2.h,),
+                        Text(
+                          "Eligibility Month:08-2024",
+                          style: TextStyle(
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xff989898)
+                          ),
+                        ),
+
+                      ],
                     ),
                   ),
                   Spacer(),
@@ -342,17 +471,17 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
                             color: Colors.white,
                             border: Border.all(
                               color: Theme.of(context).primaryColor,
-                              width: 2.0,
+                              width: 1,
                             ),
                             borderRadius: BorderRadius.circular(16.0),
                           ),
-                          width: 24,
-                          height: 24,
+                          width: 20.w,
+                          height: 18.h,
                           child: Center(
                             child: hasPaidThree
                                 ? Icon(
                                     Icons.check,
-                                    size: 20,
+                                    size: 14,
                                     color: hasPaidThree
                                         ? Theme.of(context).primaryColor
                                         : Colors.white,
@@ -363,9 +492,9 @@ class _RoscaMonthOneScreenState extends State<RoscaMonthOneScreen> {
                       ),
                       SizedBox(width: 3),
                       Text(
-                        hasPaidThree ? 'pay' : 'Didn’t  Pay',
+                        hasPaidThree ? 'Paid' : 'Didn’t  Pay',
                         style: TextStyle(
-                            fontSize: 12.sp, fontWeight: FontWeight.w400),
+                            fontSize: 10.sp, fontWeight: FontWeight.w400),
                       ),
                     ],
                   ),

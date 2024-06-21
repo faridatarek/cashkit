@@ -29,7 +29,7 @@ class _EditQuestionSixState extends State<EditQuestionSix> {
           children: [
             Text(
               "Which of these do you spend money on ?",
-              style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600),
+              style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w600),
             ),
             SizedBox(
               height: 16,
@@ -46,7 +46,7 @@ class _EditQuestionSixState extends State<EditQuestionSix> {
                       child: Text(
                         'Select Item',
                         style: TextStyle(
-                          fontSize: 16.sp,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -61,7 +61,7 @@ class _EditQuestionSixState extends State<EditQuestionSix> {
                           child: Text(
                             item,
                             style:  TextStyle(
-                              fontSize: 16.sp,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w500,
                               color: Colors.black,
                             ),
@@ -80,7 +80,7 @@ class _EditQuestionSixState extends State<EditQuestionSix> {
                   // width: double.infinity,
                   padding: const EdgeInsets.only(right: 14),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(14),
+                    borderRadius: BorderRadius.circular(8.r),
                     border: Border.all(
                       color: Colors.white,
                     ),

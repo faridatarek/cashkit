@@ -1,6 +1,5 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:cashkit/core/desgin/add_member/view.dart';
-
 import 'package:cashkit/screens/profile/rosca_template/rosca_month/month_one/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -49,15 +48,8 @@ class _AddMemberScreenState extends State<AddMemberScreen> {
                 return AlertDialog(
                   title: JelloIn(
                     duration: Duration(seconds: 2),
-                    child: Container(
-                      width: 32.w,
-                      height: 32.h,
-                      margin: EdgeInsets.symmetric(horizontal: 120),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(42)),
-                          border:
-                              Border.all(color: Theme.of(context).primaryColor),
-                          color: Colors.white),
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 20.h),
                       child: Image.asset(
                         "assets/images/Confirm.png",
                         width: 50.w,
@@ -65,25 +57,29 @@ class _AddMemberScreenState extends State<AddMemberScreen> {
                       ),
                     ),
                   ),
-                  titlePadding: EdgeInsets.symmetric(vertical: 32),
+                  titlePadding: EdgeInsets.symmetric(vertical:5.h),
                   actions: [
                     Column(
                       children: [
-                        Text(
-                          "Data Confirmation",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500, fontSize: 16),
+                        Padding(
+                         padding:EdgeInsets.only(top: 20.h)
+                        ,
+                          child: Text(
+                            "Data Confirmation",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500, fontSize: 15.sp),
+                          ),
                         ),
                         SizedBox(
-                          height: 24.h,
+                          height: 15.h,
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                          padding:  EdgeInsets.symmetric(horizontal: 20.0,vertical: 10.h),
                           child: Row(
                             children: [
                               ElevatedButton(
                                   style: ElevatedButton.styleFrom(
-                                      backgroundColor: Colors.white70),
+                                      backgroundColor:  Color(0xffEFEFEF)),
                                   onPressed: () {
                                     Navigator.push(
                                         context,
@@ -95,12 +91,12 @@ class _AddMemberScreenState extends State<AddMemberScreen> {
                                   child: Text(
                                     "Confirm",
                                     style: TextStyle(
-                                        color: Theme.of(context).primaryColor),
+                                        color: Theme.of(context).primaryColor,fontSize: 13.sp),
                                   )),
                               Spacer(),
                               ElevatedButton(
                                   style: ElevatedButton.styleFrom(
-                                      backgroundColor: Colors.white70),
+                                      backgroundColor: Color(0xffEFEFEF)),
                                   onPressed: () {
                                     Navigator.pop(
                                         context,
@@ -108,7 +104,7 @@ class _AddMemberScreenState extends State<AddMemberScreen> {
                                   },
                                   child: Text(
                                     "Cancel",
-                                    style: TextStyle(color: Colors.black),
+                                    style: TextStyle(color: Colors.black,fontSize: 13.sp),
                                   )),
                             ],
                           ),
@@ -136,43 +132,57 @@ class _AddMemberScreenState extends State<AddMemberScreen> {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16),
+        padding: EdgeInsets.symmetric(horizontal:13.w),
         child: Column(
           children: [
             SizedBox(
               height: 32.h,
             ),
-            TextFormField(
-              controller: _controller,
-              decoration: InputDecoration(
-                suffixIcon: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: Size(80.w, 57.h),
-                      backgroundColor: Theme.of(context).primaryColor,
-                    ),
-                    onPressed: () {
-                      list.add(_controller.text);
-                      _controller.clear();
-                      setState(() {});
-                    },
-                    child: Text("Add")),
-                floatingLabelBehavior: FloatingLabelBehavior.never,
-                enabledBorder: OutlineInputBorder(
+            Container(
+              height: 52.h,
+              width: MediaQuery.of(context).size.width,
+              child: TextFormField(
+                controller: _controller,
+                decoration: InputDecoration(
+
+
+                  suffixIcon: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(borderRadius:BorderRadius.only(bottomRight: Radius.circular(8.r),topRight: Radius.circular(8.r),),),
+                        fixedSize: Size(80.w, 52.h),
+                        backgroundColor: Theme.of(context).primaryColor,
+                      ),
+                      onPressed: () {
+                        list.add(_controller.text);
+                        _controller.clear();
+                        setState(() {});
+                      },
+                      child: Text("Add")),
+                  floatingLabelBehavior: FloatingLabelBehavior.never,
+                  enabledBorder: OutlineInputBorder(
+
+                      borderRadius: BorderRadius.circular(8.r),
+                      borderSide: BorderSide(
+                    color: Color(0xffBDBDBD),
+                    width: 1.0,
+                  )),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.r),
+
                     borderSide: BorderSide(
-                  color: Color(0xffBDBDBD),
-                  width: 1.0,
-                )),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Theme.of(context).primaryColor,
-                    width: 2.0,
+
+
+
+                      color: Theme.of(context).primaryColor,
+                      width: 2.0,
+                    ),
                   ),
+                  labelText: "Member Name",
+                  labelStyle:
+                      TextStyle(fontSize:14.sp,fontWeight: FontWeight.w400,color: Color(0xff989898)),
+                  border: OutlineInputBorder(
+                    ),
                 ),
-                labelText: "member name",
-                labelStyle:
-                    TextStyle(fontWeight: FontWeight.w400, fontSize: 16),
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(50.r)),
               ),
             ),
             SizedBox(

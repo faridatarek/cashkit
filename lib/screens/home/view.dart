@@ -24,13 +24,13 @@ class HomeScreen extends StatelessWidget {
 
     final List<Data> containerData = [
       Data(goalName: "New Car",totalAmount: 150000,firstdate: "12/2/2025",lastdate: "12/9/2026"
-          ,goalImg:Image.asset("assets/images/goals_img.png",)
+          ,goalImg:Image.asset("assets/images/Frame 1000005312.png",)
           ,spendAmount: 90000,spendTime: "2 years and 1 month left",spendFromTotal: "EGP 90,000 / EGP 150,000"),
       Data(goalName: "Travel To Japan",totalAmount: 30000,firstdate: "12/2/2025",lastdate: "12/9/2026"
-          ,goalImg:Image.asset("assets/images/goals_img.png",)
+          ,goalImg:Image.asset("assets/images/Frame 1000005312.png",)
           ,spendAmount: 8000,spendTime: "1 year and 3 months left",spendFromTotal: "EGP 8000 / EGP 30,000"),
       Data(goalName: "Buy New House",totalAmount: 850000,firstdate: "12/2/2025",lastdate: "12/9/2026"
-          ,goalImg:Image.asset("assets/images/goals_img.png",)
+          ,goalImg:Image.asset("assets/images/Frame 1000005312.png",)
           ,spendAmount: 18000,spendTime: "5 years and 2 months left",spendFromTotal: "EGP 18,000 / EGP 850,000")
 
     ];
@@ -56,7 +56,7 @@ class HomeScreen extends StatelessWidget {
       "in 2023",
     ];
 
-    double completedPercentage =72;
+    double completedPercentage =55;
 
     return Scaffold(
       body: Padding(
@@ -68,12 +68,12 @@ class HomeScreen extends StatelessWidget {
             children: [
               Container(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 8.0,bottom:8),
+                  padding: const EdgeInsets.only(top: 5.0,bottom:5),
                   child: Row(
 
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(left:5.0),
+                          padding: const EdgeInsets.only(left:7.0),
                           child: InkWell(
                             onTap: ()
                             {
@@ -83,12 +83,13 @@ class HomeScreen extends StatelessWidget {
                         ),
                         SizedBox(width: 10.w,),
                         Padding(
-                          padding: const EdgeInsets.only(top: 8.0),
+                          padding: const EdgeInsets.only(top: 6.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children:  [
-                              Text("Welcome,",style: TextStyle(fontSize: 18.sp,color: Color(0xff292929),fontWeight: FontWeight.w400)),
-                              Text("Lena",style: TextStyle(fontSize: 16.sp,color: Color(0xff292929),fontWeight: FontWeight.bold)),
+                              Text("Welcome,",style: TextStyle(fontSize: 15.sp,color: Color(0xff292929),fontWeight: FontWeight.w400)),
+                              SizedBox(height: 1,),
+                              Text("Farida",style: TextStyle(fontSize: 13.sp,color: Color(0xff292929),fontWeight: FontWeight.bold)),
                             ],
                           ),
                         ),
@@ -97,35 +98,35 @@ class HomeScreen extends StatelessWidget {
                           Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationsScreen()));
                         },
                             child: Padding(
-                              padding: const EdgeInsets.all(5.0),
-                              child: const CircleAvatar(backgroundColor: Color(0xffEFEFEF),child:  Icon(Icons.notifications_outlined,size:30,color:Color(0xff05966D) ),radius:25),
+                              padding:  EdgeInsets.only(top: 2.0.h,bottom: 2.h,right: 7.w),
+                              child:  CircleAvatar(backgroundColor: Color(0xffEFEFEF),backgroundImage: AssetImage("assets/images/Frame 1024.png",),radius:25.r),
                             )),
 
                       ]),
                 ),
-                margin: const EdgeInsets.symmetric(vertical:1,horizontal: 1),
+                margin: const EdgeInsets.symmetric(vertical:12,horizontal:1),
                 width: 395.w,
-                height:72.h,
+                height:60.h,
                 decoration: BoxDecoration(
 
                   color: Colors.white,
-                  borderRadius: const BorderRadius.all(Radius.circular(32)), //border corner radius
+                  borderRadius: const BorderRadius.all(Radius.circular(30)), //border corner radius
                   boxShadow:[
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.1), //color of shadow
 
                       spreadRadius:2, //spread radius
                       blurRadius:18, // blur radius
-                      //changes position of shadow
-                      //first paramerter of offset is left-right
-                      //second parameter is top to down
                     ),
-                    //you can set more BoxShadow() here
+
                   ],
                 ),
               ),
-              Image.asset("assets/images/offer.png",height:130.h ,width: 396.w,),
-              Text("Statistics",style: TextStyle(fontSize: 20.sp,color: Color(0xff292929),fontWeight: FontWeight.bold)),
+              Image.asset("assets/images/offer.png",height:110.h ,width: 396.w,),
+              Padding(
+                padding:  EdgeInsets.only(top: 6.0),
+                child: Text("Statistics",style: TextStyle(fontSize: 16.sp,color: Color(0xff292929),fontWeight: FontWeight.bold)),
+              ),
               Row(
                 children: [
                   Column(children: [
@@ -139,7 +140,7 @@ class HomeScreen extends StatelessWidget {
                                 Container(
 
                                     margin: EdgeInsets.symmetric(vertical: 8,horizontal: 8),
-                                    width: 23.w,
+                                    width: 24.w,
                                     height:23.h,
                                     decoration: BoxDecoration(
 
@@ -148,33 +149,38 @@ class HomeScreen extends StatelessWidget {
 
                                     ),
                                     child:Transform.rotate(
-                                      angle:200, // 180 degrees in radians
-                                      child: Icon(Icons.arrow_downward, color: Colors.white,size: 22),
+                                      angle:150, // 180 degrees in radians
+                                      child: Icon(Icons.arrow_downward, color: Colors.white,size: 20),
                                     )
                                 ),
                                 Container(
 
                                     margin: EdgeInsets.symmetric(vertical: 8,horizontal: 8),
-                                    width:55,
-                                    height:25,
+                                    width:56.w,
+                                    height:25.h,
                                     decoration: BoxDecoration(
 
                                       color:Color(0xffEFEFEF),
                                       borderRadius: BorderRadius.all(Radius.circular(5)), //border corner radius
 
                                     ),
-                                    child:Row(children: [
-                                      Text(" 3%",style: TextStyle(fontSize: 14.sp,color: Theme.of(context).primaryColor,fontWeight: FontWeight.bold)),
-                                      SizedBox(width: 5.w,),
-                                      Icon(Icons.trending_up, color:Theme.of(context).primaryColor,size: 22),
-                                    ],)
+                                    child:Center(
+                                      child: Row(children: [
+                                        Text(" 6%",style: TextStyle(fontSize: 12.sp,color: Theme.of(context).primaryColor,fontWeight: FontWeight.bold)),
+                                        SizedBox(width: 3.w,),
+                                        Icon(Icons.trending_up, color:Theme.of(context).primaryColor,size: 20),
+                                      ],),
+                                    )
                                 ),
 
 
                               ]),
-                          Text("  Income",style: TextStyle(fontSize: 16.sp,color: Color(0xff989898),fontWeight: FontWeight.bold)),
+                          Padding(
+                            padding:  EdgeInsets.only(top: 5.0),
+                            child: Text("  Income",style: TextStyle(fontSize: 14.sp,color: Color(0xff989898),fontWeight: FontWeight.w400)),
+                          ),
                           SizedBox(height: 5.h,),
-                          Text("  EGP 5,000",style: TextStyle(fontSize: 16.sp,color: Color(0xff292929),fontWeight: FontWeight.bold)),
+                          Text("  EGP 5,000",style: TextStyle(fontSize: 13.sp,color: Color(0xff292929),fontWeight: FontWeight.w500)),
 
                         ],
                       ),
@@ -191,11 +197,9 @@ class HomeScreen extends StatelessWidget {
 
                             spreadRadius:2, //spread radius
                             blurRadius:18, // blur radius
-                            //changes position of shadow
-                            //first paramerter of offset is left-right
-                            //second parameter is top to down
+
                           ),
-                          //you can set more BoxShadow() here
+
                         ],
                       ),),
                     Container(
@@ -208,7 +212,7 @@ class HomeScreen extends StatelessWidget {
                                 Container(
 
                                     margin: EdgeInsets.symmetric(vertical:7,horizontal: 7),
-                                    width: 23.w,
+                                    width: 24.w,
                                     height:23.h,
                                     decoration: BoxDecoration(
 
@@ -217,33 +221,38 @@ class HomeScreen extends StatelessWidget {
 
                                     ),
                                     child:Transform.rotate(
-                                      angle:200, // 180 degrees in radians
-                                      child: Icon(Icons.arrow_downward, color: Colors.white,size: 22),
+                                      angle:150, // 180 degrees in radians
+                                      child: Icon(Icons.arrow_downward, color: Colors.white,size: 20),
                                     )
                                 ),
                                 Container(
 
                                     margin: EdgeInsets.symmetric(vertical: 8,horizontal: 8),
-                                    width:55,
-                                    height:25,
+                                    width:56.w,
+                                    height:25.h,
                                     decoration: BoxDecoration(
 
                                       color:Color(0xffEFEFEF),
                                       borderRadius: BorderRadius.all(Radius.circular(5)), //border corner radius
 
                                     ),
-                                    child:Row(children: [
-                                      Text(" 3%",style: TextStyle(fontSize: 14.sp,color: Color(0xffFACC15),fontWeight: FontWeight.bold)),
-                                      SizedBox(width:5.w,),
-                                      Icon(Icons.trending_up, color:Color(0xffFACC15),size: 22),
-                                    ],)
+                                    child:Center(
+                                      child: Row(children: [
+                                        Text(" 8%",style: TextStyle(fontSize: 12.sp,color: Color(0xffFACC15),fontWeight: FontWeight.w500)),
+                                        SizedBox(width:3.w,),
+                                        Icon(Icons.trending_up, color:Color(0xffFACC15),size: 20),
+                                      ],),
+                                    )
                                 ),
 
 
                               ]),
-                          Text("  Saving",style: TextStyle(fontSize: 16.sp,color: Color(0xff989898),fontWeight: FontWeight.bold)),
+                          Padding(
+                            padding:  EdgeInsets.only(top: 5.0.w),
+                            child: Text("  Saving",style: TextStyle(fontSize: 14.sp,color: Color(0xff989898),fontWeight: FontWeight.w400)),
+                          ),
                           SizedBox(height: 5.h,),
-                          Text("  EGP 1000",style: TextStyle(fontSize: 16.sp,color: Color(0xff292929),fontWeight: FontWeight.bold)),
+                          Text("  EGP 1,000",style: TextStyle(fontSize: 13.sp,color: Color(0xff292929),fontWeight: FontWeight.w500)),
 
                         ],
                       ),
@@ -260,9 +269,7 @@ class HomeScreen extends StatelessWidget {
 
                             spreadRadius:2, //spread radius
                             blurRadius:18, // blur radius
-                            //changes position of shadow
-                            //first paramerter of offset is left-right
-                            //second parameter is top to down
+
                           ),
 
                         ],
@@ -323,24 +330,24 @@ class HomeScreen extends StatelessWidget {
 
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.only(left:75),
+                                      padding:  EdgeInsets.only(left:90.w),
                                       child: Container(
                                         width:65.w,
-                                        height:25.h,
+                                        height:20.h,
                                         decoration: BoxDecoration(
                                           color: Colors.white,
-                                          borderRadius: BorderRadius.circular(40.0),
+                                          borderRadius: BorderRadius.circular(20.0),
                                           border: Border.all(
-                                            color: Colors.green,
-                                            width: 2.0,
+                                            color:Theme.of(context).primaryColor,
+                                            width: 1.0,
                                           ),
                                         ),
                                         child: Center(
                                           child: Text(
-                                            'EGP 5000',
+                                            'EGP 5,000',
                                             style: TextStyle(
                                               color: Colors.black,
-                                              fontSize:8.sp,
+                                              fontSize:7.sp,
                                               fontWeight: FontWeight.w500,
                                             ),
                                           ),
@@ -351,12 +358,20 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            Text("EGP 400 spent of EGP 4,000",style: TextStyle(fontSize:9.sp,color: Color(0xff292929).withOpacity(0.8),fontWeight: FontWeight.w400)),
-                            SizedBox(height: 10.h,),
-                            Text("Monthly Budget",style: TextStyle(fontSize: 11.sp,color: Color(0xff989898).withOpacity(0.9),fontWeight: FontWeight.w400)
-                            ),
-                            SizedBox(height:6.h,),
-                            Text("EGP 4,000",style: TextStyle(fontSize: 16.sp,color: Color(0xff292929),fontWeight: FontWeight.w500))
+                           Padding(
+                             padding:  EdgeInsets.only(right:3.0.w,left:4.0.w ),
+                             child: Column(
+                               crossAxisAlignment: CrossAxisAlignment.start,
+                               children: [
+                                 Text("EGP 2,200 spent of EGP 4,000",style: TextStyle(fontSize:9.sp,color: Color(0xff292929).withOpacity(0.4),fontWeight: FontWeight.w400)),
+                                 SizedBox(height: 6.h,),
+                                 Text("Monthly Budget",style: TextStyle(fontSize: 11.sp,color: Color(0xff989898).withOpacity(0.9),fontWeight: FontWeight.w400)
+                                 ),
+                                 SizedBox(height:6.h,),
+                                 Text("EGP 4,000",style: TextStyle(fontSize: 13.sp,color: Color(0xff292929),fontWeight: FontWeight.w500))
+                               ],
+                             ),
+                           )
 
 
 
@@ -365,7 +380,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     margin: EdgeInsets.symmetric(vertical: 5,horizontal:6.w),
                     width:171.w,
-                    height:212.h,
+                    height:214.h,
                     decoration: BoxDecoration(
 
                       color: Colors.white,
@@ -393,17 +408,20 @@ class HomeScreen extends StatelessWidget {
 
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Top expenses",style: TextStyle(fontSize:17.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
-                            InkWell(
-                                onTap: (){
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) =>Expenses ()));
-                                },
-                                child: Text("View all",style: TextStyle(fontSize: 12.sp,fontWeight: FontWeight.w400,color: Color(0xff525252)))),
-                          ],),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Top expenses",style: TextStyle(fontSize:14.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
+                              InkWell(
+                                  onTap: (){
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) =>Expenses ()));
+                                  },
+                                  child: Text("View all",style: TextStyle(fontSize: 11.sp,fontWeight: FontWeight.w400,color: Color(0xff525252)))),
+                            ],),
+                        ),
                         SizedBox(height: 5,),
                         Container(
 
@@ -412,19 +430,10 @@ class HomeScreen extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Container(
-                                  decoration: BoxDecoration(
-
-                                    color:Color(0xffEFEFEF),
-                                    borderRadius: BorderRadius.all(Radius.circular(4)), //border corner radius
-
-                                  ),
-                                  height:45.h,width:45.w,
-                                  child:Image.asset("assets/images/noto_house (2).png",) ,
-                                ),
+                                Image.asset("assets/images/Frame 35080.png",height:46.h,width: 45.w ),
                                 SizedBox(width:7.w,),
                                 Container
-                                  ( height:80.h,width:239.w,
+                                  ( height:70.h,width:239.w,
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
@@ -434,11 +443,11 @@ class HomeScreen extends StatelessWidget {
 
                                           children: [
                                             Text("Housing",style: TextStyle(fontSize:13.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
-                                            SizedBox(width:35.w,),
-                                            Text("EGP 800 of EGP 1,000",style: TextStyle(fontSize: 10.sp,fontWeight: FontWeight.w400,color: Color(0xff525252))),
+                                           Spacer(),
+                                            Text("EGP 800 of EGP 1,000",style: TextStyle(fontSize: 9.sp,fontWeight: FontWeight.w400,color: Color(0xff525252))),
                                           ],),
                                       ),
-                                      SizedBox(height:15,),
+                                      SizedBox(height:14.h,),
                                       LoadingProg(totalAmount:1000,spentAmount: 800,width: 240.w),
                                     ],),
                                 )
@@ -446,7 +455,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                           margin: EdgeInsets.symmetric(vertical: 5,horizontal: 8),
                           width:360.w,
-                          height:80.h,
+                          height:65.h,
                           decoration: BoxDecoration(
 
                             color: Colors.white,
@@ -470,19 +479,10 @@ class HomeScreen extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Container(
-                                  decoration: BoxDecoration(
-
-                                    color:Color(0xffEFEFEF),
-                                    borderRadius: BorderRadius.all(Radius.circular(4)), //border corner radius
-
-                                  ),
-                                  height:45.h,width:45.w,
-                                  child:Image.asset("assets/images/emojione-v1_shopping-bags.png",) ,
-                                ),
+                                Image.asset("assets/images/Frame 1000005311.png",width: 45.w,height: 46.h),
                                 SizedBox(width:7.w,),
                                 Container
-                                  ( height:80.h,width:239.w,
+                                  ( height:70.h,width:239.w,
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
@@ -492,11 +492,11 @@ class HomeScreen extends StatelessWidget {
 
                                           children: [
                                             Text("Shopping",style: TextStyle(fontSize:13.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
-                                            SizedBox(width:35.w,),
-                                            Text("EGP 300 of EGP 800",style: TextStyle(fontSize: 10.sp,fontWeight: FontWeight.w400,color: Color(0xff525252))),
+                                            Spacer(),
+                                            Text("EGP 300 of EGP 800",style: TextStyle(fontSize: 9.sp,fontWeight: FontWeight.w400,color: Color(0xff525252))),
                                           ],),
                                       ),
-                                      SizedBox(height:15,),
+                                      SizedBox(height:14.h,),
                                       LoadingProg(totalAmount:800,spentAmount: 300,width: 240.w),
                                     ],),
                                 )
@@ -504,7 +504,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                           margin: EdgeInsets.symmetric(vertical: 5,horizontal: 8),
                           width:360.w,
-                          height:80.h,
+                          height:65.h,
                           decoration: BoxDecoration(
 
                             color: Colors.white,
@@ -524,7 +524,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 margin: EdgeInsets.symmetric(vertical: 5,horizontal:5.w),
                 width:359.w,
-                height:240.h,
+                height:215.h,
                 decoration: BoxDecoration(
 
                   color: Colors.white,
@@ -539,24 +539,25 @@ class HomeScreen extends StatelessWidget {
 
                   ],
                 ),),
-
+              SizedBox(height: 5.h,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(" Goals",style: TextStyle(fontSize:20.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
+                  Text(" Goals",style: TextStyle(fontSize:16.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
                   InkWell(
                       onTap: (){
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) =>All_Goals ()));
                       },
-                      child: Text("View all",style: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.w400,color: Color(0xff525252)))),
+                      child: Text("View all  ",style: TextStyle(fontSize: 11.sp,fontWeight: FontWeight.w400,color: Color(0xff525252)))),
                 ],),
+              SizedBox(height: 5.h,),
                Container(
             height: 100.w,
-            width: MediaQuery.of(context).size.width ,
+            width: MediaQuery.of(context).size.width.w ,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                // physics: NeverScrollableScrollPhysics(),
+
                 shrinkWrap: true,
                 itemBuilder: (context, index) =>GestureDetector(
                   onTap: () {
@@ -581,65 +582,69 @@ class HomeScreen extends StatelessWidget {
                             decoration: BoxDecoration(
 
                               color:Color(0xffEFEFEF),
-                              borderRadius: BorderRadius.all(Radius.circular(4)), //border corner radius
+                              borderRadius: BorderRadius.all(Radius.circular(8)), //border corner radius
 
                             ),
-                            height:45.h,width:35.w,
+                            height:43.h,width:48.w,
                             child:containerData[index].goalImg,
                           ),
                           SizedBox(width:9,),
-                          Container
-                            (
+                          Padding(
+                            padding:  EdgeInsets.only(top:6.0),
+                            child: Container
 
-                            height:70,width:MediaQuery.of(context).size.width.w*0.45,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    Text(" ${containerData[index].goalName}",style: TextStyle(fontSize:12.sp,fontWeight: FontWeight.w500,color: Color(0xff292929))),
-                                    Spacer(),
-                                    Icon(Icons.arrow_forward_ios,color: Color(0xff989898),size: 17,)
-                                  ],
-                                ),
-                                SizedBox(height:7,),
-                                Text(" ${containerData[index].spendFromTotal}",style: TextStyle(fontSize: 8.sp,fontWeight: FontWeight.w800,color: Color(0xff989899))),
-                                SizedBox(height:7,),
+                              (
 
-                                Container(
-
-                                  width: 140.w,
-                                  //275.w
-                                  height: 6.h,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(24.sp),
-                                    color: Color(0xffEFEFEF),
+                              height:70,width:MediaQuery.of(context).size.width.w*0.45,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text(" ${containerData[index].goalName}",style: TextStyle(fontSize:12.sp,fontWeight: FontWeight.w500,color: Color(0xff292929))),
+                                      Spacer(),
+                                      Icon(Icons.arrow_forward_ios,color: Color(0xff989898),size: 14,)
+                                    ],
                                   ),
-                                  child: Align(
-                                    alignment: AlignmentDirectional.centerStart,
-                                    child: Container(
-                                      width:150* (containerData[index].spendAmount/containerData[index].totalAmount).w,
-                                      height: 6.h,
-                                      decoration: BoxDecoration(
-                                          gradient: LinearGradient(colors: [
-                                            Color(0xffAFFE9C),
-                                            Color(0xff047857).withOpacity(.6),
-                                            Color(0xff005B3B).withOpacity(.8),
+                                  SizedBox(height:6.h,),
+                                  Text(" ${containerData[index].spendFromTotal}",style: TextStyle(fontSize: 8.sp,fontWeight: FontWeight.w800,color: Color(0xff989899))),
+                                  SizedBox(height:11.h,),
 
-                                          ]),
-                                          borderRadius: BorderRadius.circular(24.sp),
-                                          color: Theme.of(context).primaryColor),
+                                  Container(
+
+                                    width: 140.w,
+                                    //275.w
+                                    height: 6.h,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(24.sp),
+                                      color: Color(0xffEFEFEF),
                                     ),
-                                  ),
-                                )
-                              ],),
+                                    child: Align(
+                                      alignment: AlignmentDirectional.centerStart,
+                                      child: Container(
+                                        width:150* (containerData[index].spendAmount/containerData[index].totalAmount).w,
+                                        height: 6.h,
+                                        decoration: BoxDecoration(
+                                            gradient: LinearGradient(colors: [
+                                              Color(0xffAFFE9C),
+                                              Color(0xff047857).withOpacity(.6),
+                                              Color(0xff005B3B).withOpacity(.8),
 
+                                            ]),
+                                            borderRadius: BorderRadius.circular(24.sp),
+                                            color: Theme.of(context).primaryColor),
+                                      ),
+                                    ),
+                                  )
+                                ],),
+
+                            ),
                           )
                         ],),
                     ),
-                    margin: EdgeInsets.symmetric(vertical: 5,horizontal: 8),
-                    width:206.w,
-                    height:90.h,
+                    margin: EdgeInsets.symmetric(vertical:8,horizontal: 8),
+                    width:220.w,
+                    height:50.h,
                     decoration: BoxDecoration(
 
                       color: Colors.white,
@@ -657,18 +662,20 @@ class HomeScreen extends StatelessWidget {
                 ),
                 itemCount: containerData.length),
           ),
+              SizedBox(height: 5.h,),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(" Articles",style: TextStyle(fontSize:20.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
+                  Text(" Articles",style: TextStyle(fontSize:16.sp,fontWeight: FontWeight.w600,color: Color(0xff292929))),
                   InkWell(
                       onTap: (){
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) =>Expenses ()));
                       },
-                      child: Text("View all",style: TextStyle(fontSize: 14.sp,fontWeight: FontWeight.w400,color: Color(0xff525252)))),
+                      child: Text("View all  ",style: TextStyle(fontSize: 11.sp,fontWeight: FontWeight.w400,color: Color(0xff525252)))),
                 ],),
+              SizedBox(height: 5.h,),
               Container(
                 height: 150.h,
                 width: MediaQuery.of(context).size.width ,
@@ -687,9 +694,9 @@ class HomeScreen extends StatelessWidget {
                           Container(
                             margin: EdgeInsets.symmetric(horizontal:10.w),
                             height: 140.h,
-                            width: 116.w,
+                            width: 128.w,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16),
+                              borderRadius: BorderRadius.circular(8.r),
                               color: Theme.of(context).primaryColor,
                             ),
                             child: Column(
@@ -702,9 +709,9 @@ class HomeScreen extends StatelessWidget {
                                 Container(
                                   padding: EdgeInsets.all(10),
                                   height: 54.h,
-                                  width: 116.w,
+                                  width: 128.w,
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(16),
+                                      borderRadius:BorderRadius.only(topRight:Radius.circular(16.r),topLeft:Radius.circular(16.r),bottomLeft:Radius.circular(8.r),bottomRight: Radius.circular(8.r) ),
                                       color: Colors.white),
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -719,7 +726,8 @@ class HomeScreen extends StatelessWidget {
                                         style: TextStyle(
                                             fontSize: 8.sp, fontWeight: FontWeight.w500),
                                       ),
-                                      Text("Reed",
+                                      SizedBox(height:1.h,),
+                                      Text("Read",
                                           style: TextStyle(
                                               color: Colors.grey,
                                               fontSize: 8.sp,

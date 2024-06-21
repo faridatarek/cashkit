@@ -72,7 +72,7 @@ class _QuestionThreeScreenState extends State<QuestionThreeScreen> {
             'Do you currently have any debt?',
             style: TextStyle(
                 fontWeight: FontWeight.w700,
-                fontSize: 15,
+                fontSize: 16.sp,
                 color: Color(0xff292929)),
           ),
           SizedBox(
@@ -88,7 +88,7 @@ class _QuestionThreeScreenState extends State<QuestionThreeScreen> {
               child: Container(
                 margin: EdgeInsets.only(bottom: 16),
                 padding: EdgeInsets.only(left: 16, top: 16, bottom: 20),
-                height: 60.h,
+                height: 55.h,
                 width: 396.w,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
@@ -103,8 +103,8 @@ class _QuestionThreeScreenState extends State<QuestionThreeScreen> {
                     images[index] != null && images[index].isNotEmpty
                         ? Image.asset(
                             images[index],
-                            width: 24,
-                            height: 24,
+                            width: 24.w,
+                            height: 24.h,
                           )
                         : SizedBox.shrink(),
                     SizedBox(
@@ -113,16 +113,16 @@ class _QuestionThreeScreenState extends State<QuestionThreeScreen> {
                     Text(
                       text[index],
                       style:
-                          TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                          TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w500),
                     )
                   ],
                 ),
               ),
             ),
           ),
-     /*     SizedBox(
-            height: 5.h,
-          ),*/
+          SizedBox(
+            height: 6.h,
+          ),
           GestureDetector(
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => QuestionFourScreen(),));
@@ -131,7 +131,7 @@ class _QuestionThreeScreenState extends State<QuestionThreeScreen> {
               child: Text(
                 "I don’t currently have a debt",
                 style: TextStyle(
-                    fontSize: 14.sp,
+                    fontSize: 11.sp,
                     fontWeight: FontWeight.w600,
                     color: Theme.of(context).primaryColor),
               ),

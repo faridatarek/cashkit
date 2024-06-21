@@ -33,27 +33,27 @@ class EditAllQuestionScreen extends StatelessWidget {
           SizedBox(
               height: 120.h, width: double.infinity, child: EditQuestionOne()),
           SizedBox(
-            height: 10.h,
+            height: 2.h,
           ),
           SizedBox(
               height: 120.h, width: double.infinity, child: EditQuestionTwo()),
           SizedBox(
-            height: 10.h,
+            height: 2.h,
           ),
           SizedBox(
               height: 120.h, width: double.infinity, child: EditQuestionThree()),
           SizedBox(
-            height: 10.h,
+            height: 2.h,
           ),
           SizedBox(
               height: 120.h, width: double.infinity, child: EditQuestionFour()),
           SizedBox(
-            height: 10.h,
+            height: 2.h,
           ),
           SizedBox(
               height: 120.h, width: double.infinity, child: EditQuestionFive()),
           SizedBox(
-            height: 10.h,
+            height: 2.h,
           ),
           SizedBox(
               height: 120.h, width: double.infinity, child: EditQuestionSix()),
