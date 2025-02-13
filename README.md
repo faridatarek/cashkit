@@ -13,7 +13,7 @@ CashKit is a Flutter-based financial management application designed to help use
 
 🎯 **Goal-Based Saving Plans:** Set savings goals, deadlines, and track progress using the SMART goal framework.
 
-💰 **50-30-20 Money Management Rule:** Automatically categorize income into needs (50%), wants (30%), and savings (20%)ز
+💰 **50-30-20 Money Management Rule:** Automatically categorize income into needs (50%), wants (30%), and savings (20%)
 
 📊 **Financial Reports & Visual Insights:** Get daily, weekly, and monthly reports with charts to visualize spending and savings.
 
