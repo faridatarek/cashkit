@@ -15,8 +15,9 @@ CashKit is a Flutter-based financial management application designed to help use
 
 💰 **50-30-20 Money Management Rule:** Automatically categorize income into needs (50%), wants (30%), and savings (20%)ز
 
-🔄 **ROSCA (Money Circles) Management:** Join rotating savings groups with automated tracking, reminders, and structured payment schedules.
-
 📊 **Financial Reports & Visual Insights:** Get daily, weekly, and monthly reports with charts to visualize spending and savings.
 
 🔔 **Smart Notifications & Reminders:** Receive alerts for bills, spending, and savings progress to stay on track financially.
+
+🔄 **ROSCA (Money Circles) Management:** Join rotating savings groups with automated tracking, reminders, and structured payment schedules.
+
