@@ -26,3 +26,9 @@ Below are the app's screenshots that highlight its functionality:
 
 
 <img src="https://github.com/user-attachments/assets/a59d7f52-0ad3-4021-8445-eec7a24227c7" alt="Choose Quiz Screenshot" width="200"> <img src="https://github.com/user-attachments/assets/c8e7e58a-8639-4e78-86e7-c29af74e7783" alt="Quiz Overview Screenshot" width="200"> <img src="https://github.com/user-attachments/assets/ef9d1312-a049-410b-b129-a4713c7ba1e2" alt="Question Screenshot" width="200"> <img src="https://github.com/user-attachments/assets/82787715-5a1c-4842-91cd-524111fa9703" alt="Choose Quiz Screenshot" width="200">
+
+## Demo Video
+
+Watch the demo video of Retail Store App below:
+[![image](https://github.com/user-attachments/assets/5c0904b3-9042-454e-b466-cdec5ace7597)
+](https://youtu.be/QKz68JWNG9E)
