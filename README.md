@@ -1,16 +1,21 @@
 # cashkit
 
-A new Flutter project.
+CashKit is a Flutter-based financial management application designed to help users take control of their finances with the power of AI. The app allows users to input their income and expenses, providing intelligent insights on budgeting, expense tracking, and income allocation. With an intuitive interface and smart AI-driven recommendations, CashKit simplifies financial planning, helping users manage their money efficiently and achieve their financial goals with ease.
+---
 
-## Getting Started
+---
+## Key Features of CashKit:
 
-This project is a starting point for a Flutter application.
+🏦 **Smart Budgeting & Expense Management:** Create, edit, and delete budget categories, set spending limits, and track expenses easily
 
-A few resources to get you started if this is your first Flutter project:
+🤖 **AI-Powered Financial Insights:** AI analyzes spending habits to predict future expenses and provide personalized savings recommendations.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+🎯 **Goal-Based Saving Plans:** Set savings goals, deadlines, and track progress using the SMART goal framework.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+💰 **50-30-20 Money Management Rule:** Automatically categorize income into needs (50%), wants (30%), and savings (20%) for better financial planning.
+
+🔄 **ROSCA (Money Circles) Management:** Join rotating savings groups with automated tracking, reminders, and structured payment schedules.
+
+📊 **Financial Reports & Visual Insights:** Get daily, weekly, and monthly reports with charts to visualize spending and savings.
+
+🔔 **Smart Notifications & Reminders:** Receive alerts for bills, spending, and savings progress to stay on track financially.
